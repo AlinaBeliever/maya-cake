@@ -421,6 +421,76 @@
     });
   });
 
+  /* ---------- Анімації (етап 4) ---------- */
+  // Якщо людина в налаштуваннях системи попросила «зменшити рух» — анімацій немає
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  MC.motionOn = () => !reduce.matches;
+  if (MC.motionOn()) document.documentElement.classList.add('motion');
+
+  MC.motion = {
+    // 2. Мініатюра товару летить до іконки кошика, лічильник підстрибує
+    fly(source) {
+      const target = MC.qs('.cart-btn');
+      if (!target) return;
+      const bump = () => MC.qsa('[data-cart-count]').forEach((c) => {
+        c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump');
+      });
+      const holder = source && (source.closest('.card, .upsell__item, .product, .flavor, .tray-wrap, .builder') || null);
+      const img = holder && (holder.querySelector('.card__media > img, .gallery__slide img, img'));
+      if (!MC.motionOn() || !img || !target.getClientRects().length) { bump(); return; }
+      const a = img.getBoundingClientRect();
+      const b = target.getBoundingClientRect();
+      const size = Math.min(a.width, a.height, 120);
+      const clone = img.cloneNode();
+      clone.removeAttribute('srcset');
+      clone.removeAttribute('loading');
+      clone.className = 'fly-thumb';
+      Object.assign(clone.style, { width: size + 'px', height: size + 'px', left: (a.left + a.width / 2 - size / 2) + 'px', top: (a.top + a.height / 2 - size / 2) + 'px' });
+      document.body.appendChild(clone);
+      const dx = b.left + b.width / 2 - (a.left + a.width / 2);
+      const dy = b.top + b.height / 2 - (a.top + a.height / 2);
+      const anim = clone.animate([
+        { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+        { transform: `translate(${dx}px, ${dy}px) scale(.18)`, opacity: .6 }
+      ], { duration: 400, easing: 'cubic-bezier(.22,.61,.36,1)' });
+      anim.onfinish = () => { clone.remove(); bump(); };
+    },
+
+    // 4. Конфетті з 12 рожевих кіл від точки (елемента)
+    confetti(from) {
+      if (!MC.motionOn() || !from || !from.getClientRects().length) return;
+      const r = from.getBoundingClientRect();
+      const x0 = r.left + r.width / 2, y0 = r.top + r.height / 2;
+      const colors = ['#DDBCC4', '#C796A2', '#F3E4E6', '#DDBCC4'];
+      for (let i = 0; i < 12; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'confetti';
+        const s = 6 + Math.random() * 8;
+        Object.assign(dot.style, { left: (x0 - s / 2) + 'px', top: (y0 - s / 2) + 'px', width: s + 'px', height: s + 'px', background: colors[i % 4] });
+        document.body.appendChild(dot);
+        const ang = (Math.PI * 2 * i) / 12 + Math.random() * 0.4;
+        const dist = 50 + Math.random() * 60;
+        dot.animate([
+          { transform: 'translate(0,0) scale(.4)', opacity: 1 },
+          { transform: `translate(${Math.cos(ang) * dist}px, ${Math.sin(ang) * dist - 20}px) scale(1)`, opacity: 0 }
+        ], { duration: 400 + Math.random() * 200, easing: 'cubic-bezier(.22,.61,.36,1)' }).onfinish = () => dot.remove();
+      }
+    },
+
+    // 5. Секції проявляються при прокручуванні (лише ті, що нижче першого екрана)
+    reveal() {
+      if (!MC.motionOn() || !('IntersectionObserver' in window)) return;
+      const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      }), { rootMargin: '0px 0px -8% 0px' });
+      MC.qsa('main > section, main .section').forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight) return;
+        el.classList.add('reveal');
+        io.observe(el);
+      });
+    }
+  };
+
   MC.ready = new Promise((resolve) => {
     const start = () => {
       document.body.insertAdjacentHTML('afterbegin', headerHtml());
@@ -430,6 +500,7 @@
       renderDeadline();
       setInterval(renderDeadline, 30000);
       document.addEventListener('cart:zone', renderDeadline);
+      MC.motion.reveal();
       resolve();
     };
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);

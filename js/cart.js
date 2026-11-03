@@ -98,6 +98,9 @@
         items.push(entry);
       }
       emit();
+      const drawerOpen = drawer && drawer.classList.contains('is-open');
+      // Якщо кошик уже відкритий — мініатюра не летить (іконка кошика під панеллю)
+      MC.motion.fly(drawerOpen ? null : opts.source);
       announce(entry, opts.source);
     },
     setQty(key, qty) {
@@ -196,7 +199,7 @@
   function openDrawer(byUser) {
     clearTimeout(autoCloseTimer);
     lastFocus = document.activeElement;
-    render();
+    // Не перемальовуємо: вміст оновлюється при кожній зміні кошика, і так видно анімацію прогрес-бару
     drawer.classList.add('is-open');
     backdrop.classList.add('is-open');
     document.body.classList.add('is-locked');
@@ -271,6 +274,7 @@
     }
     const left = zone.freeFrom - subtotal;
     const pct = Math.min(subtotal / zone.freeFrom, 1) * 100;
+    progressNow = { pct, free: left <= 0, zone: zone.id };
     const text = left > 0
       ? `Ще <strong class="num">${MC.price(left)}</strong> — і доставка безкоштовна`
       : `<strong>Доставка безкоштовна</strong> ${MC.icon('check', 'inline-check')}`;
@@ -301,6 +305,27 @@
       </div>`).join('')}</div></div>`;
   }
 
+  // 4. Прогрес-бар заповнюється від попереднього значення; на порозі — конфетті
+  let progressPrev = null, progressNow = null;
+  function animateProgress() {
+    const bar = body.querySelector('.progress span');
+    if (!bar || !progressNow) { progressPrev = progressNow; return; }
+    const prev = progressPrev && progressPrev.zone === progressNow.zone ? progressPrev : null;
+    if (prev && prev.pct !== progressNow.pct) {
+      const target = progressNow.pct;
+      bar.style.transition = 'none';
+      bar.style.width = prev.pct + '%';
+      void bar.offsetWidth;
+      bar.style.transition = '';
+      bar.style.width = target + '%';
+    }
+    if (prev && !prev.free && progressNow.free) {
+      const visible = drawer.classList.contains('is-open') ? bar.parentElement : (MC.qs('.toast.is-shown') || MC.qs('.cart-btn'));
+      setTimeout(() => MC.motion.confetti(visible), 250);
+    }
+    progressPrev = progressNow;
+  }
+
   let dataCache = null;
   function render() {
     MC.qsa('[data-cart-count]').forEach((el) => {
@@ -318,13 +343,16 @@
         <a class="btn" href="catalog.html">До каталогу</a>
       </div>`;
       foot.hidden = true;
+      progressPrev = null;
       return;
     }
     foot.hidden = false;
     const subtotal = cart.subtotal();
     const zone = MC.zone(zoneId);
     const fee = zone ? MC.delivery.fee(zone, subtotal) : null;
+    progressNow = null;
     body.innerHTML = items.map(itemHtml).join('') + shippingHtml(subtotal) + (dataCache ? upsellHtml(dataCache, subtotal) : '');
+    animateProgress();
     foot.innerHTML = `<div class="totals">
         <div><span>Товари</span><span class="price">${MC.price(subtotal)}</span></div>
         <div><span>Доставка</span><span class="price">${fee == null ? 'оберіть місто' : fee === 0 ? 'безкоштовно' : MC.price(fee)}</span></div>

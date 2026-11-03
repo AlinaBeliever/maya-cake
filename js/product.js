@@ -2,8 +2,6 @@
 (function () {
   'use strict';
 
-  const fmtNum = (n) => String(Math.round(n * 10) / 10).replace('.', ',');
-
   function gallery(p, variant) {
     const slides = [];
     if (p.images.main) {
@@ -42,9 +40,13 @@
         <p class="soft-note">${MC.NOTE_PITS}</p></div></details>`);
     }
     const k = p.kbzhv;
+    // Цифри — рядками, точно як у сторіз (без округлення)
+    const extra = k ? [['з них насичені жири', k.saturated, ' г'], ['з них цукри', k.sugars, ' г'], ['сіль', k.salt, ' г'], ['енергетична цінність', k.kj, ' кДж']]
+      .filter((r) => r[1]).map((r) => `<li><span>${r[0]}</span><b>${MC.esc(r[1])}${r[2]}</b></li>`).join('') : '';
     blocks.push(`<details><summary>Харчова цінність на 100 г${MC.icon('chevron')}</summary><div>
       ${k ? `<table class="kbzhv"><thead><tr><th>Білки, г</th><th>Жири, г</th><th>Вуглеводи, г</th><th>ккал</th></tr></thead>
-        <tbody><tr><td>${fmtNum(k.protein)}</td><td>${fmtNum(k.fat)}</td><td>${fmtNum(k.carbs)}</td><td>${fmtNum(k.kcal)}</td></tr></tbody></table>`
+        <tbody><tr><td>${MC.esc(k.protein)}</td><td>${MC.esc(k.fat)}</td><td>${MC.esc(k.carbs)}</td><td>${MC.esc(k.kcal)}</td></tr></tbody></table>
+        ${extra ? `<ul class="kbzhv-more">${extra}</ul>` : ''}`
         : '<p class="muted">Харчову цінність уточнюйте.</p>'}
       <p class="soft-note">Вага ручних десертів може відрізнятися в межах 3%.</p>
     </div></details>`);

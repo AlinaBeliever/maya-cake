@@ -115,10 +115,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.5,
-        "fat": 15.8,
-        "carbs": 33.5,
-        "kcal": 294
+        "protein": "5,5",
+        "fat": "15,8",
+        "carbs": "33,5",
+        "kcal": "294"
       },
       "shelfLife": "72 год",
       "images": {
@@ -144,10 +144,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 5.95,
-        "fat": 19.17,
-        "carbs": 33.85,
-        "kcal": 329.87
+        "protein": "5,95",
+        "fat": "19,17",
+        "carbs": "33,85",
+        "kcal": "329,87"
       },
       "shelfLife": "72 год",
       "images": {
@@ -172,10 +172,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 8.3,
-        "fat": 11,
-        "carbs": 43.5,
-        "kcal": 295
+        "protein": "8,3",
+        "fat": "11",
+        "carbs": "43,5",
+        "kcal": "295"
       },
       "shelfLife": "72 год",
       "images": {
@@ -200,10 +200,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 6.1,
-        "fat": 24.9,
-        "carbs": 41.4,
-        "kcal": 407
+        "protein": "6,1",
+        "fat": "24,9",
+        "carbs": "41,4",
+        "kcal": "407"
       },
       "shelfLife": "72 год",
       "images": {
@@ -228,10 +228,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.28,
-        "fat": 17.14,
-        "carbs": 37.47,
-        "kcal": 323.81
+        "protein": "5,28",
+        "fat": "17,14",
+        "carbs": "37,47",
+        "kcal": "323,81"
       },
       "shelfLife": "72 год",
       "images": {
@@ -256,10 +256,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.4,
-        "fat": 22.3,
-        "carbs": 36.3,
-        "kcal": 362
+        "protein": "5,4",
+        "fat": "22,3",
+        "carbs": "36,3",
+        "kcal": "362"
       },
       "shelfLife": "72 год",
       "images": {
@@ -284,10 +284,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 6.43,
-        "fat": 23.61,
-        "carbs": 47.18,
-        "kcal": 425.05
+        "protein": "6,43",
+        "fat": "23,61",
+        "saturated": "12,05",
+        "carbs": "47,18",
+        "sugars": "31,12",
+        "salt": "0,13",
+        "kcal": "425,05",
+        "kj": "1779,63"
       },
       "shelfLife": "72 год",
       "images": {
@@ -313,10 +317,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 4.91,
-        "fat": 18.63,
-        "carbs": 37.2,
-        "kcal": 337.11
+        "protein": "4,91",
+        "fat": "18,63",
+        "saturated": "10,60",
+        "carbs": "37,20",
+        "sugars": "27,03",
+        "salt": "0,21",
+        "kcal": "337,11",
+        "kj": "1411,41"
       },
       "shelfLife": "72 год",
       "images": {
@@ -344,10 +352,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 8,
-        "fat": 24.8,
-        "carbs": 37.2,
-        "kcal": 401
+        "protein": "8",
+        "fat": "24,8",
+        "carbs": "37,2",
+        "kcal": "401"
       },
       "shelfLife": "72 год",
       "images": {
@@ -373,10 +381,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 4.55,
-        "fat": 17.78,
-        "carbs": 30.08,
-        "kcal": 304.09
+        "protein": "4,55",
+        "fat": "17,78",
+        "saturated": "11,59",
+        "carbs": "30,08",
+        "sugars": "24,14",
+        "salt": "0,06",
+        "kcal": "304,09",
+        "kj": "1273,18"
       },
       "shelfLife": "72 год",
       "images": {
@@ -404,10 +416,14 @@
         "sesame"
       ],
       "kbzhv": {
-        "protein": 6.97,
-        "fat": 20.82,
-        "carbs": 29.13,
-        "kcal": 331.39
+        "protein": "6,97",
+        "fat": "20,82",
+        "saturated": "10,78",
+        "carbs": "29,13",
+        "sugars": "21,89",
+        "salt": "0,29",
+        "kcal": "331,39",
+        "kj": "1387,49"
       },
       "shelfLife": "72 год",
       "images": {
@@ -433,10 +449,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.95,
-        "fat": 20.41,
-        "carbs": 25.91,
-        "kcal": 312.6
+        "protein": "5,95",
+        "fat": "20,41",
+        "saturated": "12,97",
+        "carbs": "25,91",
+        "sugars": "18,96",
+        "salt": "0,22",
+        "kcal": "312,60",
+        "kj": "1308,81"
       },
       "shelfLife": "72 год",
       "images": {
@@ -463,10 +483,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 7.79,
-        "fat": 24.4,
-        "carbs": 27.95,
-        "kcal": 362.64
+        "protein": "7,79",
+        "fat": "24,40",
+        "saturated": "15,19",
+        "carbs": "27,95",
+        "sugars": "21,44",
+        "salt": "0,34",
+        "kcal": "362,64",
+        "kj": "1518,30"
       },
       "shelfLife": "72 год",
       "images": {
@@ -493,10 +517,14 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 4.9,
-        "fat": 27.47,
-        "carbs": 29.18,
-        "kcal": 383.16
+        "protein": "4,90",
+        "fat": "27,47",
+        "saturated": "13,70",
+        "carbs": "29,18",
+        "sugars": "23,62",
+        "salt": "0,3",
+        "kcal": "383,16",
+        "kj": "1604,24"
       },
       "shelfLife": "72 год",
       "images": {
@@ -522,10 +550,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 4.0,
-        "fat": 20.7,
-        "carbs": 25.0,
-        "kcal": 300
+        "protein": "4,0",
+        "fat": "20,7",
+        "carbs": "25,0",
+        "kcal": "300"
       },
       "shelfLife": "72 год",
       "images": {
@@ -552,10 +580,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 7.93,
-        "fat": 22.42,
-        "carbs": 24.76,
-        "kcal": 392.72
+        "protein": "7,93",
+        "fat": "22,42",
+        "carbs": "24,76",
+        "kcal": "392,72"
       },
       "shelfLife": "72 год",
       "images": {
@@ -581,10 +609,14 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 6.72,
-        "fat": 26.66,
-        "carbs": 29.79,
-        "kcal": 389.26
+        "protein": "6,72",
+        "fat": "26,66",
+        "saturated": "17,74",
+        "carbs": "29,79",
+        "sugars": "20,10",
+        "salt": "0,25",
+        "kcal": "389,26",
+        "kj": "1629,78"
       },
       "shelfLife": "72 год",
       "images": {
@@ -609,10 +641,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 6.6,
-        "fat": 26.5,
-        "carbs": 48.2,
-        "kcal": 455
+        "protein": "6,6",
+        "fat": "26,5",
+        "carbs": "48,2",
+        "kcal": "455"
       },
       "shelfLife": "72 год",
       "images": {
@@ -638,10 +670,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 5.5,
-        "fat": 28.4,
-        "carbs": 49.8,
-        "kcal": 477
+        "protein": "5,5",
+        "fat": "28,4",
+        "carbs": "49,8",
+        "kcal": "477"
       },
       "shelfLife": "72 год",
       "images": {
@@ -755,10 +787,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 9.1,
-        "fat": 24.23,
-        "carbs": 33.46,
-        "kcal": 384.81
+        "protein": "9,10",
+        "fat": "24,23",
+        "carbs": "33,46",
+        "kcal": "384,81"
       },
       "shelfLife": "72 год",
       "images": {
@@ -784,10 +816,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 8.98,
-        "fat": 23.55,
-        "carbs": 36.14,
-        "kcal": 388.75
+        "protein": "8,98",
+        "fat": "23,55",
+        "carbs": "36,14",
+        "kcal": "388,75"
       },
       "shelfLife": "72 год",
       "images": {
@@ -813,10 +845,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 9.45,
-        "fat": 24.55,
-        "carbs": 32.0,
-        "kcal": 385.68
+        "protein": "9,45",
+        "fat": "24,55",
+        "carbs": "32,00",
+        "kcal": "385,68"
       },
       "shelfLife": "72 год",
       "images": {
@@ -842,10 +874,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.1,
-        "fat": 22.5,
-        "carbs": 34.6,
-        "kcal": 357
+        "protein": "5,1",
+        "fat": "22,5",
+        "carbs": "34,6",
+        "kcal": "357"
       },
       "shelfLife": "48 год",
       "images": {
@@ -871,10 +903,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 5.4,
-        "fat": 26.3,
-        "carbs": 43.3,
-        "kcal": 428
+        "protein": "5,4",
+        "fat": "26,3",
+        "carbs": "43,3",
+        "kcal": "428"
       },
       "shelfLife": "5 діб",
       "images": {
@@ -898,10 +930,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 4.66,
-        "fat": 21.47,
-        "carbs": 39.53,
-        "kcal": 413.96
+        "protein": "4,66",
+        "fat": "21,47",
+        "carbs": "39,53",
+        "kcal": "413,96"
       },
       "shelfLife": "72 год",
       "images": {
@@ -925,10 +957,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 7.25,
-        "fat": 32.16,
-        "carbs": 39.63,
-        "kcal": 471.41
+        "protein": "7,25",
+        "fat": "32,16",
+        "carbs": "39,63",
+        "kcal": "471,41"
       },
       "shelfLife": "72 год",
       "images": {
@@ -952,10 +984,14 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 4.93,
-        "fat": 14.88,
-        "carbs": 31.92,
-        "kcal": 282.5
+        "protein": "4,93",
+        "fat": "14,88",
+        "saturated": "9,11",
+        "carbs": "31,92",
+        "sugars": "17,86",
+        "salt": "0,07",
+        "kcal": "282,50",
+        "kj": "1182,77"
       },
       "shelfLife": "72 год",
       "images": {
@@ -980,10 +1016,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 7.71,
-        "fat": 20.28,
-        "carbs": 39.79,
-        "kcal": 370.97
+        "protein": "7,71",
+        "fat": "20,28",
+        "saturated": "12,66",
+        "carbs": "39,79",
+        "sugars": "30,79",
+        "salt": "0,29",
+        "kcal": "370,97",
+        "kj": "1553,17"
       },
       "shelfLife": "48 год",
       "images": {
@@ -1008,10 +1048,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 6.0,
-        "fat": 20.72,
-        "carbs": 38.91,
-        "kcal": 370.45
+        "protein": "6,00",
+        "fat": "20,72",
+        "saturated": "13,21",
+        "carbs": "38,91",
+        "sugars": "27,22",
+        "salt": "0,09",
+        "kcal": "370,45",
+        "kj": "1551,01"
       },
       "shelfLife": "48 год",
       "images": {
@@ -1097,10 +1141,10 @@
         "peanuts"
       ],
       "kbzhv": {
-        "protein": 7.26,
-        "fat": 32.97,
-        "carbs": 56.64,
-        "kcal": 549.32
+        "protein": "7,26",
+        "fat": "32,97",
+        "carbs": "56,64",
+        "kcal": "549,32"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1124,10 +1168,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 5.32,
-        "fat": 24.22,
-        "carbs": 36.3,
-        "kcal": 376.7
+        "protein": "5,32",
+        "fat": "24,22",
+        "carbs": "36,30",
+        "kcal": "376,70"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1150,10 +1194,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.69,
-        "fat": 25.99,
-        "carbs": 42.42,
-        "kcal": 417.71
+        "protein": "5,69",
+        "fat": "25,99",
+        "carbs": "42,42",
+        "kcal": "417,71"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1177,10 +1221,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 6.31,
-        "fat": 28.63,
-        "carbs": 41.22,
-        "kcal": 439.21
+        "protein": "6,31",
+        "fat": "28,63",
+        "carbs": "41,22",
+        "kcal": "439,21"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1204,10 +1248,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 6.33,
-        "fat": 15.53,
-        "carbs": 57.49,
-        "kcal": 387.84
+        "protein": "6,33",
+        "fat": "15,53",
+        "carbs": "57,49",
+        "kcal": "387,84"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1230,10 +1274,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.8,
-        "fat": 12.57,
-        "carbs": 53.14,
-        "kcal": 341.2
+        "protein": "5,80",
+        "fat": "12,57",
+        "carbs": "53,14",
+        "kcal": "341,20"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1265,10 +1309,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 4.89,
-        "fat": 31.27,
-        "carbs": 30.45,
-        "kcal": 418.99
+        "protein": "4,89",
+        "fat": "31,27",
+        "carbs": "30,45",
+        "kcal": "418,99"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1291,10 +1335,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 6.05,
-        "fat": 34.56,
-        "carbs": 44.42,
-        "kcal": 510.67
+        "protein": "6,05",
+        "fat": "34,56",
+        "carbs": "44,42",
+        "kcal": "510,67"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1318,10 +1362,10 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 11.6,
-        "fat": 32.23,
-        "carbs": 30.26,
-        "kcal": 457.93
+        "protein": "11,6",
+        "fat": "32,23",
+        "carbs": "30,26",
+        "kcal": "457,93"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1344,10 +1388,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.6,
-        "fat": 16.8,
-        "carbs": 55.77,
-        "kcal": 388
+        "protein": "5,60",
+        "fat": "16,80",
+        "carbs": "55,77",
+        "kcal": "388"
       },
       "shelfLife": "5 діб",
       "images": {
@@ -1370,10 +1414,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 7.7,
-        "fat": 25.73,
-        "carbs": 49.61,
-        "kcal": 452.53
+        "protein": "7,70",
+        "fat": "25,73",
+        "carbs": "49,61",
+        "kcal": "452,53"
       },
       "shelfLife": "5 діб",
       "images": {
@@ -1414,10 +1458,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 6.7,
-        "fat": 24.25,
-        "carbs": 49.49,
-        "kcal": 435.4
+        "protein": "6,70",
+        "fat": "24,25",
+        "carbs": "49,49",
+        "kcal": "435,40"
       },
       "shelfLife": "5 діб",
       "images": {
@@ -1458,10 +1502,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 7.17,
-        "fat": 34.39,
-        "carbs": 52.91,
-        "kcal": 547.15
+        "protein": "7,17",
+        "fat": "34,39",
+        "carbs": "52,91",
+        "kcal": "547,15"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1484,10 +1528,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 6.35,
-        "fat": 41.58,
-        "carbs": 40.4,
-        "kcal": 558.89
+        "protein": "6,35",
+        "fat": "41,58",
+        "carbs": "40,40",
+        "kcal": "558,89"
       },
       "shelfLife": "72 год",
       "images": {
@@ -1510,10 +1554,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.97,
-        "fat": 20.47,
-        "carbs": 64.43,
-        "kcal": 456.4
+        "protein": "5,97",
+        "fat": "20,47",
+        "carbs": "64,43",
+        "kcal": "456,40"
       },
       "shelfLife": "48 год",
       "images": {
@@ -1537,10 +1581,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 4.89,
-        "fat": 10.64,
-        "carbs": 67.65,
-        "kcal": 385.63
+        "protein": "4,89",
+        "fat": "10,64",
+        "saturated": "6,68",
+        "carbs": "67,65",
+        "sugars": "63,48",
+        "salt": "0,28",
+        "kcal": "385,63",
+        "kj": "1614,59"
       },
       "shelfLife": "48 год",
       "images": {
@@ -1564,10 +1612,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 8.035,
-        "fat": 27.43,
-        "carbs": 50.88,
-        "kcal": 482.71
+        "protein": "8,035",
+        "fat": "27,43",
+        "carbs": "50,88",
+        "kcal": "482,71"
       },
       "shelfLife": "48 год у вітрині під кришкою при +2…+6 °C",
       "images": {
@@ -1592,10 +1640,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 6.01,
-        "fat": 20.14,
-        "carbs": 50.83,
-        "kcal": 406.67
+        "protein": "6,01",
+        "fat": "20,14",
+        "carbs": "50,83",
+        "kcal": "406,67"
       },
       "shelfLife": "48 год у вітрині під кришкою при +2…+6 °C",
       "images": {
@@ -1620,10 +1668,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 7.65,
-        "fat": 25.46,
-        "carbs": 49.77,
-        "kcal": 458.45
+        "protein": "7,65",
+        "fat": "25,46",
+        "carbs": "49,77",
+        "kcal": "458,45"
       },
       "shelfLife": "48 год у вітрині під кришкою при +2…+6 °C",
       "images": {
@@ -1648,10 +1696,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 6.41,
-        "fat": 25.03,
-        "carbs": 48.6,
-        "kcal": 444.38
+        "protein": "6,41",
+        "fat": "25,03",
+        "carbs": "48,60",
+        "kcal": "444,38"
       },
       "shelfLife": "48 год у вітрині під кришкою при +2…+6 °C",
       "images": {
@@ -1676,10 +1724,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 6.19,
-        "fat": 11.6,
-        "carbs": 37.89,
-        "kcal": 281.16
+        "protein": "6,19",
+        "fat": "11,60",
+        "carbs": "37,89",
+        "kcal": "281,16"
       },
       "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
       "images": {
@@ -1705,10 +1753,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 5.83,
-        "fat": 11.05,
-        "carbs": 35.14,
-        "kcal": 262.09
+        "protein": "5,83",
+        "fat": "11,05",
+        "carbs": "35,14",
+        "kcal": "262,09"
       },
       "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
       "images": {
@@ -1734,10 +1782,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 6.24,
-        "fat": 7.37,
-        "carbs": 43.38,
-        "kcal": 256.44
+        "protein": "6,24",
+        "fat": "7,37",
+        "carbs": "43,38",
+        "kcal": "256,44"
       },
       "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
       "images": {
@@ -1762,10 +1810,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 6.3,
-        "fat": 13.4,
-        "carbs": 46.77,
-        "kcal": 319.29
+        "protein": "6,30",
+        "fat": "13,40",
+        "carbs": "46,77",
+        "kcal": "319,29"
       },
       "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
       "images": {
@@ -1790,10 +1838,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 6.03,
-        "fat": 14.73,
-        "carbs": 35.23,
-        "kcal": 292.19
+        "protein": "6,03",
+        "fat": "14,73",
+        "carbs": "35,23",
+        "kcal": "292,19"
       },
       "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
       "images": {
@@ -1818,10 +1866,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 4.61,
-        "fat": 7.95,
-        "carbs": 41.23,
-        "kcal": 248.7
+        "protein": "4,61",
+        "fat": "7,95",
+        "carbs": "41,23",
+        "kcal": "248,70"
       },
       "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
       "images": {
@@ -1846,10 +1894,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 5.28,
-        "fat": 8.43,
-        "carbs": 32.43,
-        "kcal": 225.16
+        "protein": "5,28",
+        "fat": "8,43",
+        "carbs": "32,43",
+        "kcal": "225,16"
       },
       "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
       "images": {
@@ -1874,10 +1922,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 7.05,
-        "fat": 26.7,
-        "carbs": 62.57,
-        "kcal": 511.03
+        "protein": "7,05",
+        "fat": "26,70",
+        "carbs": "62,57",
+        "kcal": "511,03"
       },
       "shelfLife": "3–5 діб у герметично закритій банці або під скляною кришкою при температурі не вище 20 °C",
       "images": {
@@ -1902,10 +1950,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 7.19,
-        "fat": 23.08,
-        "carbs": 48.15,
-        "kcal": 429.69
+        "protein": "7,19",
+        "fat": "23,08",
+        "carbs": "48,15",
+        "kcal": "429,69"
       },
       "shelfLife": "3–5 діб у герметично закритій банці або під скляною кришкою при температурі не вище 20 °C",
       "images": {
@@ -1930,10 +1978,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 7.58,
-        "fat": 19.4,
-        "carbs": 66.29,
-        "kcal": 463.9
+        "protein": "7,58",
+        "fat": "19,40",
+        "carbs": "66,29",
+        "kcal": "463,90"
       },
       "shelfLife": "3–5 діб у герметично закритій банці або під скляною кришкою при температурі не вище 20 °C",
       "images": {
@@ -1958,10 +2006,10 @@
       "contains": null,
       "allergens": [],
       "kbzhv": {
-        "protein": 8.97,
-        "fat": 23.94,
-        "carbs": 65.12,
-        "kcal": 504.01
+        "protein": "8,97",
+        "fat": "23,94",
+        "carbs": "65,12",
+        "kcal": "504,01"
       },
       "shelfLife": "3–5 діб у герметично закритій банці або під скляною кришкою при температурі не вище 20 °C",
       "images": {
@@ -1990,10 +2038,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.07,
-        "fat": 19.69,
-        "carbs": 34.54,
-        "kcal": 338.04
+        "protein": "5,07",
+        "fat": "19,69",
+        "saturated": "11,87",
+        "carbs": "34,54",
+        "sugars": "16,89",
+        "salt": "0,03",
+        "kcal": "338,04",
+        "kj": "1412,54"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2018,10 +2070,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 4.62,
-        "fat": 22.7,
-        "carbs": 28.23,
-        "kcal": 338.04
+        "protein": "4,62",
+        "fat": "22,70",
+        "saturated": "12,72",
+        "carbs": "28,23",
+        "sugars": "16,84",
+        "salt": "0,26",
+        "kcal": "338,04",
+        "kj": "1415,33"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2051,10 +2107,14 @@
         "peanuts"
       ],
       "kbzhv": {
-        "protein": 7.38,
-        "fat": 27.86,
-        "carbs": 30.26,
-        "kcal": 400.75
+        "protein": "7,38",
+        "fat": "27,86",
+        "saturated": "12,94",
+        "carbs": "30,26",
+        "sugars": "27,06",
+        "salt": "0,13",
+        "kcal": "400,75",
+        "kj": "1677,87"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2080,10 +2140,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 4.08,
-        "fat": 24.45,
-        "carbs": 23.87,
-        "kcal": 334.21
+        "protein": "4,08",
+        "fat": "24,45",
+        "saturated": "18,68",
+        "carbs": "23,87",
+        "sugars": "17,76",
+        "salt": "0,11",
+        "kcal": "334,21",
+        "kj": "1399,28"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2112,10 +2176,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 2.6,
-        "fat": 13.37,
-        "carbs": 27.77,
-        "kcal": 243.0
+        "protein": "2,60",
+        "fat": "13,37",
+        "saturated": "9,58",
+        "carbs": "27,77",
+        "sugars": "20,47",
+        "salt": "0,12",
+        "kcal": "243,0",
+        "kj": "1017,43"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2141,10 +2209,14 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 4.04,
-        "fat": 16.98,
-        "carbs": 23.94,
-        "kcal": 267.41
+        "protein": "4,04",
+        "fat": "16,98",
+        "saturated": "11,44",
+        "carbs": "23,94",
+        "sugars": "20,49",
+        "salt": "0,22",
+        "kcal": "267,41",
+        "kj": "1119,61"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2171,10 +2243,14 @@
         "nuts"
       ],
       "kbzhv": {
-        "protein": 3.52,
-        "fat": 5.77,
-        "carbs": 29.49,
-        "kcal": 184.51
+        "protein": "3,52",
+        "fat": "5,77",
+        "saturated": "1,47",
+        "carbs": "29,49",
+        "sugars": "18,91",
+        "salt": "0,05",
+        "kcal": "184,51",
+        "kj": "772,51"
       },
       "shelfLife": "48 год",
       "images": {
@@ -2204,10 +2280,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 8.3,
-        "fat": 32.2,
-        "carbs": 44.6,
-        "kcal": 494
+        "protein": "8,3",
+        "fat": "32,2",
+        "carbs": "44,6",
+        "kcal": "494"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2249,10 +2325,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 4.1,
-        "fat": 14.1,
-        "carbs": 26.6,
-        "kcal": 245
+        "protein": "4,1",
+        "fat": "14,1",
+        "carbs": "26,6",
+        "kcal": "245"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2294,10 +2370,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 5.3,
-        "fat": 6.1,
-        "carbs": 51.4,
-        "kcal": 767
+        "protein": "5,3",
+        "fat": "6,1",
+        "carbs": "51,4",
+        "kcal": "767"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2340,10 +2416,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 9.7,
-        "fat": 24.6,
-        "carbs": 32.2,
-        "kcal": 537
+        "protein": "9,7",
+        "fat": "24,6",
+        "carbs": "32,2",
+        "kcal": "537"
       },
       "shelfLife": "72 год",
       "images": {
@@ -2384,10 +2460,10 @@
         "milk"
       ],
       "kbzhv": {
-        "protein": 0.97,
-        "fat": 40.45,
-        "carbs": 49.07,
-        "kcal": 557.73
+        "protein": "0,97",
+        "fat": "40,45",
+        "carbs": "49,07",
+        "kcal": "557,73"
       },
       "shelfLife": "14 діб",
       "images": {

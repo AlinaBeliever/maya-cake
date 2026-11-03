@@ -1003,3 +1003,10 @@ html:not(.motion) .hero__cut::before, html:not(.motion) .hero__cut::after { disp
 /* 5. Секції проявляються знизу при прокручуванні (один раз) */
 .motion .reveal { opacity: 0; transform: translateY(16px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
 .motion .reveal.is-in { opacity: 1; transform: none; }
+
+/* Етап 5: планшет */
+@media (min-width: 768px) and (max-width: 1199px) {
+  [data-featured] > .card:nth-child(n+7) { display: none; } /* 6 карток = два повні ряди по 3 */
+}
+@media (min-width: 600px) { .team { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+.team .ph-circle { max-width: 220px; margin: 0 auto; }

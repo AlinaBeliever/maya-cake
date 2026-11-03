@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Автоперевірка сайту — Maya Cake</title>
+  <style>
+    body { font: 14px/1.5 system-ui, sans-serif; margin: 24px; color: #183447; background: #fbf6f2; }
+    h1 { font-size: 22px; }
+    #summary { font-size: 18px; font-weight: 600; margin: 12px 0; }
+    .ok { color: #2e7d32; } .fail { color: #a8433f; font-weight: 600; }
+    li { margin: 2px 0; }
+    #frames iframe { border: 1px solid #ddd; margin: 4px; background: #fff; }
+  </style>
+</head>
+<body>
+  <!-- Відкрийте http://localhost:8000/tools/test.html — сторінка сама пройде сайт і покаже результат.
+       Увага: тест очищає кошик у цьому браузері. -->
+  <h1>Автоперевірка сайту Maya Cake</h1>
+  <p id="summary">Перевіряємо…</p>
+  <ol id="log"></ol>
+  <div id="frames"></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/main.js"></script>
+<script>
+(async function () {
+  'use strict';
+  const log = document.getElementById('log');
+  let passed = 0, failed = 0;
+  const check = (name, cond, extra) => {
+    const li = document.createElement('li');
+    li.className = cond ? 'ok' : 'fail';
+    li.textContent = (cond ? '✓ ' : '✗ ') + name + (extra != null ? ' — ' + extra : '');
+    log.appendChild(li);
+    cond ? passed++ : failed++;
+  };
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const errors = [];
+  const NOW = 'mc_now_override';
+  const setNow = (v) => { if (v) sessionStorage.setItem(NOW, v); else sessionStorage.removeItem(NOW); };
+
+  // Відкрити сторінку в iframe і дочекатися, поки сайт завантажить дані
+  function open(url, width, height) {
+    return new Promise((resolve) => {
+      const f = document.createElement('iframe');
+      f.width = width || 1280; f.height = height || 800;
+      document.getElementById('frames').appendChild(f);
+      f.onload = async () => {
+        const w = f.contentWindow;
+        w.addEventListener('error', (e) => errors.push(url + ': ' + e.message));
+        try { await w.MC.ready; await w.MC.data(); } catch (e) { /* сторінка без даних */ }
+        await sleep(150);
+        resolve(f);
+      };
+      f.src = '../' + url;
+    });
+  }
+  const close = (f) => f.remove();
+  const waitFor = async (fn, ms) => { for (let t = 0; t < (ms || 3000); t += 50) { if (fn()) return true; await sleep(50); } return false; };
+
+  /* ---------- 1. Дедлайн 14:00 за Києвом ---------- */
+  const D = MC.delivery;
+  const iso = D.iso;
+  const scen = [
+    ['вт 10:00, Київ → завтра (ср 4.11)', '2026-11-03T10:00', 'kyiv', '2026-11-04'],
+    ['вт 13:59, Київ → завтра', '2026-11-03T13:59', 'kyiv', '2026-11-04'],
+    ['вт 14:00, Київ → післязавтра (чт 5.11)', '2026-11-03T14:00', 'kyiv', '2026-11-05'],
+    ['вт 18:30, Київ → післязавтра', '2026-11-03T18:30', 'kyiv', '2026-11-05'],
+    ['сб 10:00, Київ → неділя (Київ щодня)', '2026-11-07T10:00', 'kyiv', '2026-11-08'],
+    ['чт 10:00, Буча → пт 6.11', '2026-11-05T10:00', 'bucha', '2026-11-06'],
+    ['пт 10:00, Буча → пн 9.11 (сб не возимо)', '2026-11-06T10:00', 'bucha', '2026-11-09'],
+    ['пт 15:00, Буча → пн 9.11', '2026-11-06T15:00', 'bucha', '2026-11-09'],
+    ['сб 10:00, Вишгород → нд 8.11', '2026-11-07T10:00', 'vyshhorod', '2026-11-08'],
+    ['сб 15:00, Вишгород → ср 11.11', '2026-11-07T15:00', 'vyshhorod', '2026-11-11'],
+    ['нд 10:00, Вишгород → ср 11.11', '2026-11-08T10:00', 'vyshhorod', '2026-11-11'],
+    ['пн 10:00, Бориспіль → вт 10.11', '2026-11-09T10:00', 'boryspil', '2026-11-10'],
+    ['вт 15:00, Бориспіль → чт 12.11', '2026-11-10T15:00', 'boryspil', '2026-11-12'],
+    ['31.12 15:00, Київ → 2.01 (перехід року)', '2026-12-31T15:00', 'kyiv', '2027-01-02']
+  ];
+  scen.forEach(([name, now, zone, want]) => {
+    setNow(now);
+    const got = iso(D.earliest(zone));
+    check('Дедлайн: ' + name, got === want, got);
+  });
+  setNow('2026-11-03T10:00');
+  MC.cfg.CLOSED_DATES.push('2026-11-04');
+  check('Дедлайн: вихідний цеху 4.11 пропускаємо → 5.11', iso(D.earliest('kyiv')) === '2026-11-05');
+  MC.cfg.CLOSED_DATES.pop();
+  setNow('2026-11-06T09:00');
+  const bDates = D.dates('bucha', 7).map((d) => d.getUTCDay());
+  check('Дати для Бучі — лише пн–пт', bDates.length === 7 && bDates.every((x) => x >= 1 && x <= 5), bDates.join(','));
+  const vDates = D.dates('vyshhorod', 4).map((d) => d.getUTCDay());
+  check('Дати для Вишгорода — лише ср і нд', vDates.every((x) => x === 3 || x === 0), vDates.join(','));
+  setNow(null);
+  // Справжній час Києва береться не з годинника пристрою
+  const real = MC.kyivNow();
+  const viaIntl = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Kyiv', hour: '2-digit', hourCycle: 'h23' }).format(new Date());
+  check('Поточна година — за Києвом', String(real.h).padStart(2, '0') === viaIntl, real.h + ' год');
+
+  // Текст смуги дедлайну
+  setNow('2026-11-03T11:45');
+  let f = await open('index.html');
+  let bar = f.contentDocument.querySelector('[data-deadline]').textContent;
+  check('Смуга до 14:00: «Замовте протягом 2 год 15 хв»', /2\s*год\s*15\s*хв/.test(bar) && /завтра/.test(bar), bar.trim().slice(0, 70));
+  close(f);
+  setNow('2026-11-03T16:00');
+  f = await open('index.html');
+  bar = f.contentDocument.querySelector('[data-deadline]').textContent;
+  check('Смуга після 14:00: «на післязавтра»', /післязавтра/.test(bar), bar.trim().slice(0, 70));
+  close(f);
+  setNow('2026-11-03T10:00');
+
+  /* ---------- 2. Каталог і фільтри ---------- */
+  localStorage.clear();
+  f = await open('catalog.html');
+  const data = await f.contentWindow.MC.data();
+  let doc = f.contentDocument;
+  check('Каталог: показано всі товари', doc.querySelectorAll('[data-grid] .card').length === data.products.length, doc.querySelectorAll('[data-grid] .card').length + ' з ' + data.products.length);
+  const noImgOk = [...doc.querySelectorAll('[data-grid] .card')].every((c) => c.querySelector('img, .ph'));
+  check('Каталог: у кожної картки є фото або «фото буде»', noImgOk);
+  const noPrice = data.products.filter((p) => !f.contentWindow.MC.priceInfo(p));
+  const tgOk = noPrice.every((p) => { const c = doc.querySelector(`.card[data-id="${p.id}"]`); return c && /ціну уточнюйте/.test(c.textContent) && c.querySelector('a[href*="t.me"]') && !c.querySelector('[data-add]'); });
+  check('Товари без ціни: «ціну уточнюйте» + «Запитати в Telegram»', tgOk, noPrice.length + ' шт');
+  close(f);
+
+  f = await open('catalog.html?cat=cakes&nonuts=1');
+  doc = f.contentDocument;
+  const cards = [...doc.querySelectorAll('[data-grid] .card')].map((c) => data.byId[c.dataset.id]);
+  const expected = data.products.filter((p) => p.category === 'cakes' && p.allergens.length && !p.allergens.includes('nuts') && !p.allergens.includes('peanuts'));
+  check('Фільтр «Торти + без горіхів»', cards.length === expected.length && cards.every((p) => p.category === 'cakes' && !p.allergens.includes('nuts')), cards.length + ' шт');
+  doc.querySelector('[data-filter="p1000plus"]').click();
+  await sleep(50);
+  const pricey = [...doc.querySelectorAll('[data-grid] .card')].map((c) => data.byId[c.dataset.id]);
+  check('Фільтр «Від 1000 грн» поверх попередніх', pricey.length > 0 && pricey.every((p) => p.price > 1000), pricey.length + ' шт');
+  check('Стан фільтрів записано в адресу', /cat=cakes/.test(f.contentWindow.location.search) && /nonuts=1/.test(f.contentWindow.location.search) && /p1000plus=1/.test(f.contentWindow.location.search), f.contentWindow.location.search);
+  doc.querySelector('[data-sort]').value = 'asc';
+  doc.querySelector('[data-sort]').dispatchEvent(new Event('change'));
+  await sleep(50);
+  const sorted = [...doc.querySelectorAll('[data-grid] .card')].map((c) => data.byId[c.dataset.id].price);
+  check('Сортування за ціною ↑', sorted.every((v, i) => !i || sorted[i - 1] <= v), sorted.join(', '));
+  close(f);
+
+  f = await open('catalog.html?cat=caramel&p1000plus=1');
+  doc = f.contentDocument;
+  check('Порожній стан «Нічого не знайшли»', !doc.querySelector('[data-empty]').hidden && doc.querySelectorAll('[data-grid] .card').length === 0);
+  doc.querySelector('[data-reset]').click();
+  await sleep(50);
+  check('«Скинути фільтри» повертає весь каталог', doc.querySelectorAll('[data-grid] .card').length === data.products.length);
+  close(f);
+
+  f = await open('catalog.html?gift=1');
+  check('Посилання «Подарунки» з головної працює', f.contentDocument.querySelectorAll('[data-grid] .card').length === data.products.filter((p) => p.tags.includes('gift')).length);
+  close(f);
+
+  /* ---------- 3. Кошик і збереження після перезавантаження ---------- */
+  localStorage.clear();
+  f = await open('catalog.html?cat=tarts');
+  doc = f.contentDocument;
+  doc.querySelector('[data-add="tart-lemon"]').click();
+  await sleep(30);
+  check('Анімація: мініатюра летить у кошик', !!doc.querySelector('.fly-thumb'));
+  await sleep(500);
+  doc.querySelector('[data-add="tart-lemon"]').click();
+  doc.querySelector('[data-add="tart-plum-orange"]').click();
+  await sleep(500);
+  check('Лічильник кошика = 3', doc.querySelector('[data-cart-count]').textContent === '3');
+  f.contentWindow.location.reload();
+  await new Promise((r) => { f.onload = r; });
+  await f.contentWindow.MC.ready; await f.contentWindow.MC.data(); await sleep(200);
+  doc = f.contentDocument;
+  const saved = JSON.parse(localStorage.getItem('mayacake_cart_v1'));
+  check('Після перезавантаження кошик на місці', doc.querySelector('[data-cart-count]').textContent === '3' && saved.length === 2, saved.map((i) => i.id + '×' + i.qty).join(', '));
+  check('Сума кошика = 235 грн (2×70 + 95)', f.contentWindow.MC.cart.subtotal() === 235);
+  // Ліміт 20 шт
+  f.contentWindow.MC.cart.setQty(saved[0].key, 25);
+  check('Ліміт 20 шт однієї позиції', f.contentWindow.MC.cart.items()[0].qty === 20);
+  f.contentWindow.MC.cart.setQty(saved[0].key, 2);
+  // Безкоштовна доставка й конфетті
+  const W = f.contentWindow;
+  W.MC.cart.setZone('kyiv');
+  W.MC.cart.open();
+  await sleep(400);
+  check('Кошик: «Ще 565 грн — і доставка безкоштовна»', /Ще\s*565/.test(doc.querySelector('.ship__text').textContent.replace(/ /g, ' ')), doc.querySelector('.ship__text').textContent.trim());
+  W.MC.cart.add(data.byId['napoleon'], {});
+  await sleep(320);
+  check('Анімація: конфетті на порозі безкоштовної доставки', doc.querySelectorAll('.confetti').length === 12);
+  check('Доставка безкоштовна після 800 грн', /безкоштовно/.test(doc.querySelector('.totals').textContent));
+  W.MC.cart.setZone('vyshhorod');
+  await sleep(100);
+  check('Область: поріг 1500 грн', /Ще\s*265/.test(doc.querySelector('.ship__text').textContent.replace(/ /g, ' ')), doc.querySelector('.ship__text').textContent.trim());
+  close(f);
+
+  /* ---------- 4. Товар і конструктор ---------- */
+  localStorage.clear();
+  f = await open('product.html?id=bento');
+  doc = f.contentDocument;
+  doc.querySelector('input[name="variant"][value="red-velvet"]').click();
+  doc.querySelector('[data-q="1"]').click();
+  doc.querySelector('[data-buy]').click();
+  await sleep(100);
+  let it = f.contentWindow.MC.cart.items()[0];
+  check('Бенто: начинка й кількість у кошику', it && it.variantLabel === 'Червоний оксамит' && it.qty === 2 && it.price === 900);
+  check('Сторінка товару: title з назвою', /Бенто-торт/.test(doc.title));
+  close(f);
+  f = await open('product.html?id=macaron-box-classic');
+  await waitFor(() => /box\.html/.test(f.contentWindow.location.href));
+  check('Коробка макарон з каталогу веде в конструктор', /box\.html\?type=classic/.test(f.contentWindow.location.href));
+  close(f);
+
+  localStorage.clear();
+  f = await open('box.html', 1280);
+  doc = f.contentDocument;
+  check('Конструктор: кнопка неактивна, поки коробка порожня', doc.querySelector('.tray [data-add]').disabled);
+  doc.querySelector('[data-flavor="classic-pistachio"]').click();
+  await sleep(20);
+  check('Анімація: смак «влітає» в комірку', !!doc.querySelector('.cell.is-pop'));
+  doc.querySelector('[data-cell="0"]').click();
+  check('Тап по комірці прибирає смак', doc.querySelectorAll('.cell.is-filled').length === 0);
+  doc.querySelector('[data-size="5"]').click();
+  doc.querySelector('[data-preset="set"]').click();
+  doc.querySelector('[data-gift]').click();
+  doc.querySelector('[data-card]').value = 'З любовʼю';
+  doc.querySelector('[data-card]').dispatchEvent(new Event('input'));
+  await sleep(50);
+  check('Класичний набір на 5 шт + коробка = 320 грн', /320/.test(doc.querySelector('[data-total]').textContent.replace(/\s/g, '')), doc.querySelector('[data-total]').textContent);
+  doc.querySelector('.tray [data-add]').click();
+  await sleep(100);
+  it = f.contentWindow.MC.cart.items()[0];
+  check('Коробка в кошику одним рядком зі смаками й листівкою', it && it.price === 320 && it.flavorNames.length === 5 && it.card === 'З любовʼю');
+  check('Опція «подарункова коробка» лишається для наступної коробки', doc.querySelector('[data-gift]').checked);
+  doc.querySelector('[data-gift]').click(); // знімаємо
+  doc.querySelector('[data-type] [data-v="premium"]').click();
+  doc.querySelector('[data-size="4"]').click();
+  ['premium-oreo', 'premium-oreo', 'premium-dubai-chocolate', 'premium-raffaello'].forEach((id) => doc.querySelector(`[data-flavor="${id}"]`).click());
+  await sleep(50);
+  check('Преміум 4 шт: 2×100 + 2×120 = 440 грн', /440/.test(doc.querySelector('[data-total]').textContent.replace(/\s/g, '')), doc.querySelector('[data-total]').textContent);
+  close(f);
+
+  /* ---------- 5. Оформлення замовлення від початку до кінця ---------- */
+  async function fillCheckout(doc, zone) {
+    const set = (sel, v) => { const el = doc.querySelector(sel); el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); };
+    set('#c-name', 'Олена Тест');
+    set('#c-phone', '063 410 26 25');
+    set('#c-email', 'test@example.com');
+    set('#c-zone', zone);
+    set('#c-address', 'вул. Тестова, 1');
+    await sleep(50);
+  }
+  setNow('2026-11-03T10:00');
+  f = await open('checkout.html');
+  doc = f.contentDocument;
+  check('Оформлення: підсумок з кошика', /320/.test(doc.querySelector('[data-totals]').textContent.replace(/\s/g, '')));
+  doc.querySelector('[data-submit]').click();
+  await sleep(50);
+  check('Порожня форма не надсилається, показано підказку', !doc.querySelector('[data-alert]').hidden && /checkout/.test(f.contentWindow.location.href));
+  await fillCheckout(doc, 'bucha');
+  const firstDate = doc.querySelector('input[name="date"]:checked').value;
+  check('Буча, вт 10:00 → перша дата ср 4.11', firstDate === '2026-11-04', firstDate);
+  // Людина тримала вкладку до вечора наступного дня — дата вже недоступна
+  setNow('2026-11-04T15:00');
+  doc.querySelector('[data-submit]').click();
+  await sleep(50);
+  const newDate = doc.querySelector('input[name="date"]:checked').value;
+  check('Застаріла дата: попередження й автозаміна на найближчу (пт 6.11)', /минув час/.test(doc.querySelector('[data-alert]').textContent) && newDate === '2026-11-06', newDate);
+  // «Справжня» відправка: підмінюємо мережу й перевіряємо, що саме піде у Formspree
+  let sent = null;
+  f.contentWindow.MC.cfg.FORMSPREE_ID = 'test123';
+  f.contentWindow.fetch = (url, opt) => { sent = { url, body: JSON.parse(opt.body) }; return Promise.resolve({ ok: true }); };
+  doc.querySelector('[data-gift]').click();
+  doc.querySelector('#g-name').value = 'Мама';
+  doc.querySelector('#g-phone').value = '+380671112233';
+  doc.querySelector('[data-submit]').click();
+  await waitFor(() => /thanks/.test(f.contentWindow.location.href), 3000);
+  check('Замовлення надіслано на formspree.io/f/<ID>', sent && sent.url === 'https://formspree.io/f/test123');
+  check('Номер замовлення у форматі MC-0411-XXXX', sent && /^MC-0411-\d{4}$/.test(sent.body.order_id), sent && sent.body.order_id);
+  check('У листі: склад, сума, зона, дата, отримувач', sent && /Коробка класичних макарон/.test(sent.body.order) && sent.body.total === 520 && /Буча/.test(sent.body.order) && /Подарунок для: Мама/.test(sent.body.order) && sent.body.phone === '+380634102625',
+    sent && ('разом ' + sent.body.total + ' грн'));
+  check('Після замовлення — сторінка «Дякуємо»', /thanks\.html/.test(f.contentWindow.location.href));
+  await sleep(300);
+  doc = f.contentDocument;
+  check('«Дякуємо»: номер замовлення й кнопка Telegram', doc.querySelector('.order-no') && doc.querySelector('[data-tg-send]') && doc.querySelector('.order-no').textContent === sent.body.order_id);
+  check('Кошик очищено після замовлення', JSON.parse(localStorage.getItem('mayacake_cart_v1')).length === 0);
+  close(f);
+  setNow(null);
+
+  /* ---------- 6. Ширини екрана: без горизонтального прокручування ---------- */
+  localStorage.clear();
+  const pages = ['index.html', 'catalog.html', 'product.html?id=cake-raspberry-mango', 'box.html', 'b2b.html', 'delivery.html', 'about.html', 'checkout.html', 'thanks.html'];
+  for (const w of [375, 414, 768, 1280, 1440]) {
+    const bad = [];
+    for (const p of pages) {
+      const fr = await open(p, w, 800);
+      const de = fr.contentDocument.documentElement;
+      if (de.scrollWidth > de.clientWidth + 1) bad.push(p + ' (' + de.scrollWidth + ')');
+      close(fr);
+    }
+    check(`Ширина ${w} px: жодна сторінка не прокручується вбік`, !bad.length, bad.join(', ') || null);
+  }
+
+  check('Жодної помилки JavaScript на сторінках', !errors.length, errors.join(' | ') || null);
+  localStorage.clear();
+  document.getElementById('summary').innerHTML = failed
+    ? `<span class="fail">Не пройдено: ${failed}</span> · пройдено: ${passed}`
+    : `<span class="ok">Усе гаразд: ${passed} перевірок пройдено</span>`;
+  document.body.dataset.done = '1';
+})().catch((e) => {
+  document.getElementById('summary').innerHTML = '<span class="fail">Тест зупинився: ' + e.message + '</span>';
+  document.body.dataset.done = '1';
+});
+</script>
+</body>
+</html>

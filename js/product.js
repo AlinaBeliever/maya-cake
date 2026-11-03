@@ -9,17 +9,20 @@
     if (p.images.main) {
       slides.push({ src: MC.img(p.images.main, 800), srcset: MC.srcset(p.images.main), alt: p.name });
     }
+    if (p.images.extra) slides.push({ src: MC.img(p.images.extra, 800), srcset: MC.srcset(p.images.extra), alt: p.name });
     if (p.images.cut) slides.push({ cut: true, src: `assets/img/${p.images.cut}.webp`, alt: `${p.name} — розріз` });
+    // Начинка на вибір (бенто) — окремий кадр, що змінюється разом із вибором
+    if (variant && variant.image) slides.push({ cut: true, filling: true, src: `assets/img/${variant.image}.webp`, alt: `${p.name} — ${variant.label}` });
     if (!slides.length) {
       return '<div class="gallery"><div class="gallery__track"><div class="gallery__slide"><span class="ph"><span>фото буде</span></span></div></div></div>';
     }
     const slideHtml = slides.map((s, i) => `<div class="gallery__slide${s.cut ? ' is-cut' : ''}" id="slide-${i}">
-        <img src="${s.src}"${s.srcset ? ` srcset="${s.srcset}" sizes="(min-width: 900px) 600px, 100vw"` : ''} width="${s.cut ? 320 : 800}" height="${s.cut ? 320 : 1000}" alt="${MC.esc(s.alt)}"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>
+        <img${s.filling ? ' data-filling' : ''} src="${s.src}"${s.srcset ? ` srcset="${s.srcset}" sizes="(min-width: 900px) 600px, 100vw"` : ''} width="${s.cut ? 320 : 800}" height="${s.cut ? 320 : 1000}" alt="${MC.esc(s.alt)}"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>
       </div>`).join('');
     const multi = slides.length > 1;
-    return `<div class="gallery">
+    return `<div class="gallery${multi ? '' : ' gallery--single'}">
       <div class="gallery__track" data-track tabindex="0" aria-label="Фото товару">${slideHtml}</div>
-      ${multi ? `<div class="gallery__thumbs">${slides.map((s, i) => `<button type="button" class="${s.cut ? 'is-cut' : ''}" data-go="${i}" aria-label="Фото ${i + 1}"${i ? '' : ' aria-current="true"'}><img src="${s.cut ? s.src : MC.img(p.images.main, 400)}" alt="" loading="lazy"></button>`).join('')}</div>
+      ${multi ? `<div class="gallery__thumbs">${slides.map((s, i) => `<button type="button" class="${s.cut ? 'is-cut' : ''}" data-go="${i}" aria-label="Фото ${i + 1}"${i ? '' : ' aria-current="true"'}><img${s.filling ? ' data-filling' : ''} src="${s.cut ? s.src : s.src.replace('-800.', '-400.')}" alt="" loading="lazy"></button>`).join('')}</div>
       <div class="gallery__dots">${slides.map((s, i) => `<button type="button" data-go="${i}" aria-label="Фото ${i + 1}"${i ? '' : ' aria-current="true"'}></button>`).join('')}</div>` : ''}
     </div>`;
   }
@@ -131,12 +134,23 @@
       if (e.target.name === 'variant') {
         variant = p.variants.find((v) => v.id === e.target.value);
         update();
+        showFilling(root, p, variant);
       }
       if (e.target.matches('[data-ship-zone]')) MC.cart.setZone(e.target.value);
     });
     document.addEventListener('cart:zone', renderShip);
     update();
     renderShip();
+  }
+
+  // Обрали начинку — показуємо її розріз у галереї
+  function showFilling(root, p, v) {
+    const imgs = MC.qsa('img[data-filling]', root);
+    if (!v.image || !imgs.length) return;
+    imgs.forEach((im) => { im.src = `assets/img/${v.image}.webp`; im.alt = `${p.name} — ${v.label}`; });
+    const slide = imgs[0].closest('.gallery__slide');
+    const btn = MC.qs(`[data-go="${slide.id.replace('slide-', '')}"]`, root);
+    if (btn) btn.click();
   }
 
   // Галерея: гортання пальцем на телефоні, мініатюри на комп'ютері

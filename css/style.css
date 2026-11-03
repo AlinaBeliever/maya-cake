@@ -740,6 +740,7 @@ p { margin: 0 0 1em; }
   .product__info { position: sticky; top: calc(var(--header-h) + 24px); align-self: start; }
   .gallery { display: grid; grid-template-columns: 76px 1fr; gap: 16px; align-items: start; }
   .gallery__thumbs { display: grid; gap: 10px; order: -1; }
+  .gallery--single { display: block; }
   .gallery__thumbs button { width: 76px; aspect-ratio: 4 / 5; padding: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); overflow: hidden; cursor: pointer; }
   .gallery__thumbs button[aria-current="true"] { border-color: var(--navy); }
   .gallery__thumbs img { width: 100%; height: 100%; object-fit: cover; }

@@ -387,6 +387,14 @@ def circle_img(A, box, size=CUT_SIZE, inset=0.035):
     return out
 
 
+def circle_card(circle):
+    """Кадр 4:5 для картки: коло з розрізом по центру на білому (для фото, де самий десерт знято надто близько)."""
+    W, H = 640, 800   # коло 480 px займає 3/4 ширини — без розтягування
+    card = Image.new('RGB', (W, H), (255, 255, 255))
+    card.paste(circle, ((W - circle.size[0]) // 2, (H - circle.size[1]) // 2 - 16), circle)
+    return card
+
+
 def save_sizes(im, name):
     paths = []
     for w in WIDTHS:
@@ -404,12 +412,12 @@ def save_one(im, name, quality=82):
 
 
 # ---------------------------------------------------------------------------
-def blobs(A, y0, y1, x0=0, x1=None, open_px=7, min_area=4000):
+def blobs(A, y0, y1, x0=0, x1=None, open_px=7, min_area=4000, thr=40):
     """Окремі предмети на білому фоні (макарони, начинки) — рамки зліва направо, згори вниз."""
     x1 = x1 or A.shape[1]
     bg = np.array([255, 255, 255])
     sub = A[y0:y1, x0:x1]
-    m = np.abs(sub - bg).sum(-1) > 40
+    m = np.abs(sub - bg).sum(-1) > thr
     m = ndimage.binary_opening(m, structure=np.ones((open_px, open_px)))
     m = ndimage.binary_fill_holes(m)
     lab, k = ndimage.label(m)
@@ -418,9 +426,10 @@ def blobs(A, y0, y1, x0=0, x1=None, open_px=7, min_area=4000):
         if (lab[sl] == i).sum() >= min_area:
             out.append((sl[1].start + x0, sl[0].start + y0, sl[1].stop + x0, sl[0].stop + y0))
     rows = []
-    for b in sorted(out, key=lambda b: b[1]):
+    mid = lambda b: (b[1] + b[3]) / 2   # за серединою: попкорн згори не робить окремий ряд
+    for b in sorted(out, key=mid):
         for r in rows:
-            if abs(r[0][1] - b[1]) < 60:
+            if abs(mid(r[0]) - mid(b)) < 60:
                 r.append(b)
                 break
         else:
@@ -429,9 +438,11 @@ def blobs(A, y0, y1, x0=0, x1=None, open_px=7, min_area=4000):
 
 
 def macaron_tile(A, box):
-    x0, y0, x1, y1 = box
+    # запас довкола, щоб не зрізати світлі краї (кришечки, шоколад)
+    p = 3
+    x0, y0, x1, y1 = max(0, box[0] - p), max(0, box[1] - p), min(A.shape[1], box[2] + p), min(A.shape[0], box[3] + p)
     m = Image.fromarray(np.clip(A[y0:y1, x0:x1], 0, 255).astype(np.uint8))
-    side = int(max(m.size) * 1.12)
+    side = int(max(m.size) * 1.08)
     sq = Image.new('RGB', (side, side), (255, 255, 255))
     sq.paste(m, ((side - m.size[0]) // 2, (side - m.size[1]) // 2))
     return sq.resize((MAC_SIZE, MAC_SIZE), Image.LANCZOS)
@@ -441,11 +452,11 @@ def macarons(files):
     done = []
     # Класичні — сторіз 42, макарони між рядками назв; премiум — 62 (дві групи)
     for group, n, names, regions in (('classic', 42, CLASSIC, [(600, 1900)]),
-                                      ('premium', 62, PREMIUM, [(500, 1060), (1270, 1800)])):
+                                      ('premium', 62, PREMIUM, [(330, 960), (1190, 1800)])):
         A = load(files, n)
         boxes = []
         for y0, y1 in regions:
-            boxes += [b for b in blobs(A, y0, y1, min_area=9000) if (b[3] - b[1]) > 60 and (b[2] - b[0]) > 120]
+            boxes += [b for b in blobs(A, y0, y1, min_area=9000, thr=22) if (b[3] - b[1]) > 60 and (b[2] - b[0]) > 120]
         if len(boxes) != len(names):
             print(f'  ! {group}: знайдено {len(boxes)} макарон, очікувалось {len(names)}', file=sys.stderr)
         for b, name in zip(boxes, names):
@@ -459,7 +470,7 @@ def bento_fillings(files):
     out = []
     for b, name in zip(boxes, BENTO):
         d = max(b[2] - b[0], b[3] - b[1])
-        out.append(save_one(circle_img(A, (b[0], b[1], b[0] + d, b[1] + d), 240, 0.02), f'bento-filling-{name}'))
+        out.append(save_one(circle_img(A, (b[0], b[1], b[0] + d, b[1] + d), min(d, 320), 0.02), f'bento-filling-{name}'))
     return out
 
 
@@ -591,6 +602,8 @@ def main():
         mains.append(save_sizes(photo, name)[0])
         if circ:
             cuts.append(save_one(circle_img(A, circ), f'{name}-cut'))
+            if name.startswith('layers-'):
+                mains.append(save_sizes(circle_card(circle_img(A, circ)), f'{name}-card')[0])
         print(f'  ✓ {name}')
     extra = []
     if not only:

@@ -1991,8 +1991,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-napoleon",
-        "cut": "layers-napoleon-cut"
+        "main": "layers-napoleon-card",
+        "extra": "layers-napoleon",
+        "cut": null
       },
       "tags": [
         "new"
@@ -2018,8 +2019,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-oreo-cheesecake",
-        "cut": "layers-oreo-cheesecake-cut"
+        "main": "layers-oreo-cheesecake-card",
+        "extra": "layers-oreo-cheesecake",
+        "cut": null
       },
       "tags": [
         "new"
@@ -2050,8 +2052,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-snickers",
-        "cut": "layers-snickers-cut"
+        "main": "layers-snickers-card",
+        "extra": "layers-snickers",
+        "cut": null
       },
       "tags": [
         "new"
@@ -2078,8 +2081,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-tiramisu",
-        "cut": "layers-tiramisu-cut"
+        "main": "layers-tiramisu-card",
+        "extra": "layers-tiramisu",
+        "cut": null
       },
       "tags": [
         "new"
@@ -2109,8 +2113,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-red-velvet",
-        "cut": "layers-red-velvet-cut"
+        "main": "layers-red-velvet-card",
+        "extra": "layers-red-velvet",
+        "cut": null
       },
       "tags": [
         "new"
@@ -2137,8 +2142,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-chocolate-cherry",
-        "cut": "layers-chocolate-cherry-cut"
+        "main": "layers-chocolate-cherry-card",
+        "extra": "layers-chocolate-cherry",
+        "cut": null
       },
       "tags": [
         "new"
@@ -2166,8 +2172,9 @@
       },
       "shelfLife": "48 год",
       "images": {
-        "main": "layers-chia",
-        "cut": "layers-chia-cut"
+        "main": "layers-chia-card",
+        "extra": "layers-chia",
+        "cut": null
       },
       "tags": [
         "new",

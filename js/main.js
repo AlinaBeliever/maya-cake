@@ -270,16 +270,20 @@
   const page = (location.pathname.split('/').pop() || 'index.html');
 
   function headerHtml() {
-    const nav = NAV.map(([href, label]) => `<a href="${href}"${page === href ? ' aria-current="page"' : ''}>${label}</a>`).join('');
+    // Меню розбите довкола логотипа: 3 пункти ліворуч, 2 праворуч
+    const link = ([href, label]) => `<a href="${href}"${page === href ? ' aria-current="page"' : ''}>${label}</a>`;
+    const navLeft = NAV.slice(0, 3).map(link).join('');
+    const navRight = NAV.slice(3).map(link).join('');
     return `
     <a class="skip-link" href="#main">Перейти до змісту</a>
     <div class="deadline-bar" role="status" aria-live="polite"><div class="container" data-deadline>&nbsp;</div></div>
     <header class="site-header">
       <div class="container">
         <button class="icon-btn menu-toggle" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>${MC.icon('menu')}</button>
+        <nav class="nav nav--left" aria-label="Головне меню">${navLeft}</nav>
         <a class="logo" href="index.html" aria-label="Maya Cake — на головну"><img src="assets/img/logo.webp" width="180" height="120" alt="Maya Cake"></a>
-        <nav class="nav" aria-label="Головне меню">${nav}</nav>
         <div class="header-actions">
+          <nav class="nav nav--right" aria-label="Інформація">${navRight}</nav>
           <a class="icon-btn tg-link" href="${MC.tgUrl()}" target="_blank" rel="noopener" aria-label="Написати в Telegram">${MC.icon('telegram')}</a>
           <button class="icon-btn cart-btn" type="button" data-cart-open aria-label="Кошик">${MC.icon('bag')}<span class="cart-count" data-cart-count>0</span></button>
         </div>
@@ -360,21 +364,13 @@
     const tomorrow = Math.round((e - d.today()) / DAY) === 1;
     // Назву міста ставимо на початок («Буча: …»), щоб не відмінювати її
     const where = zone.id === 'kyiv' ? '' : `${zone.label}: `;
-    let main;
-    if (tomorrow && d.beforeCutoff()) {
-      const left = d.minutesLeft();
-      const h = Math.floor(left / 60), m = left % 60;
-      const t = (h ? `${h} год ` : '') + `${m} хв`;
-      main = `${where}Замовте протягом <strong class="num">${t}</strong> — привеземо <em>завтра</em>, ${d.weekday(e)}`;
-    } else if (!d.beforeCutoff() && Math.round((e - d.today()) / DAY) === 2) {
-      main = `${where}Сьогодні приймаємо на <em>післязавтра</em> — ${d.long(e)}`;
-    } else {
-      main = `${where}Найближча доставка — <em>${d.long(e)}</em>`;
+    const cutoff = `${String(CFG.CUTOFF_HOUR).padStart(2, '0')}:00`;
+    // Коротко, одним рядком; дата — лише на ширших екранах
+    if (tomorrow && d.beforeCutoff()) return `${where}Замовте до ${cutoff} — привеземо завтра`;
+    if (!d.beforeCutoff() && Math.round((e - d.today()) / DAY) === 2) {
+      return `${where}Приймаємо на післязавтра<span class="wide"> — ${d.long(e)}</span>`;
     }
-    const kyiv = MC.zone('kyiv');
-    const region = CFG.ZONES.find((z) => z.id !== 'kyiv');
-    return `<span class="dot" aria-hidden="true"></span><span>${main}, ${CFG.DELIVERY_WINDOW}</span>` +
-      `<span class="free">Київ — безкоштовно від ${MC.price(kyiv.freeFrom)} · область — від ${MC.price(region.freeFrom)}</span>`;
+    return `${where}Найближча доставка<span class="wide"> — ${d.long(e)}</span>`;
   };
 
   function renderDeadline() {
@@ -405,7 +401,7 @@
 
   function initHeaderScroll() {
     const header = MC.qs('.site-header');
-    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
   }

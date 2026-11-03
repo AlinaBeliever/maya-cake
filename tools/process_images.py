@@ -480,6 +480,29 @@ def gift_boxes(files):
     return out
 
 
+def hero(files, name='cake-raspberry-mango'):
+    """Широкий кадр для першого екрана: шматок торта праворуч на білому, ліворуч — місце для тексту.
+    Фото не збільшуємо: висота кадру = висота фото, ліву межу м'яко розчиняємо в білому."""
+    n, opt = PRODUCTS[name]
+    A = load(files, n)
+    photo = main_photo(A, n, opt, find_circle(A, bg_color(A), n))
+    H = photo.size[1]
+    W = int(H * 16 / 9)
+    canvas = Image.new('RGB', (W, H), (255, 255, 255))
+    fade = Image.new('L', photo.size, 255)
+    d = ImageDraw.Draw(fade)
+    for i in range(160):
+        d.line([(i, 0), (i, H)], fill=int(255 * i / 160))
+    canvas.paste(photo, (W - photo.size[0], 0), fade)
+    out = []
+    for w in (1280, 1920):
+        tw = min(w, W)
+        p = os.path.join(OUT, f'hero-{w}.webp')
+        canvas.resize((tw, round(H * tw / W)), Image.LANCZOS).save(p, 'WEBP', quality=82, method=6)
+        out.append(p)
+    return out
+
+
 def owners(files):
     """Фото Славіка й Майї (сторіз 1) — без тексту, 4:5."""
     im = Image.open(files[0]).convert('RGB')
@@ -600,6 +623,7 @@ def main():
         extra += macarons(files)
         extra += bento_fillings(files)
         extra += gift_boxes(files)
+        extra += hero(files)
         extra += owners(files)
         extra += certificate()
         extra += logo()

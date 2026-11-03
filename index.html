@@ -12,41 +12,37 @@
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/cake-raspberry-mango-800.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="index">
 <main id="main">
 
-  <!-- 1. Hero -->
-  <section class="hero">
-    <div class="container">
+  <!-- 1. Hero: фото на весь перший екран, текст унизу ліворуч -->
+  <section class="hero" aria-labelledby="hero-title">
+    <picture class="hero__media">
+      <source media="(min-width: 900px)" srcset="assets/img/hero-1280.webp 1280w, assets/img/hero-1920.webp 1920w" sizes="100vw">
+      <img src="assets/img/cake-raspberry-mango-800.webp" srcset="assets/img/cake-raspberry-mango-400.webp 400w, assets/img/cake-raspberry-mango-800.webp 800w" sizes="100vw" width="800" height="1000" alt="Торт «Малина & манго-маракуя» в розрізі" fetchpriority="high">
+    </picture>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="container hero__inner">
       <div class="hero__text">
-        <span class="eyebrow">Кондитерська · Київ</span>
-        <h1>Ніжність, яку привозять <em>зранку</em></h1>
-        <p class="lead">Замовте до 14:00 — і ми привеземо торти, макарон, тарти й тістечка наступного дня з 10:00 до 18:00.</p>
+        <p class="hero__eyebrow">Кондитерська · Київ</p>
+        <h1 class="hero__title" id="hero-title"><span class="hero__line"><span>Ніжність, яку</span></span> <span class="hero__line"><span>привозять <em>зранку</em></span></span></h1>
         <div class="hero__actions">
-          <a class="btn" href="catalog.html">Обрати десерти</a>
-          <a class="btn btn--ghost" href="box.html">Зібрати коробку макарон</a>
-        </div>
-        <div class="hero__meta">
-          <span><svg aria-hidden="true"><use href="assets/icons/sprite.svg#truck"/></svg>Київ — безкоштовно від 800 грн</span>
-          <span><svg aria-hidden="true"><use href="assets/icons/sprite.svg#card"/></svg>Оплата після підтвердження</span>
+          <a class="btn-ed" href="catalog.html">Обрати десерти</a>
+          <a class="link-ed" href="box.html">Зібрати коробку <span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <div class="hero__visual">
-        <div class="hero__photo">
-          <img src="assets/img/cake-raspberry-mango-800.webp" srcset="assets/img/cake-raspberry-mango-400.webp 400w, assets/img/cake-raspberry-mango-800.webp 800w" sizes="(min-width: 900px) 520px, 90vw" width="800" height="1000" alt="Торт «Малина & манго-маракуя» в розрізі" fetchpriority="high">
-        </div>
-        <div class="hero__cut" data-hero-cut>
-          <img src="assets/img/tart-plum-orange-cut.webp" width="320" height="320" alt="Тарт слива-апельсин у розрізі">
-        </div>
-        <a class="hero__tag" href="product.html?id=cake-raspberry-mango">
-          <strong>Малина & манго-маракуя</strong>
-          <span class="price">d18 · 1,65 кг · 1 600 грн</span>
-        </a>
-      </div>
+      <a class="hero__caption" href="product.html?id=cake-raspberry-mango">Малина &amp; манго-маракуя<span>1 600 грн</span></a>
+    </div>
+  </section>
+
+  <!-- Біжучий рядок зі смаками макарон -->
+  <section class="marquee" aria-label="Смаки макарон">
+    <div class="marquee__track">
+      <ul class="marquee__group"><li>Кіндер</li><li>Лайм-кокос</li><li>Пломбір-лохина</li><li>Кавун</li><li>Макфлурі</li><li>Груша-дорблю</li><li>Фундук-вишня</li><li>Лаванда-чорниця</li><li>Лимонний щербет</li><li>Смородиновий чізкейк</li><li>Фісташка</li><li>Мак-малина</li><li>Лимонний чізкейк</li><li>Манго-маракуйя</li><li>Чізкейк-нутелла</li><li>Диня-камамбер</li><li>Кокос-полуниця</li><li>Баунті</li><li>Ферреро</li><li>Шоколад-маракуйя</li><li>Солона карамель</li><li>Вишня-боби тонка</li><li>Карамельний попкорн</li><li>Лате халва</li><li>Твікс</li><li>Лимонний пиріг</li><li>Орео</li><li>Шоколад-смородина</li><li>Матча-кокос-полуниця</li><li>Бабл-гам</li><li>Буено</li><li>Дубайський шоколад</li><li>Рафаелло</li><li>Горгонзола-волоський горіх</li><li>Капучино камамбер</li></ul>
+      <ul class="marquee__group" aria-hidden="true"><li>Кіндер</li><li>Лайм-кокос</li><li>Пломбір-лохина</li><li>Кавун</li><li>Макфлурі</li><li>Груша-дорблю</li><li>Фундук-вишня</li><li>Лаванда-чорниця</li><li>Лимонний щербет</li><li>Смородиновий чізкейк</li><li>Фісташка</li><li>Мак-малина</li><li>Лимонний чізкейк</li><li>Манго-маракуйя</li><li>Чізкейк-нутелла</li><li>Диня-камамбер</li><li>Кокос-полуниця</li><li>Баунті</li><li>Ферреро</li><li>Шоколад-маракуйя</li><li>Солона карамель</li><li>Вишня-боби тонка</li><li>Карамельний попкорн</li><li>Лате халва</li><li>Твікс</li><li>Лимонний пиріг</li><li>Орео</li><li>Шоколад-смородина</li><li>Матча-кокос-полуниця</li><li>Бабл-гам</li><li>Буено</li><li>Дубайський шоколад</li><li>Рафаелло</li><li>Горгонзола-волоський горіх</li><li>Капучино камамбер</li></ul>
     </div>
   </section>
 

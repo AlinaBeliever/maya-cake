@@ -111,7 +111,7 @@
   setNow('2026-11-03T11:45');
   let f = await open('index.html');
   let bar = f.contentDocument.querySelector('[data-deadline]').textContent;
-  check('Смуга до 14:00: «Замовте протягом 2 год 15 хв»', /2\s*год\s*15\s*хв/.test(bar) && /завтра/.test(bar), bar.trim().slice(0, 70));
+  check('Смуга до 14:00: «Замовте до 14:00 — привеземо завтра»', /Замовте до 14:00/.test(bar) && /завтра/.test(bar), bar.trim().slice(0, 70));
   close(f);
   setNow('2026-11-03T16:00');
   f = await open('index.html');

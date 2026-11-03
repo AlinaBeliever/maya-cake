@@ -480,25 +480,15 @@ def gift_boxes(files):
     return out
 
 
-def hero(files, name='cake-raspberry-mango'):
-    """Широкий кадр для першого екрана: шматок торта праворуч на білому, ліворуч — місце для тексту.
-    Фото не збільшуємо: висота кадру = висота фото, ліву межу м'яко розчиняємо в білому."""
+def hero(files, name='napoleon'):
+    """Фото для першого екрана головної — основне фото торта без зменшення (права половина екрана)."""
     n, opt = PRODUCTS[name]
     A = load(files, n)
     photo = main_photo(A, n, opt, find_circle(A, bg_color(A), n))
-    H = photo.size[1]
-    W = int(H * 16 / 9)
-    canvas = Image.new('RGB', (W, H), (255, 255, 255))
-    fade = Image.new('L', photo.size, 255)
-    d = ImageDraw.Draw(fade)
-    for i in range(160):
-        d.line([(i, 0), (i, H)], fill=int(255 * i / 160))
-    canvas.paste(photo, (W - photo.size[0], 0), fade)
     out = []
-    for w in (1280, 1920):
-        tw = min(w, W)
-        p = os.path.join(OUT, f'hero-{w}.webp')
-        canvas.resize((tw, round(H * tw / W)), Image.LANCZOS).save(p, 'WEBP', quality=82, method=6)
+    for w in (600, photo.size[0]):
+        p = os.path.join(OUT, f'hero-{name}-{w}.webp')
+        photo.resize((w, round(photo.size[1] * w / photo.size[0])), Image.LANCZOS).save(p, 'WEBP', quality=84, method=6)
         out.append(p)
     return out
 

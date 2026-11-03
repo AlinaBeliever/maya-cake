@@ -13,29 +13,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261104">
+  <link rel="stylesheet" href="css/style.css?v=20261104b">
 </head>
 <body data-page="index">
 <main id="main">
 
-  <!-- 1. Hero: фото на весь перший екран, текст унизу ліворуч -->
+  <!-- 1. Hero: текст ліворуч, фото торта на праву половину екрана -->
   <section class="hero" aria-labelledby="hero-title">
-    <picture class="hero__media">
-      <source media="(min-width: 900px)" srcset="assets/img/hero-1280.webp 1280w, assets/img/hero-1920.webp 1920w" sizes="100vw">
-      <img src="assets/img/cake-raspberry-mango-800.webp" srcset="assets/img/cake-raspberry-mango-400.webp 400w, assets/img/cake-raspberry-mango-800.webp 800w" sizes="100vw" width="800" height="1000" alt="Торт «Малина & манго-маракуя» в розрізі" fetchpriority="high">
-    </picture>
-    <div class="hero__shade" aria-hidden="true"></div>
-    <div class="container hero__inner">
-      <div class="hero__text">
-        <p class="hero__eyebrow">Кондитерська · Київ</p>
-        <h1 class="hero__title" id="hero-title"><span class="hero__line"><span>Ніжність, яку</span></span> <span class="hero__line"><span>привозять <em>зранку</em></span></span></h1>
-        <div class="hero__actions">
-          <a class="btn-ed" href="catalog.html">Обрати десерти</a>
-          <a class="link-ed" href="box.html">Зібрати коробку <span aria-hidden="true">→</span></a>
-        </div>
+    <div class="hero__text">
+      <p class="hero__eyebrow">Кондитерська · Київ</p>
+      <h1 class="hero__title" id="hero-title"><span class="hero__line"><span>Французькі десерти</span></span> <span class="hero__line"><span>з <em>Києва</em></span></span></h1>
+      <div class="hero__actions">
+        <a class="btn-ed" href="catalog.html">Обрати десерти</a>
+        <a class="link-ed" href="box.html">Зібрати коробку <span aria-hidden="true">→</span></a>
       </div>
-      <a class="hero__caption" href="product.html?id=cake-raspberry-mango">Малина &amp; манго-маракуя<span>1 600 грн</span></a>
     </div>
+    <figure class="hero__figure">
+      <div class="hero__media">
+        <img src="assets/img/hero-napoleon-913.webp" srcset="assets/img/hero-napoleon-600.webp 600w, assets/img/hero-napoleon-913.webp 913w" sizes="(min-width: 900px) 50vw, 100vw" width="913" height="1141" alt="Торт «Наполеон» у розрізі" fetchpriority="high">
+      </div>
+      <figcaption class="hero__caption"><a href="product.html?id=napoleon"><em>Наполеон</em><span>1 000 грн</span></a></figcaption>
+    </figure>
   </section>
 
   <!-- Біжучий рядок зі смаками макарон -->
@@ -220,9 +218,9 @@
   </section>
 </main>
 
-<script src="js/config.js?v=20261104"></script>
-<script src="js/main.js?v=20261104"></script>
-<script src="js/cart.js?v=20261104"></script>
-<script src="js/index.js?v=20261104"></script>
+<script src="js/config.js?v=20261104b"></script>
+<script src="js/main.js?v=20261104b"></script>
+<script src="js/cart.js?v=20261104b"></script>
+<script src="js/index.js?v=20261104b"></script>
 </body>
 </html>

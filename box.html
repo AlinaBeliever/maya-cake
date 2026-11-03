@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Зібрати коробку макарон — Maya Cake</title>
+  <meta name="description" content="Зберіть коробку макарон на свій смак: 22 класичні та 14 преміум смаків. Коробки на 4, 5, 8 і 10 штук, подарункове пакування, листівка.">
+  <meta name="theme-color" content="#FBF6F2">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="box">
+<main id="main">
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow">Конструктор</span>
+      <h1>Коробка макарон <em>на ваш смак</em></h1>
+      <p class="lead muted">Оберіть розмір і торкніться смаків — вони займуть вільні комірки. Торкніться комірки, щоб прибрати смак.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container builder">
+      <div class="builder__main">
+        <div class="builder__controls">
+          <div class="seg" role="group" aria-label="Тип макарон" data-type>
+            <button type="button" data-v="classic" aria-pressed="true">Класичні</button>
+            <button type="button" data-v="premium" aria-pressed="false">Преміум</button>
+          </div>
+          <div class="builder__sizes" role="group" aria-label="Розмір коробки" data-sizes></div>
+          <div class="builder__presets">
+            <button class="btn btn--ghost btn--sm" type="button" data-preset="set">Класичний набір</button>
+            <button class="btn btn--ghost btn--sm" type="button" data-preset="random">Випадково</button>
+            <button class="btn btn--ghost btn--sm" type="button" data-preset="clear">Очистити</button>
+          </div>
+        </div>
+        <div data-flavors></div>
+      </div>
+
+      <div class="tray-wrap">
+        <div class="tray">
+          <div class="tray__lid">
+            <h2>Ваша коробка</h2>
+            <span class="tray__count" data-count aria-live="polite"></span>
+          </div>
+          <div class="tray__cells" data-cells></div>
+          <p class="tray__list" data-list></p>
+        </div>
+        <div class="tray tray--opts">
+          <div class="tray__opts">
+            <label class="check"><input type="checkbox" data-gift> Подарункова коробка <span class="muted">+<span data-gift-price></span></span></label>
+            <div class="field" style="margin:0">
+              <label for="card-text">Текст листівки <span class="muted" style="font-weight:400">(необовʼязково)</span></label>
+              <textarea class="textarea" id="card-text" maxlength="150" rows="2" placeholder="З днем народження, мамо!" data-card></textarea>
+              <span class="hint" data-card-left>150 символів</span>
+            </div>
+          </div>
+          <div class="tray__total"><span>Разом</span><strong data-total>0 грн</strong></div>
+          <button class="btn btn--block" type="button" data-add disabled>Додати в кошик</button>
+          <p class="pay-note" data-hint></p>
+          <p class="soft-note">Ціни й термін придатності макарон уточнюються. Зберігайте в холодильнику.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="builder-bar">
+    <div><strong data-bar-total>0 грн</strong><span data-bar-count></span></div>
+    <button class="btn" type="button" data-add disabled>У кошик</button>
+  </div>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/box.js"></script>
+</body>
+</html>

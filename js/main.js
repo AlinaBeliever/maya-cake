@@ -180,6 +180,47 @@
 
   const BADGES = { new: 'Новинка', 'lactose-free': 'Без лактози' };
 
+  MC.ALLERGENS = {
+    gluten: 'Глютен (борошно)',
+    milk: 'Молоко',
+    eggs: 'Яйця',
+    nuts: 'Горіхи',
+    peanuts: 'Арахіс',
+    sesame: 'Кунжут'
+  };
+  MC.NOTE_PITS = 'Фрукти й горіхи ми очищаємо від кісточок і шкарлупи, але інколи вони все ж можуть траплятися. Десерти зі свіжими ягодами можуть пускати сік — це нормально.';
+
+  // Надсилання форми через Formspree. Якщо ID ще не вставлено — повертає {demo: true}
+  MC.formReady = (id) => id && id !== 'ВСТАВ_ID';
+  MC.sendForm = function (id, data) {
+    if (!MC.formReady(id)) return Promise.resolve({ demo: true });
+    return fetch('https://formspree.io/f/' + id, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(data)
+    }).then((r) => {
+      if (!r.ok) throw new Error('Formspree ' + r.status);
+      return { ok: true };
+    });
+  };
+  // Телефон у форматі +380XXXXXXXXX (приймаємо 0XXXXXXXXX, 380…, з пробілами й дужками)
+  MC.normalizePhone = function (v) {
+    let d = String(v || '').replace(/\D/g, '');
+    if (d.length === 10 && d[0] === '0') d = '38' + d;
+    if (d.length === 9) d = '380' + d;
+    return /^380\d{9}$/.test(d) ? '+' + d : null;
+  };
+  MC.copy = function (text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) { /* ignore */ }
+    ta.remove();
+    return Promise.resolve();
+  };
+  MC.categoryLabel = (data, id) => (data.categories.find((c) => c.id === id) || {}).label || '';
+
   MC.card = function (p, opts) {
     opts = opts || {};
     const url = MC.productUrl(p);
@@ -207,12 +248,13 @@
       action = `<a class="card__add" href="${url}" aria-label="Обрати ${MC.esc((p.variantTitle || 'варіант').toLowerCase())}: ${MC.esc(p.name)}">${MC.icon('arrow')}</a>`;
     }
     const weight = p.weight ? `<span class="pill pill--line">${MC.esc(p.weight)}</span>` : '';
+    // Кнопка «+» / «→» — у кутку фото; «Запитати в Telegram» — під назвою
     return `<article class="card" data-id="${p.id}">
-      <div class="card__media">${media}<div class="card__badges">${badges}</div></div>
+      <div class="card__media">${media}<div class="card__badges">${badges}</div>${pi ? action : ''}</div>
       <div class="card__body">
         <h3 class="card__title"><a href="${url}">${MC.esc(p.name)}</a></h3>
         <div class="card__meta"><span class="pill pill--price">${MC.priceText(p)}</span>${weight}</div>
-        <div class="card__foot">${pi ? '' : '<span class="card__ask">ціну уточнюйте</span>'}${action}</div>
+        ${pi ? '' : `<div class="card__foot">${action}</div>`}
       </div>
     </article>`;
   };

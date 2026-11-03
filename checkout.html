@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Оформлення замовлення — Maya Cake</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FBF6F2">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+<main id="main">
+  <section class="page-head" style="padding-bottom:20px">
+    <div class="container">
+      <h1>Оформлення <em>замовлення</em></h1>
+      <p class="lead muted">Без реєстрації. Оплата — після того, як ми підтвердимо замовлення.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="empty-state" data-empty hidden>
+      <div class="ph-circle"><span>порожньо</span></div>
+      <h2>У кошику поки нічого немає</h2>
+      <p class="muted">Оберіть десерти — і повертайтеся сюди.</p>
+      <a class="btn" href="catalog.html">До каталогу</a>
+    </div>
+
+    <form class="checkout" data-form novalidate hidden>
+      <div>
+        <div class="form-alert" data-alert hidden tabindex="-1"></div>
+
+        <section class="step-card" aria-labelledby="s1">
+          <h2 id="s1"><span>1</span>Контакти</h2>
+          <div class="form-grid">
+            <div class="field"><label for="c-name">Імʼя *</label><input class="input" id="c-name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="c-phone">Телефон *</label><input class="input" id="c-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+380 __ ___ __ __"><span class="error-text" data-err="phone" hidden>Вкажіть номер у форматі +380XXXXXXXXX</span></div>
+            <div class="field full"><label for="c-email">Email <span class="muted" style="font-weight:400">— надішлемо копію замовлення</span></label><input class="input" id="c-email" name="email" type="email" autocomplete="email"></div>
+          </div>
+        </section>
+
+        <section class="step-card" aria-labelledby="s2">
+          <h2 id="s2"><span>2</span>Доставка</h2>
+          <div class="form-grid">
+            <div class="field"><label for="c-zone">Місто *</label><select class="select" id="c-zone" name="zone" required data-zone></select></div>
+            <div class="field"><label for="c-address">Адреса *</label><input class="input" id="c-address" name="address" required autocomplete="street-address" placeholder="Вулиця, будинок, квартира"></div>
+          </div>
+          <fieldset class="field" style="border:0;padding:0;margin:0 0 16px">
+            <legend class="label" style="margin-bottom:8px">Дата доставки *</legend>
+            <div class="dates" data-dates></div>
+            <span class="hint" data-date-hint></span>
+          </fieldset>
+          <div class="field" style="margin:0"><label for="c-time">Побажання щодо часу</label><input class="input" id="c-time" name="time_wish" placeholder="Наприклад: після 15:00"><span class="hint">Доставляємо з 10:00 до 18:00 — постараємося врахувати побажання.</span></div>
+        </section>
+
+        <section class="step-card" aria-labelledby="s3">
+          <h2 id="s3"><span>3</span>Отримувач</h2>
+          <label class="check"><input type="checkbox" name="is_gift" data-gift> Це подарунок — привезти іншій людині</label>
+          <div class="gift-fields" data-gift-fields>
+            <div class="form-grid">
+              <div class="field"><label for="g-name">Імʼя отримувача *</label><input class="input" id="g-name" name="recipient_name"></div>
+              <div class="field"><label for="g-phone">Телефон отримувача *</label><input class="input" id="g-phone" name="recipient_phone" type="tel" placeholder="+380 __ ___ __ __"><span class="error-text" data-err="g-phone" hidden>Вкажіть номер у форматі +380XXXXXXXXX</span></div>
+              <div class="field full"><label class="check"><input type="checkbox" name="hide_price"> Не показувати ціну в чеку</label></div>
+              <div class="field full"><label for="g-card">Текст листівки</label><textarea class="textarea" id="g-card" name="card_text" maxlength="150" rows="2"></textarea><span class="hint">До 150 символів</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="step-card" aria-labelledby="s4">
+          <h2 id="s4"><span>4</span>Коментар</h2>
+          <div class="field" style="margin:0"><label for="c-comment" class="visually-hidden">Коментар до замовлення</label><textarea class="textarea" id="c-comment" name="comment" placeholder="Код домофону, побажання до замовлення…"></textarea></div>
+        </section>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </div>
+
+      <aside class="checkout__aside">
+        <div class="summary">
+          <button class="summary-toggle" type="button" aria-expanded="false" data-toggle>
+            <span data-toggle-label>Ваше замовлення</span><svg aria-hidden="true"><use href="assets/icons/sprite.svg#chevron"/></svg>
+          </button>
+          <div class="summary__items" data-items hidden></div>
+          <div class="totals" style="margin-top:16px" data-totals></div>
+          <button class="btn btn--block" type="submit" data-submit>Підтвердити замовлення</button>
+          <p class="pay-note">Оплата після підтвердження. Натискаючи кнопку, ви погоджуєтеся, що ми звʼяжемося з вами для підтвердження.</p>
+        </div>
+      </aside>
+    </form>
+  </div>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

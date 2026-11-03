@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Каталог десертів — Maya Cake</title>
+  <meta name="description" content="Увесь асортимент Maya Cake: торти, макарон, бенто, тарти, еклери, тістечка, десерти в стаканчиках. Ціни, вага, склад і КБЖВ.">
+  <meta name="theme-color" content="#FBF6F2">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="catalog">
+<main id="main">
+  <section class="page-head">
+    <div class="container">
+      <h1 data-cat-title>Каталог</h1>
+      <p class="lead muted" data-cat-lead>Замовте до 14:00 — привеземо завтра з 10:00 до 18:00.</p>
+    </div>
+  </section>
+
+  <div class="cat-sticky">
+    <div class="container">
+      <nav class="chips hscroll" aria-label="Категорії" data-chips></nav>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="filters">
+        <div class="chips hscroll filters__toggles" role="group" aria-label="Фільтри" data-filters></div>
+        <label class="filters__sort">Сортувати
+          <select class="select" data-sort>
+            <option value="popular">Популярні</option>
+            <option value="asc">Ціна ↑</option>
+            <option value="desc">Ціна ↓</option>
+          </select>
+        </label>
+      </div>
+      <p class="catalog-count" data-count aria-live="polite"></p>
+      <div class="product-grid" data-grid></div>
+      <div class="empty-state" data-empty hidden>
+        <div class="ph-circle"><span>нічого</span></div>
+        <h2>Нічого не знайшли</h2>
+        <p class="muted">Спробуйте прибрати частину фільтрів.</p>
+        <button class="btn btn--ghost" type="button" data-reset>Скинути фільтри</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>

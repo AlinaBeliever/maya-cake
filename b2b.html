@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Десерти для кавʼярень оптом — Maya Cake</title>
+  <meta name="description" content="Макарон і тістечка для вітрини вашої кавʼярні: оптові ціни від 10 шт, рекомендована роздрібна ціна, калькулятор маржі, доставка за графіком.">
+  <meta name="theme-color" content="#FBF6F2">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="b2b">
+<main id="main">
+  <!-- 1. Hero -->
+  <section>
+    <div class="container b2b-hero">
+      <div>
+        <span class="eyebrow">Для кавʼярень і ресторанів</span>
+        <h1>Десерти для вашої вітрини, <em>свіжі щодня</em></h1>
+        <p class="lead">Макарон і тістечка оптом від 10 шт. Ви одразу бачите оптову й рекомендовану роздрібну ціну — і скільки заробите.</p>
+        <div class="hero__actions">
+          <a class="btn" href="#apply">Отримати прайс</a>
+          <a class="btn btn--ghost" href="#calc">Порахувати маржу</a>
+        </div>
+        <div class="b2b-hero__stat">
+          <div><strong>від 10 шт</strong>мінімальне замовлення</div>
+          <div><strong>до 14:00</strong>замовлення на завтра</div>
+        </div>
+      </div>
+      <div class="b2b-hero__visual" aria-hidden="true">
+        <span><img src="assets/img/mac-premium-dubai-chocolate.webp" width="200" height="200" alt=""></span>
+        <span><img src="assets/img/mac-classic-pistachio.webp" width="200" height="200" alt=""></span>
+        <span><img src="assets/img/mac-premium-raffaello.webp" width="200" height="200" alt=""></span>
+        <span><img src="assets/img/mac-classic-salted-caramel.webp" width="200" height="200" alt=""></span>
+        <span><img src="assets/img/mac-premium-bueno.webp" width="200" height="200" alt=""></span>
+        <span><img src="assets/img/mac-classic-coconut-strawberry.webp" width="200" height="200" alt=""></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Вигоди -->
+  <section class="section" style="padding-top:0" aria-labelledby="why-title">
+    <div class="container">
+      <h2 id="why-title" class="visually-hidden">Чому Maya Cake</h2>
+      <div class="benefits">
+        <div class="benefit"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#whisk"/></svg><h3>Свіжість</h3><p>Готуємо під ваше замовлення й привозимо наступного дня.</p></div>
+        <div class="benefit"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#certificate"/></svg><h3>Сертифікат</h3><p>Сертифікат відповідності, склад і КБЖВ для кожної позиції — для ваших гостей.</p></div>
+        <div class="benefit"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#card"/></svg><h3>Рекомендована ціна</h3><p>До кожної позиції — РРЦ, щоб ви одразу бачили свою маржу.</p></div>
+        <div class="benefit"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#truck"/></svg><h3>Доставка за графіком</h3><p>Київ — щодня, міста області — у фіксовані дні тижня.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Асортимент для вітрини -->
+  <section class="section" style="padding-top:0" aria-labelledby="range-title">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="eyebrow">Асортимент для вітрини</span><h2 id="range-title">Ціни для закладів</h2></div>
+      </div>
+      <div class="table-wrap">
+        <table class="table" data-b2b-table>
+          <thead><tr><th>Позиція</th><th>Опт, від 10 шт</th><th>РРЦ</th><th>Ваша маржа</th><th>Термін придатності</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="soft-note">Повний прайс з іншими позиціями надішлемо після заявки.</p>
+    </div>
+  </section>
+
+  <!-- 4. Калькулятор маржі -->
+  <section class="section" style="padding-top:0" id="calc" aria-labelledby="calc-title">
+    <div class="container">
+      <div class="section-head"><h2 id="calc-title">Скільки ви <em>заробите</em></h2></div>
+      <div class="margin-calc">
+        <div class="panel">
+          <div class="field">
+            <div class="range-row"><label for="per-day">Продаєте за день</label><output data-per-day class="num">20 шт</output></div>
+            <input class="range" type="range" id="per-day" min="10" max="60" step="1" value="20" data-range>
+          </div>
+          <div class="field">
+            <span class="label">Позиція</span>
+            <div class="radio-cards" data-items></div>
+          </div>
+          <div class="field" style="margin:0">
+            <label for="days">Робочих днів на місяць</label>
+            <select class="select" id="days" data-days>
+              <option value="22">22 — без вихідних</option>
+              <option value="26" selected>26 — шість днів на тиждень</option>
+              <option value="30">30 — щодня</option>
+            </select>
+          </div>
+        </div>
+        <div class="margin-result" aria-live="polite">
+          <span class="eyebrow" style="color:var(--powder);margin:0">Ваш дохід на місяць</span>
+          <div class="big" data-income>0 грн</div>
+          <dl>
+            <div><dt>Маржа з однієї штуки</dt><dd data-per-unit></dd></div>
+            <div><dt>Маржа у відсотках</dt><dd data-percent></dd></div>
+            <div><dt>Закупівля на місяць</dt><dd data-cost></dd></div>
+            <div><dt>Виторг на місяць</dt><dd data-revenue></dd></div>
+          </dl>
+          <p>Розрахунок: (РРЦ − оптова ціна) × штук на день × робочі дні.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Умови -->
+  <section class="section" style="padding-top:0" aria-labelledby="terms-title">
+    <div class="container">
+      <div class="section-head"><h2 id="terms-title">Умови</h2></div>
+      <div class="conditions">
+        <div class="condition"><strong>від 10 шт</strong>Мінімальне замовлення. Тістечко «персик» — від 3 шт одного виду.</div>
+        <div class="condition"><strong>до 14:00</strong>Замовлення на наступний день, доставка з 10:00 до 18:00.</div>
+        <div class="condition"><strong>за графіком</strong><span data-b2b-days></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Форма -->
+  <section class="section" style="padding-top:0" id="apply" aria-labelledby="apply-title">
+    <div class="container" style="max-width:860px">
+      <div class="panel">
+        <span class="eyebrow">Пробна партія</span>
+        <h2 id="apply-title">Отримати прайс і умови</h2>
+        <p class="muted">Надішлемо прайс і умови протягом робочого дня.</p>
+        <form data-b2b-form novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="b-name">Назва закладу *</label><input class="input" id="b-name" name="venue" required autocomplete="organization"></div>
+            <div class="field"><label for="b-city">Місто / район *</label><input class="input" id="b-city" name="city" required placeholder="Київ, Поділ"></div>
+            <div class="field"><label for="b-contact">Контактна особа *</label><input class="input" id="b-contact" name="contact_name" required autocomplete="name"></div>
+            <div class="field"><label for="b-phone">Телефон *</label><input class="input" id="b-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+380 __ ___ __ __"><span class="error-text" data-err="phone" hidden>Вкажіть номер у форматі +380XXXXXXXXX</span></div>
+            <div class="field"><label for="b-ig">Instagram закладу</label><input class="input" id="b-ig" name="instagram" placeholder="@"></div>
+            <div class="field"><label for="b-qty">Орієнтовно штук на тиждень</label><input class="input" id="b-qty" name="weekly_qty" inputmode="numeric" placeholder="70"></div>
+            <div class="field full"><span class="label">Що цікавить</span>
+              <div class="checks" data-b2b-checks></div>
+            </div>
+            <div class="field"><label for="b-date">Бажана дата пробної поставки</label><input class="input" id="b-date" name="trial_date" type="date"></div>
+            <div class="field full"><label for="b-msg">Коментар</label><textarea class="textarea" id="b-msg" name="message"></textarea></div>
+          </div>
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-alert" data-b2b-alert hidden></div>
+          <button class="btn" type="submit">Надіслати заявку</button>
+        </form>
+        <div class="form-success" data-b2b-success hidden>
+          <div class="ph-circle"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#check"/></svg></div>
+          <h3>Дякуємо! Заявку отримано</h3>
+          <p class="muted" data-b2b-success-text>Надішлемо прайс і умови протягом робочого дня.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/b2b.js"></script>
+</body>
+</html>

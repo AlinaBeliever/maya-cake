@@ -31,6 +31,7 @@ OUT = os.path.join(ROOT, 'assets', 'img')
 
 # Де сторіз лежить на скріні (скріни зроблені з одного вікна, тому позиція однакова)
 STORY_BOX = (1065, 318, 1875, 1748)  # → сторіз 810×1430 px
+STORY_W = 804  # корисна ширина: правий край (6 px) — темна рамка вікна
 
 # Нижня межа фото: нижче починаються КБЖВ і рядок «Відповісти»
 LIMIT_OLD = 1272  # сторіз «4 тиж.» (№1–46)
@@ -324,9 +325,10 @@ def main_photo(img, n, kind, opt):
     elif kind == 'cake':
         w, cx = opt.get('w', 640), opt.get('cx', 490)
     else:
-        w, cx = opt.get('w', 810), opt.get('cx', 405)
-    x0 = max(0, min(810 - w, cx - w // 2))
-    crop = img.crop((x0, top, x0 + w, limit)).copy()
+        w, cx = opt.get('w', STORY_W), opt.get('cx', 402)
+    # праворуч сторіз закінчується на 804 px — далі темна рамка Instagram
+    x0 = max(0, min(STORY_W - w, cx - w // 2))
+    crop = img.crop((x0, top, min(x0 + w, STORY_W), limit)).copy()
     crop = remove_lines(crop)
     crop = fade_edges(crop)
     cw, ch = crop.size

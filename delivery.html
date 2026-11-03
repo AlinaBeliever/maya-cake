@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Доставка й оплата — Maya Cake</title>
+  <meta name="description" content="Доставка десертів Maya Cake по Києву та області: замовлення до 14:00 — доставка наступного дня з 10:00 до 18:00. Київ 150 грн, безкоштовно від 800 грн.">
+  <meta name="theme-color" content="#FBF6F2">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="delivery">
+<main id="main">
+  <section class="page-head">
+    <div class="container">
+      <h1>Доставка й <em>оплата</em></h1>
+      <p class="lead">Замовлення до 14:00 — привеземо наступного дня з 10:00 до 18:00. Оплата після підтвердження замовлення.</p>
+    </div>
+  </section>
+
+  <!-- Калькулятор -->
+  <section class="section" style="padding-top:16px" aria-labelledby="calc-title">
+    <div class="container">
+      <div class="panel calc">
+        <div>
+          <span class="eyebrow">Калькулятор</span>
+          <h2 id="calc-title">Перевірте свою доставку</h2>
+          <div class="field" style="margin-top:20px">
+            <label for="d-zone">Місто</label>
+            <select class="select" id="d-zone" data-zone></select>
+          </div>
+          <div class="field" style="margin:0">
+            <label for="d-sum">Сума замовлення, грн</label>
+            <input class="input num" id="d-sum" type="number" inputmode="numeric" min="0" step="50" data-sum>
+            <span class="hint" data-sum-hint></span>
+          </div>
+        </div>
+        <div class="calc__result" aria-live="polite">
+          <div data-result></div>
+          <div>
+            <p class="label" style="font-size:14px;font-weight:600;margin-bottom:10px">Найближчі дати доставки</p>
+            <ul class="date-list" data-dates></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Зони -->
+  <section class="section" style="padding-top:0" aria-labelledby="zones-title">
+    <div class="container">
+      <div class="section-head"><h2 id="zones-title">Зони й дні доставки</h2></div>
+      <div class="table-wrap">
+        <table class="table zones-table">
+          <thead><tr><th>Місто</th><th>Дні</th><th>Вартість</th><th>Безкоштовно</th></tr></thead>
+          <tbody data-zones></tbody>
+        </table>
+      </div>
+      <p class="soft-note" data-unconfirmed></p>
+    </div>
+  </section>
+
+  <!-- Як проходить замовлення -->
+  <section class="section" style="padding-top:0" aria-labelledby="flow-title">
+    <div class="container">
+      <div class="section-head"><h2 id="flow-title">Як проходить замовлення</h2></div>
+      <ol class="timeline">
+        <li><strong>До 14:00</strong><p>Оформлюєте замовлення на сайті. Після 14:00 приймаємо на післязавтра.</p></li>
+        <li><strong>Підтвердження й приготування</strong><p>Звʼязуємося з вами, узгоджуємо деталі й оплату. Кондитери готують ваше замовлення.</p></li>
+        <li><strong>10:00–18:00</strong><p>Привозимо наступного дня. Побажання щодо часу напишіть у коментарі — постараємося врахувати.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Оплата -->
+  <section class="section" style="padding-top:0" aria-labelledby="pay-title">
+    <div class="container two-col">
+      <div>
+        <h2 id="pay-title">Оплата</h2>
+        <ul class="info-list">
+          <li><svg aria-hidden="true"><use href="assets/icons/sprite.svg#card"/></svg><span>Оплата після підтвердження: ми звʼяжемося з вами й узгодимо зручний спосіб. Онлайн-оплати на сайті поки немає.</span></li>
+          <li><svg aria-hidden="true"><use href="assets/icons/sprite.svg#gift"/></svg><span>Замовляєте в подарунок? Вкажіть отримувача в оформленні — ми привеземо десерти йому, а ціну в чеку можемо не показувати.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Важливо знати</h2>
+        <ul class="info-list">
+          <li><svg aria-hidden="true"><use href="assets/icons/sprite.svg#scale"/></svg><span>У вазі десертів допускається похибка 3%. Енергетична цінність вказана на 100 г.</span></li>
+          <li><svg aria-hidden="true"><use href="assets/icons/sprite.svg#leaf"/></svg><span data-pits></span></li>
+          <li><svg aria-hidden="true"><use href="assets/icons/sprite.svg#telegram"/></svg><span>Великі замовлення (більше 20 шт однієї позиції) — <a data-tg href="#" target="_blank" rel="noopener">напишіть нам у Telegram</a>.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/delivery.js"></script>
+</body>
+</html>

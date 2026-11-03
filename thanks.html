@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Дякуємо за замовлення — Maya Cake</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FBF6F2">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="thanks">
+<main id="main">
+  <div class="container">
+    <div class="thanks" data-thanks>
+      <div class="ph-circle"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#check"/></svg></div>
+      <h1>Дякуємо за <em>замовлення!</em></h1>
+      <p class="lead" style="margin:0 auto" data-lead>Ми отримали ваше замовлення і скоро звʼяжемося з вами.</p>
+      <div data-order></div>
+    </div>
+  </div>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  /* Сторінка «Дякуємо»: номер замовлення, що далі, кнопка «Надіслати в Telegram» */
+  MC.ready.then(function () {
+    var order = null;
+    try { order = JSON.parse(localStorage.getItem('mayacake_last_order_v1')); } catch (e) { /* ignore */ }
+    var box = MC.qs('[data-order]');
+    if (!order) {
+      MC.qs('[data-lead]').textContent = 'Тут показуємо номер замовлення після оформлення.';
+      box.innerHTML = '<p style="margin-top:24px"><a class="btn" href="catalog.html">До каталогу</a></p>';
+      return;
+    }
+    if (order.demo) {
+      MC.qs('[data-lead]').innerHTML = 'Сайт працює в демо-режимі: форму замовлень ще не підключено. Щоб ми точно отримали замовлення, <strong>надішліть його нам у Telegram</strong> — кнопка нижче.';
+    }
+    box.innerHTML =
+      '<div class="order-no">' + MC.esc(order.id) + '</div>' +
+      '<div class="actions">' +
+        '<button class="btn" type="button" data-tg-send>' + MC.icon('telegram') + 'Надіслати замовлення в Telegram</button>' +
+        '<a class="btn btn--ghost" href="' + MC.igUrl() + '" target="_blank" rel="noopener">' + MC.icon('instagram') + 'Наш Instagram</a>' +
+      '</div>' +
+      '<p class="muted" style="font-size:13px;margin-top:12px" data-copied>Кнопка скопіює текст замовлення й відкриє наш чат — залишиться вставити й надіслати.</p>' +
+      '<ol class="steps">' +
+        '<li class="step"><h3>Підтвердимо замовлення</h3><p>Звʼяжемося з вами за номером ' + MC.esc(order.phone) + ' і узгодимо оплату.</p></li>' +
+        '<li class="step"><h3>Приготуємо</h3><p>Кондитери почнуть готувати ваші десерти.</p></li>' +
+        '<li class="step"><h3>Привеземо</h3><p>' + MC.esc(order.dateLabel) + ', ' + MC.cfg.DELIVERY_WINDOW + ' — ' + MC.esc(order.zoneLabel) + ', ' + MC.esc(order.address) + '.</p></li>' +
+      '</ol>' +
+      '<details><summary class="link-arrow" style="cursor:pointer">Показати текст замовлення</summary><div class="order-text">' + MC.esc(order.text) + '</div></details>';
+    MC.qs('[data-tg-send]').addEventListener('click', function () {
+      MC.copy(order.text).then(function () {
+        MC.qs('[data-copied]').innerHTML = '<strong>Текст скопійовано.</strong> У чаті Telegram вставте його (утримуйте поле повідомлення → «Вставити») і надішліть.';
+      });
+      window.open(MC.tgUrl(), '_blank', 'noopener');
+    });
+  });
+</script>
+</body>
+</html>

@@ -501,13 +501,56 @@ def contact_sheet(paths, dest, thumb=200, cols=8):
     print('Контактний аркуш:', dest)
 
 
+def originals(folder):
+    """Заміна фото на оригінали від власниці.
+
+    Покладіть у папку файли з назвою товару (як у data/products.json):
+        berry-plombir.jpg      → основне фото (обріжеться по центру до 4:5)
+        berry-plombir-cut.jpg  → фото розрізу (обріжеться в коло)
+    Підходять .jpg, .jpeg, .png, .webp. Старі файли з такою ж назвою замінюються.
+    """
+    done = 0
+    for path in sorted(glob.glob(os.path.join(folder, '*'))):
+        name, ext = os.path.splitext(os.path.basename(path))
+        if ext.lower() not in ('.jpg', '.jpeg', '.png', '.webp'):
+            continue
+        im = Image.open(path).convert('RGB')
+        w, h = im.size
+        if name.endswith('-cut'):
+            side = min(w, h)
+            sq = im.crop(((w - side) // 2, (h - side) // 2, (w + side) // 2, (h + side) // 2))
+            sq = sq.resize((640, 640), Image.LANCZOS)
+            box = (0, 0, 640, 640)
+            c = circle_photo(sq, box)
+            save_one(c.resize((CUT_SIZE * 2, CUT_SIZE * 2), Image.LANCZOS), name)
+        else:
+            # обрізаємо по центру до 4:5
+            if w / h > 0.8:
+                nw = round(h * 0.8)
+                im = im.crop(((w - nw) // 2, 0, (w + nw) // 2, h))
+            else:
+                nh = round(w / 0.8)
+                im = im.crop((0, (h - nh) // 2, w, (h + nh) // 2))
+            for tw in (400, 800, 1200):
+                if im.size[0] >= tw * 0.9:
+                    im.resize((tw, round(tw * 1.25)), Image.LANCZOS).save(
+                        os.path.join(OUT, f'{name}-{tw}.webp'), 'WEBP', quality=84, method=6)
+        print(f'  ✓ {name}')
+        done += 1
+    print(f'Замінено фото: {done}')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--sheet', metavar='DIR', help='зберегти контактні аркуші для перевірки в цю папку')
     ap.add_argument('--only', help='обробити лише ці товари (через кому)')
+    ap.add_argument('--originals', metavar='DIR', help='замінити фото оригіналами з цієї папки (див. README)')
     args = ap.parse_args()
 
     os.makedirs(OUT, exist_ok=True)
+    if args.originals:
+        originals(args.originals)
+        return
     files = load_stories()
     mains, cuts = [], []
     only = set(args.only.split(',')) if args.only else None

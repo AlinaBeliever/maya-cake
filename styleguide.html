@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Дизайн-система — Maya Cake</title>
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Стилі лише для цієї технічної сторінки */
+    .sg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; }
+    .sg-swatch { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); font-size: 13px; }
+    .sg-swatch i { display: block; height: 72px; }
+    .sg-swatch div { padding: 10px 12px; }
+    .sg-swatch code { color: var(--muted); }
+    .sg-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+    .sg-block { margin-bottom: 56px; }
+    .sg-cat { margin: 48px 0 20px; display: flex; align-items: baseline; gap: 12px; }
+    .sg-cat h3 { margin: 0; }
+  </style>
+</head>
+<body>
+<main id="main">
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Технічна сторінка · етап 2</span>
+      <h1>Дизайн-система <em>Maya Cake</em></h1>
+      <p class="lead">Кольори, шрифти, кнопки і повний каталог з усіма товарами — щоб перевірити дані й фото до того, як збирати сторінки.</p>
+
+      <div class="sg-block">
+        <h2>Палітра</h2>
+        <div class="sg-swatches" id="swatches"></div>
+      </div>
+
+      <div class="sg-block">
+        <h2>Шрифти</h2>
+        <h1>Заголовок H1 — <em>до 14:00</em></h1>
+        <h2>Заголовок H2 — Торти й тістечка</h2>
+        <h3>Заголовок H3 — Японський рулет</h3>
+        <p class="lead">Основний текст Manrope 18 px. Замовте до 14:00 — привеземо завтра з 10:00 до 18:00.</p>
+        <p>Звичайний текст 16 px з міжрядковим інтервалом 1,6. Ціни — однакової ширини: <span class="price">1 500 грн · 840 грн · 75 грн</span>.</p>
+      </div>
+
+      <div class="sg-block">
+        <h2>Кнопки й позначки</h2>
+        <div class="sg-row">
+          <a class="btn" href="#">Обрати десерти</a>
+          <a class="btn btn--ghost" href="#">Зібрати коробку макарон</a>
+          <button class="btn" disabled>Неактивна</button>
+          <button class="card__add" type="button" aria-label="Додати"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#plus"/></svg></button>
+        </div>
+        <div class="sg-row">
+          <span class="pill pill--price">1 500 грн</span>
+          <span class="pill pill--line">d18 · 1,6 кг</span>
+          <span class="badge" style="background:var(--powder-soft)">Новинка</span>
+        </div>
+        <div style="max-width:420px">
+          <div class="field"><label for="sg-in">Ваше імʼя</label><input class="input" id="sg-in" placeholder="Олена"></div>
+          <div class="field"><label for="sg-sel">Місто доставки</label><select class="select" id="sg-sel"><option>Київ</option></select></div>
+        </div>
+      </div>
+
+      <div class="sg-block">
+        <h2>Повний каталог</h2>
+        <p class="muted" id="sg-count">Завантажуємо товари…</p>
+        <div id="sg-catalog"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  (function () {
+    var css = getComputedStyle(document.documentElement);
+    var tokens = ['--navy', '--navy-deep', '--ink', '--powder', '--powder-soft', '--powder-deep', '--olive', '--cream', '--white', '--line', '--muted'];
+    document.getElementById('swatches').innerHTML = tokens.map(function (t) {
+      var v = css.getPropertyValue(t).trim();
+      return '<div class="sg-swatch"><i style="background:' + v + '"></i><div><strong>' + t + '</strong><br><code>' + v + '</code></div></div>';
+    }).join('');
+
+    MC.data().then(function (d) {
+      var html = '';
+      d.categories.forEach(function (c) {
+        var list = d.products.filter(function (p) { return p.category === c.id; });
+        html += '<div class="sg-cat"><h3>' + c.label + '</h3><span class="muted">' + list.length + '</span></div>' +
+          '<div class="product-grid">' + list.map(function (p) { return MC.card(p); }).join('') + '</div>';
+      });
+      document.getElementById('sg-catalog').innerHTML = html;
+      document.getElementById('sg-count').textContent = d.products.length + ' позицій у ' + d.categories.length +
+        ' категоріях + ' + (d.macarons.classic.length + d.macarons.premium.length) + ' смаків макарон.';
+      // Демо кошика: styleguide.html#cart-demo — додає кілька товарів і відкриває кошик
+      if (location.hash === '#cart-demo') {
+        MC.cart.clear();
+        MC.cart.add(d.byId['napoleon']);
+        MC.cart.add(d.byId['tart-lemon'], { qty: 3 });
+        MC.cart.add(d.byId['caramel-jar'], { variant: 'salted' });
+        MC.cart.setZone('bucha');
+        MC.cart.open();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

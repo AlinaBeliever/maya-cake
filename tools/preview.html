@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Перегляд на різних екранах — Maya Cake</title>
+  <style>
+    body { margin: 0; padding: 16px; background: #e9e4e1; font: 14px/1.4 system-ui, sans-serif; color: #183447; }
+    form { margin-bottom: 16px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    input { padding: 6px 10px; width: 320px; }
+    .row { display: flex; gap: 24px; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: 6px; font-weight: 600; }
+    iframe { border: 0; background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,.12); }
+  </style>
+</head>
+<body>
+  <!-- Відкрийте http://localhost:8000/tools/preview.html?page=index.html — побачите сторінку
+       одночасно на телефонах 375 і 414 px та планшеті 768 px. -->
+  <form><label>Сторінка: <input name="page" id="page"></label><button>Показати</button></form>
+  <div class="row" id="row"></div>
+  <script>
+    var params = new URLSearchParams(location.search);
+    var page = params.get('page') || 'index.html';
+    var h = params.get('h') || 812;
+    document.getElementById('page').value = page;
+    document.getElementById('row').innerHTML = [375, 414, 768].map(function (w) {
+      return '<figure><figcaption>' + w + ' px</figcaption><iframe src="../' + page + '" width="' + w + '" height="' + h + '"></iframe></figure>';
+    }).join('');
+  </script>
+</body>
+</html>

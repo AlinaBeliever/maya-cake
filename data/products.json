@@ -1,0 +1,2723 @@
+{
+  "_note": "Дані з Instagram-сторіз @maya.cake.kyiv. КБЖВ — на 100 г. Поле check — що уточнити у власниці.",
+  "categories": [
+    {
+      "id": "macarons",
+      "label": "Макарон"
+    },
+    {
+      "id": "cakes",
+      "label": "Торти"
+    },
+    {
+      "id": "bento",
+      "label": "Бенто"
+    },
+    {
+      "id": "rolls",
+      "label": "Рулети й кекси"
+    },
+    {
+      "id": "tarts",
+      "label": "Тарти"
+    },
+    {
+      "id": "eclairs",
+      "label": "Еклери й шу"
+    },
+    {
+      "id": "pastries",
+      "label": "Тістечка"
+    },
+    {
+      "id": "cups",
+      "label": "У стаканчиках"
+    },
+    {
+      "id": "bakery",
+      "label": "Випічка"
+    },
+    {
+      "id": "caramel",
+      "label": "Карамель"
+    }
+  ],
+  "products": [
+    {
+      "id": "macaron-box-classic",
+      "category": "macarons",
+      "name": "Коробка класичних макарон",
+      "price": null,
+      "weight": "5 або 10 шт · 50 г/шт",
+      "description": "22 смаки на вибір: від «Кіндер» і «Солоної карамелі» до «Диня-камамбер». Зберіть коробку на 5 або 10 штук у конструкторі.",
+      "contains": null,
+      "allergens": [
+        "eggs",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": null,
+      "shelfLife": "4 доби",
+      "images": {
+        "main": null,
+        "cut": null
+      },
+      "tags": [
+        "gift"
+      ],
+      "link": "box.html?type=classic",
+      "priceFrom": 275,
+      "image": "mac-classic-kinder",
+      "check": [
+        "Роздрібна ціна 55 грн/шт може бути застарілою"
+      ]
+    },
+    {
+      "id": "macaron-box-premium",
+      "category": "macarons",
+      "name": "Коробка макарон преміум",
+      "price": null,
+      "weight": "4 або 8 шт · 40–55 г/шт",
+      "description": "14 авторських смаків: «Дубайський шоколад», «Рафаелло», «Карамельний попкорн» та інші. Коробка на 4 або 8 штук.",
+      "contains": null,
+      "allergens": [
+        "eggs",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": null,
+      "shelfLife": "4 доби",
+      "images": {
+        "main": null,
+        "cut": null
+      },
+      "tags": [
+        "gift"
+      ],
+      "link": "box.html?type=premium",
+      "priceFrom": 400,
+      "image": "mac-premium-dubai-chocolate",
+      "check": [
+        "Роздрібні ціни 100 і 120 грн/шт можуть бути застарілими"
+      ]
+    },
+    {
+      "id": "napoleon",
+      "category": "cakes",
+      "name": "Наполеон",
+      "price": 1000,
+      "weight": "d20 · 1,6 кг",
+      "description": "Тонкі коржі, які чергуються з ніжним заварним кремом на основі молока. Прикрашений крихтою листкового тіста.",
+      "contains": "Борошно, вершкове масло, яйця, молоко, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.5,
+        "fat": 15.8,
+        "carbs": 33.5,
+        "kcal": 294
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "napoleon",
+        "cut": "napoleon-cut"
+      },
+      "tags": [
+        "gift"
+      ]
+    },
+    {
+      "id": "napoleon-chocolate-nut",
+      "category": "cakes",
+      "name": "Наполеон шоколад-горіх",
+      "price": 1200,
+      "weight": "d20 · 1,65 кг",
+      "description": "Тонкі шоколадні листкові коржі, просочені кремом, збагаченим шоколадно-горіховим смаком.",
+      "contains": "Вершкове масло, яйця, борошно пшеничне, сметана, молоко, шоколад, горіхова паста",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 5.95,
+        "fat": 19.17,
+        "carbs": 33.85,
+        "kcal": 329.87
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "napoleon-chocolate-nut",
+        "cut": "napoleon-chocolate-nut-cut"
+      },
+      "tags": [
+        "gift"
+      ]
+    },
+    {
+      "id": "spartak",
+      "category": "cakes",
+      "name": "Спартак",
+      "price": 1200,
+      "weight": "d20 · 1,5 кг",
+      "description": "Класичне поєднання шоколадно-медових коржів з ніжним сметанно-заварним кремом.",
+      "contains": "Мед, вершкове масло, яйця, борошно, молоко, сметана, білий шоколад, вершковий сир",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 8.3,
+        "fat": 11,
+        "carbs": 43.5,
+        "kcal": 295
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "spartak",
+        "cut": "spartak-cut"
+      },
+      "tags": [
+        "gift"
+      ]
+    },
+    {
+      "id": "red-velvet",
+      "category": "cakes",
+      "name": "Червоний оксамит",
+      "price": 1200,
+      "weight": "d20 · 1,4 кг",
+      "description": "М’які та повітряні бісквіти червоного кольору в поєднанні з кремом на основі вершкового сиру. Вражає не тільки кольором, а й смаком.",
+      "contains": "Пшеничне борошно, яйця, кефір, вершковий сир, вершкове масло",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 6.1,
+        "fat": 24.9,
+        "carbs": 41.4,
+        "kcal": 407
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "red-velvet",
+        "cut": "red-velvet-cut"
+      },
+      "tags": [
+        "gift"
+      ]
+    },
+    {
+      "id": "cake-poppy-lemon-blueberry",
+      "category": "cakes",
+      "name": "Мак-лимон-лохина",
+      "price": 1350,
+      "weight": "d20 · 1,65 кг",
+      "description": "Соковиті макові бісквіти, ароматне лимонне просочення, лимонний курд та конфі з лохини, об’єднані ніжним крем-чизом.",
+      "contains": "Борошно пшеничне, молоко, яйця, вершковий сир, вершкове масло, білий шоколад",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.28,
+        "fat": 17.14,
+        "carbs": 37.47,
+        "kcal": 323.81
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "cake-poppy-lemon-blueberry",
+        "cut": "cake-poppy-lemon-blueberry-cut"
+      },
+      "tags": [
+        "gift"
+      ]
+    },
+    {
+      "id": "strawberry-honey-cake",
+      "category": "cakes",
+      "name": "Полуничний медівник",
+      "price": 1350,
+      "weight": "d18 · 1,35 кг",
+      "description": "Класичні медові коржі в обіймах повітряного сметанкового крему зі свіжими нотками полуничного конфі.",
+      "contains": "Борошно, вершкове масло, яйця, мед, крем-сир, сметана, вершки, шоколад білий",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.4,
+        "fat": 22.3,
+        "carbs": 36.3,
+        "kcal": 362
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "strawberry-honey-cake",
+        "cut": "strawberry-honey-cake-cut"
+      },
+      "tags": [
+        "gift"
+      ]
+    },
+    {
+      "id": "honey-cake-caramel",
+      "category": "cakes",
+      "name": "Карамельний медівник",
+      "price": 1500,
+      "weight": "d18 · 1,6 кг",
+      "description": "Ароматні медові коржі, прошаровані ніжним сметанно-карамельним кремом та солоною карамеллю.",
+      "contains": "Борошно пшеничне, вершкове масло, яйця, мед, сметана, іриска, вершки, білий шоколад, вершковий сир",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 6.43,
+        "fat": 23.61,
+        "carbs": 47.18,
+        "kcal": 425.05
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "honey-cake-caramel",
+        "cut": "honey-cake-caramel-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ]
+    },
+    {
+      "id": "berry-plombir",
+      "category": "cakes",
+      "name": "Ягідний пломбір",
+      "price": 1400,
+      "weight": "d18 · 1,6 кг",
+      "description": "М’які ванільні бісквіти з соковитою ягідною начинкою у поєднанні з ніжним сметанно-вершковим мусом, що нагадує смак пломбіру.",
+      "contains": "Борошно пшеничне, молоко, яйця, сметана, згущене молоко, вершки, вершковий сир, вершкове масло, білий шоколад",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 4.91,
+        "fat": 18.63,
+        "carbs": 37.2,
+        "kcal": 337.11
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "berry-plombir",
+        "cut": "berry-plombir-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ],
+      "berries": true,
+      "note": "Декор може змінюватись залежно від сезону."
+    },
+    {
+      "id": "cake-chocolate-cherry",
+      "category": "cakes",
+      "name": "Торт шоколад-вишня",
+      "price": 1500,
+      "weight": "d20 · 1,6 кг",
+      "description": "Шоколадні бісквіти, просочені соком вишні, крем на основі вершкового сиру та вишні, глазур на основі молочного шоколаду.",
+      "contains": "Борошно, яйця, вершкове масло, молоко, крем-сир, темний шоколад, вершки, шоколад молочний",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 8,
+        "fat": 24.8,
+        "carbs": 37.2,
+        "kcal": 401
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "cake-chocolate-cherry",
+        "cut": "cake-chocolate-cherry-cut"
+      },
+      "tags": [
+        "gift"
+      ],
+      "berries": true
+    },
+    {
+      "id": "mousse-chocolate-cherry",
+      "category": "cakes",
+      "name": "Мусовий шоколад-вишня",
+      "price": 1400,
+      "weight": "d18 · 1,4 кг",
+      "description": "Ніжний мус на темному шоколаді, ароматне вишневе компоте з цілими ягодами вишні та шоколадний бісквіт у шоколадній глазурі.",
+      "contains": "Яйця, сметана, борошно пшеничне, чорний шоколад, молоко, вершки, шоколад молочний",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 4.55,
+        "fat": 17.78,
+        "carbs": 30.08,
+        "kcal": 304.09
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "mousse-chocolate-cherry",
+        "cut": "mousse-chocolate-cherry-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ],
+      "berries": true
+    },
+    {
+      "id": "cake-raspberry-mango",
+      "category": "cakes",
+      "name": "Малина & манго-маракуя",
+      "price": 1600,
+      "weight": "d18 · 1,65 кг",
+      "description": "Ванільні бісквіти, прошаровані оксамитовим крем-мусом із манго, доповнені шарами малинового конфі та компоте манго-маракуя.",
+      "contains": "Молоко, борошно пшеничне, яйця, білий шоколад, вершковий сир, вершки, вершкове масло, чорний кунжут",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "sesame"
+      ],
+      "kbzhv": {
+        "protein": 6.97,
+        "fat": 20.82,
+        "carbs": 29.13,
+        "kcal": 331.39
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "cake-raspberry-mango",
+        "cut": "cake-raspberry-mango-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ]
+    },
+    {
+      "id": "mousse-cherry-profiteroles",
+      "category": "cakes",
+      "name": "Мусовий з вишневими профітролями",
+      "price": 1500,
+      "weight": "d18 · 1,45 кг",
+      "description": "Поєднання ніжного ванільного бісквіту та легкого сметанного мусу на білому шоколаді, всередині якого профітролі з вишневою начинкою.",
+      "contains": "Молоко, борошно пшеничне, яйця, білий шоколад, згущене молоко, вершки, вершковий сир, сметана, масло вершкове",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.95,
+        "fat": 20.41,
+        "carbs": 25.91,
+        "kcal": 312.6
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "mousse-cherry-profiteroles",
+        "cut": "mousse-cherry-profiteroles-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ],
+      "berries": true
+    },
+    {
+      "id": "three-milks-profiteroles",
+      "category": "cakes",
+      "name": "Три молока з профітролями",
+      "price": 1500,
+      "weight": "d18 · 1,45 кг",
+      "description": "Ванільний бісквіт з оксамитовим мусом на білому шоколаді, усередині якого профітролі з кремом зі згущеного молока та вершкового сиру.",
+      "contains": "Молоко, борошно пшеничне, яйця, білий шоколад, згущене молоко, вершки, вершковий сир, вершкове масло",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 7.79,
+        "fat": 24.4,
+        "carbs": 27.95,
+        "kcal": 362.64
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "three-milks-profiteroles",
+        "cut": "three-milks-profiteroles-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ]
+    },
+    {
+      "id": "cake-carrot-caramel",
+      "category": "cakes",
+      "name": "Морквяно-карамельний",
+      "price": 1500,
+      "weight": "d18 · 1,6 кг",
+      "description": "Ніжний карамельний чізкейк між шарами ароматних морквяних бісквітів у поєднанні з вершковим кремом та солоною карамеллю.",
+      "contains": "Волоський горіх, пшеничне борошно, яйця, вершковий сир, вершки, вершкове масло, білий шоколад",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 4.9,
+        "fat": 27.47,
+        "carbs": 29.18,
+        "kcal": 383.16
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "cake-carrot-caramel",
+        "cut": "cake-carrot-caramel-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ]
+    },
+    {
+      "id": "ne-khatyna",
+      "category": "cakes",
+      "name": "Не хатина",
+      "price": 1600,
+      "weight": "d20 · 1,6 кг",
+      "description": "Трубочки зі стиглими вишнями в поєднанні з ніжним та легким сметанковим кремом, вкриті глазур’ю на основі молочного шоколаду.",
+      "contains": "Сметана, борошно пшеничне в/г, масло вершкове, шоколад білий, шоколад молочний, шоколадна глазур молочна, молоко, вершки, фундук",
+      "allergens": [
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 4.0,
+        "fat": 20.7,
+        "carbs": 25.0,
+        "kcal": 300
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "ne-khatyna",
+        "cut": "ne-khatyna-cut"
+      },
+      "tags": [
+        "gift"
+      ],
+      "berries": true
+    },
+    {
+      "id": "cheesecake-new-york",
+      "category": "cakes",
+      "name": "Чізкейк Нью-Йорк",
+      "price": 1500,
+      "weight": "d20 · 1,6 кг",
+      "description": "Класичне поєднання хрусткого пісочного тіста та ніжної вершково-сирної основи з шоколадними пір’їнками в декорі.",
+      "contains": "Вершкове масло, мигдалеве борошно, пшеничне борошно, вершковий сир, творог, яйця, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 7.93,
+        "fat": 22.42,
+        "carbs": 24.76,
+        "kcal": 392.72
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "cheesecake-new-york",
+        "cut": "cheesecake-new-york-cut"
+      },
+      "tags": [
+        "gift"
+      ]
+    },
+    {
+      "id": "cheesecake-bounty",
+      "category": "cakes",
+      "name": "Чізкейк баунті",
+      "price": 1500,
+      "weight": "d20 · 1,55 кг",
+      "description": "Хрустка шоколадна основа, кокосово-сирна начинка з додаванням пасти кокоса та кокосової стружки, під ніжним шоколадним шаром.",
+      "contains": "Борошно пшеничне, вершкове масло, мигдалеве борошно, яйця, молоко, вершковий сир, кисломолочний сир, вершки, молочний шоколад, темний шоколад",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 6.72,
+        "fat": 26.66,
+        "carbs": 29.79,
+        "kcal": 389.26
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "cheesecake-bounty",
+        "cut": "cheesecake-bounty-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ]
+    },
+    {
+      "id": "waffle-cake",
+      "category": "cakes",
+      "name": "Вафельний торт",
+      "price": 600,
+      "weight": "d21 · 650 г",
+      "description": "Зібраний із шарів хрустких вафель у тандемі з класичним кремом на основі вареного згущеного молока.",
+      "contains": "Вершкове масло, варене згущене молоко",
+      "allergens": [
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 6.6,
+        "fat": 26.5,
+        "carbs": 48.2,
+        "kcal": 455
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "waffle-cake",
+        "cut": "waffle-cake-cut"
+      },
+      "tags": [],
+      "check": [
+        "У списку алергенів немає борошна, але вафлі зазвичай його містять — позначили глютен"
+      ]
+    },
+    {
+      "id": "waffle-cake-salted-caramel",
+      "category": "cakes",
+      "name": "Вафельний з солоною карамеллю",
+      "price": 750,
+      "weight": "d20 · 800 г",
+      "description": "Хрусткі вафлі з кремом на основі вареного згущеного молока, смак яких доповнює солона карамель та хрусткі мигдалеві пелюстки.",
+      "contains": "Молоко згущене варене, масло вершкове, солона карамель, мигдалеві пластівці",
+      "allergens": [
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 5.5,
+        "fat": 28.4,
+        "carbs": 49.8,
+        "kcal": 477
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "waffle-cake-salted-caramel",
+        "cut": "waffle-cake-salted-caramel-cut"
+      },
+      "tags": [],
+      "check": [
+        "У списку алергенів немає борошна, але вафлі зазвичай його містять — позначили глютен"
+      ]
+    },
+    {
+      "id": "waffle-raspberry",
+      "category": "cakes",
+      "name": "Корпусне вафельне «малина»",
+      "price": null,
+      "weight": null,
+      "description": null,
+      "contains": null,
+      "allergens": [],
+      "kbzhv": null,
+      "shelfLife": null,
+      "images": {
+        "main": null,
+        "cut": null
+      },
+      "tags": [],
+      "check": [
+        "Немає фото, ціни, ваги, опису, складу і КБЖВ — є лише назва в меню «на завтра»"
+      ]
+    },
+    {
+      "id": "bento",
+      "category": "bento",
+      "name": "Бенто-торт",
+      "price": 900,
+      "weight": "d11–12 · 550–700 г",
+      "description": "Мініторт у фірмовій коробці з начинкою на вибір. Вага залежить від смаку. Нестандартні дизайни сплачуються додатково — уточнюйте індивідуально.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": null,
+      "shelfLife": null,
+      "images": {
+        "main": "bento",
+        "cut": null
+      },
+      "tags": [
+        "gift"
+      ],
+      "variants": [
+        {
+          "id": "chocolate-cherry",
+          "label": "Шоколад-вишня",
+          "price": 900,
+          "image": "bento-filling-chocolate-cherry"
+        },
+        {
+          "id": "spartak",
+          "label": "Спартак",
+          "price": 900,
+          "image": "bento-filling-spartak"
+        },
+        {
+          "id": "strawberry-honey",
+          "label": "Полуничний медівник",
+          "price": 900,
+          "image": "bento-filling-strawberry-honey"
+        },
+        {
+          "id": "red-velvet",
+          "label": "Червоний оксамит",
+          "price": 900,
+          "image": "bento-filling-red-velvet"
+        },
+        {
+          "id": "poppy-lemon",
+          "label": "Мак-лимон-лохина",
+          "price": 900,
+          "image": "bento-filling-poppy-lemon"
+        },
+        {
+          "id": "berry-plombir",
+          "label": "Ягідний пломбір",
+          "price": 900,
+          "image": "bento-filling-berry-plombir"
+        }
+      ],
+      "variantTitle": "Начинка",
+      "check": [
+        "Склад, алергени і КБЖВ бенто не вказані",
+        "Термін придатності бенто не вказаний"
+      ]
+    },
+    {
+      "id": "roll-vanilla",
+      "category": "rolls",
+      "name": "Японський рулет ванільний",
+      "price": 1100,
+      "weight": "27 см · 950 г",
+      "description": "Ніжна ванільна намелака в обіймах пухкого ванільного японського бісквіту.",
+      "contains": "Молоко, борошно пшеничне, яйця, білий шоколад, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 9.1,
+        "fat": 24.23,
+        "carbs": 33.46,
+        "kcal": 384.81
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "roll-vanilla",
+        "cut": "roll-vanilla-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ]
+    },
+    {
+      "id": "roll-raspberry",
+      "category": "rolls",
+      "name": "Японський рулет малиновий",
+      "price": 1100,
+      "weight": "27 см · 950 г",
+      "description": "Ніжний японський бісквіт, що нагадує суфле, у поєднанні з малиновою намелакою та конфі.",
+      "contains": "Молоко, борошно пшеничне, яйця, білий шоколад, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 8.98,
+        "fat": 23.55,
+        "carbs": 36.14,
+        "kcal": 388.75
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "roll-raspberry",
+        "cut": "roll-raspberry-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ]
+    },
+    {
+      "id": "roll-chocolate",
+      "category": "rolls",
+      "name": "Японський рулет шоколадний",
+      "price": 1100,
+      "weight": "27 см · 950 г",
+      "description": "Шоколадний японський бісквіт, що нагадує суфле, у поєднанні з шоколадною намелакою.",
+      "contains": "Молоко, борошно пшеничне, яйця, молочний шоколад, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 9.45,
+        "fat": 24.55,
+        "carbs": 32.0,
+        "kcal": 385.68
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "roll-chocolate",
+        "cut": "roll-chocolate-cut"
+      },
+      "tags": [
+        "new",
+        "gift"
+      ]
+    },
+    {
+      "id": "meringue-roll-raspberry",
+      "category": "rolls",
+      "name": "Малиновий меренговий рулет",
+      "price": 850,
+      "weight": "29 см · 800 г",
+      "description": "Злегка запечена ніжна меренга, всередині якої ховається легкий крем на основі вершкового сиру та ароматне малинове кюлі.",
+      "contains": "Вершкове масло, борошно пшеничне, яйця, крем-сир, шоколад темний, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.1,
+        "fat": 22.5,
+        "carbs": 34.6,
+        "kcal": 357
+      },
+      "shelfLife": "48 год",
+      "images": {
+        "main": "meringue-roll-raspberry",
+        "cut": "meringue-roll-raspberry-cut"
+      },
+      "tags": [
+        "gift"
+      ]
+    },
+    {
+      "id": "carrot-loaf",
+      "category": "rolls",
+      "name": "Морквяний кекс",
+      "price": 650,
+      "weight": "25×9,5 см · 900 г",
+      "description": "Ароматний кекс, основою якого є терта морква, що надає солодкості та вологи. Журавлина та волоський горіх, щоб збагатити його смак.",
+      "contains": "Яйця, волоський горіх, пшеничне борошно, вершки, вершковий сир",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 5.4,
+        "fat": 26.3,
+        "carbs": 43.3,
+        "kcal": 428
+      },
+      "shelfLife": "5 діб",
+      "images": {
+        "main": "carrot-loaf",
+        "cut": "carrot-loaf-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "tart-lemon",
+      "category": "tarts",
+      "name": "Тарт лимон",
+      "price": 70,
+      "weight": "d5 · 50–55 г",
+      "description": "Хрустка пісочна основа з лимонною начинкою, що створена на основі свіжого лимонного соку, цедри та білого шоколаду.",
+      "contains": "Масло вершкове, борошно пшеничне, яйця, мигдалеве борошно, білий шоколад, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 4.66,
+        "fat": 21.47,
+        "carbs": 39.53,
+        "kcal": 413.96
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "tart-lemon",
+        "cut": "tart-lemon-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "tart-caramel-almond",
+      "category": "tarts",
+      "name": "Тарт карамель-мигдаль",
+      "price": 70,
+      "weight": "d5 · 40 г",
+      "description": "Хрустка основа з пісочного тіста ніжно обіймає шар солоної карамелі та цілі горішки смаженого мигдалю.",
+      "contains": "Масло вершкове, борошно пшеничне, яйця, мигдалеве борошно, вершки, мигдаль",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 7.25,
+        "fat": 32.16,
+        "carbs": 39.63,
+        "kcal": 471.41
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "tart-caramel-almond",
+        "cut": "tart-caramel-almond-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "tart-plum-orange",
+      "category": "tarts",
+      "name": "Тарт слива-апельсин",
+      "price": 95,
+      "weight": "d5 · 55 г",
+      "description": "Хрустка пісочна основа з ароматним апельсиновим курдом, апельсиновою намелакою та сливовим конфі.",
+      "contains": "Масло вершкове, борошно пшеничне, яйця, мигдалеве борошно, білий шоколад, молоко, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 4.93,
+        "fat": 14.88,
+        "carbs": 31.92,
+        "kcal": 282.5
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "tart-plum-orange",
+        "cut": "tart-plum-orange-cut"
+      },
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "eclair-condensed-milk",
+      "category": "eclairs",
+      "name": "Еклер зі згущеним молоком",
+      "price": 150,
+      "weight": "110–115 г",
+      "description": "Заварне тістечко в поєднанні з оксамитовим кремом на основі згущеного молока та вершкового сиру, покрите глянцевою глазур’ю.",
+      "contains": "Вершкове масло, борошно пшеничне, яйця, згущене молоко, вершковий сир, білий шоколад, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 7.71,
+        "fat": 20.28,
+        "carbs": 39.79,
+        "kcal": 370.97
+      },
+      "shelfLife": "48 год",
+      "images": {
+        "main": "eclair-condensed-milk",
+        "cut": "eclair-condensed-milk-cut"
+      },
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "eclair-classic",
+      "category": "eclairs",
+      "name": "Еклер класичний",
+      "price": 140,
+      "weight": "105–110 г",
+      "description": "Заварне тістечко в поєднанні з ніжним класичним заварним кремом під глянцевою шоколадною глазур’ю та какао.",
+      "contains": "Вершкове масло, борошно пшеничне, яйця, молоко, вершки, чорний шоколад",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 6.0,
+        "fat": 20.72,
+        "carbs": 38.91,
+        "kcal": 370.45
+      },
+      "shelfLife": "48 год",
+      "images": {
+        "main": "eclair-classic",
+        "cut": "eclair-classic-cut"
+      },
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "choux-classic",
+      "category": "eclairs",
+      "name": "Шу класичний",
+      "price": null,
+      "weight": null,
+      "description": null,
+      "contains": null,
+      "allergens": [],
+      "kbzhv": null,
+      "shelfLife": null,
+      "images": {
+        "main": null,
+        "cut": null
+      },
+      "tags": [],
+      "check": [
+        "Немає фото, ціни, ваги, опису, складу і КБЖВ — є лише назва в меню «на завтра»"
+      ]
+    },
+    {
+      "id": "choux-raspberry",
+      "category": "eclairs",
+      "name": "Шу малина",
+      "price": null,
+      "weight": null,
+      "description": null,
+      "contains": null,
+      "allergens": [],
+      "kbzhv": null,
+      "shelfLife": null,
+      "images": {
+        "main": null,
+        "cut": null
+      },
+      "tags": [],
+      "check": [
+        "Немає фото, ціни, ваги, опису, складу і КБЖВ — є лише назва в меню «на завтра»"
+      ]
+    },
+    {
+      "id": "choux-chocolate",
+      "category": "eclairs",
+      "name": "Шу шоколад",
+      "price": null,
+      "weight": null,
+      "description": null,
+      "contains": null,
+      "allergens": [],
+      "kbzhv": null,
+      "shelfLife": null,
+      "images": {
+        "main": null,
+        "cut": null
+      },
+      "tags": [],
+      "check": [
+        "Немає фото, ціни, ваги, опису, складу і КБЖВ — є лише назва в меню «на завтра»"
+      ]
+    },
+    {
+      "id": "brownie-peanut-caramel",
+      "category": "pastries",
+      "name": "Брауні арахіс-карамель",
+      "price": 75,
+      "weight": "5×5 см · 65–70 г",
+      "description": "Карамель тофі у поєднанні з хрустким арахісом, яка окриває ніжну текстуру брауні на основі темного шоколаду.",
+      "contains": "Масло вершкове, темний шоколад, яйця, борошно, вершки, арахіс",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "peanuts"
+      ],
+      "kbzhv": {
+        "protein": 7.26,
+        "fat": 32.97,
+        "carbs": 56.64,
+        "kcal": 549.32
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "brownie-peanut-caramel",
+        "cut": "brownie-peanut-caramel-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "whoopie-coffee-nut",
+      "category": "pastries",
+      "name": "Вупі пай кава-горіх",
+      "price": 95,
+      "weight": "d6,5–7 см · 75–80 г",
+      "description": "Ніжні шоколадні половинки печива, наповнені кремом зі смаком кави на основі вершкового сиру в поєднанні з горіховим кремом.",
+      "contains": "Вершкове масло, яйця, борошно, крем-сир, праліне фундучне, вершки, молоко, молочний шоколад",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 5.32,
+        "fat": 24.22,
+        "carbs": 36.3,
+        "kcal": 376.7
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "whoopie-coffee-nut",
+        "cut": "whoopie-coffee-nut-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "whoopie-raspberry",
+      "category": "pastries",
+      "name": "Вупі пай малина",
+      "price": 95,
+      "weight": "d6,5–7 см · 75 г",
+      "description": "Шоколадні бісквітні половинки печива з кремом на основі вершкового сиру та малинової начинки, що надає ягідної нотки.",
+      "contains": "Вершкове масло, яйця, борошно, шоколад білий, крем-сир",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.69,
+        "fat": 25.99,
+        "carbs": 42.42,
+        "kcal": 417.71
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "whoopie-raspberry",
+        "cut": "whoopie-raspberry-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "whoopie-pistachio",
+      "category": "pastries",
+      "name": "Вупі пай фісташка",
+      "price": 95,
+      "weight": "d6,5–7 см · 75 г",
+      "description": "Шоколадні бісквітні половинки з ніжним кремом на основі вершкового сиру, прикрашені подрібненими фісташками.",
+      "contains": "Вершкове масло, яйця, борошно, шоколад білий, фісташка, крем-сир",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 6.31,
+        "fat": 28.63,
+        "carbs": 41.22,
+        "kcal": 439.21
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "whoopie-pistachio",
+        "cut": "whoopie-pistachio-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "peach-condensed-milk",
+      "category": "pastries",
+      "name": "Персик зі згущенкою",
+      "price": 70,
+      "weight": "65–70 г",
+      "description": "М’яке тістечко з ніжним кремом на основі згущеного молока, всередині якого ховається горішок цілого обсмаженого фундука.",
+      "contains": "Борошно пшеничне, сметана, яйця, масло вершкове, варене згущене молоко, фундук",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 6.33,
+        "fat": 15.53,
+        "carbs": 57.49,
+        "kcal": 387.84
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "peach-condensed-milk",
+        "cut": "peach-condensed-milk-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "peach-cream",
+      "category": "pastries",
+      "name": "Тістечко персик",
+      "price": null,
+      "weight": "65–70 г",
+      "description": null,
+      "contains": "Борошно пшеничне, сметана, яйця, масло вершкове, вершки, вершковий сир",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.8,
+        "fat": 12.57,
+        "carbs": 53.14,
+        "kcal": 341.2
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "peach-cream",
+        "cut": "peach-cream-cut"
+      },
+      "tags": [],
+      "wholesale": {
+        "opt": 70,
+        "rrp": 95,
+        "min": 3
+      },
+      "check": [
+        "Роздрібна ціна не вказана — є лише оптова 70 грн і рекомендована 95 грн",
+        "Немає опису"
+      ]
+    },
+    {
+      "id": "potato-caramel",
+      "category": "pastries",
+      "name": "Картопля карамельна",
+      "price": 70,
+      "weight": "55 г",
+      "description": "Крихта пісочного печива в поєднанні з вершками та вершковим сиром, які обіймають ніжну солону карамель.",
+      "contains": "Борошно, яйця, крем-сир, вершки, масло вершкове, молочний шоколад",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 4.89,
+        "fat": 31.27,
+        "carbs": 30.45,
+        "kcal": 418.99
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "potato-caramel",
+        "cut": "potato-caramel-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "potato-kinder",
+      "category": "pastries",
+      "name": "Картопля кіндер кантрі",
+      "price": 70,
+      "weight": "55–60 г",
+      "description": "Ніжна маса крихти ванільного бісквіту й шоколаду з додаванням хрусткого повітряного рису.",
+      "contains": "Борошно пшеничне, яйця, вершки, масло вершкове, шоколад",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 6.05,
+        "fat": 34.56,
+        "carbs": 44.42,
+        "kcal": 510.67
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "potato-kinder",
+        "cut": "potato-kinder-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "potato-almond",
+      "category": "pastries",
+      "name": "Картопля мигдаль",
+      "price": 70,
+      "weight": "55 г",
+      "description": "Крихта з шоколадного бісквіту, шоколадного пісочного печива та мигдалевого борошна з ірискою та подрібненим мигдалем.",
+      "contains": "Мигдалеве борошно, вершки, шоколад молочний, яйця, вершковий сир, молоко згущене варене, борошно пшеничне в/г, масло солодковершкове, мигдаль",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 11.6,
+        "fat": 32.23,
+        "carbs": 30.26,
+        "kcal": 457.93
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "potato-almond",
+        "cut": "potato-almond-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "murashnyk",
+      "category": "pastries",
+      "name": "Мурашник",
+      "price": 40,
+      "weight": "d5 см · 45 г",
+      "description": "Хрустке пісочне тісто в поєднанні з кремом на основі згущеного молока, смак яких доповнює класична солона карамель.",
+      "contains": "Яйця, масло вершкове, молоко, борошно, вершки, варене згущене молоко",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.6,
+        "fat": 16.8,
+        "carbs": 55.77,
+        "kcal": 388
+      },
+      "shelfLife": "5 діб",
+      "images": {
+        "main": "murashnyk",
+        "cut": "murashnyk-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "nut-dorblu",
+      "category": "pastries",
+      "name": "Горішок з дорблю",
+      "price": 50,
+      "weight": "38–40 г",
+      "description": "Ідеальна гармонія смаків пікантного сирного ганашу на білому шоколаді та сиру дорблю з хрусткими кришечками, що тануть у роті.",
+      "contains": "Масло вершкове, борошно пшеничне, яйця, сметана, білий шоколад, вершки, сир дорблю",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 7.7,
+        "fat": 25.73,
+        "carbs": 49.61,
+        "kcal": 452.53
+      },
+      "shelfLife": "5 діб",
+      "images": {
+        "main": "nut-dorblu",
+        "cut": "nut-dorblu-cut"
+      },
+      "tags": [
+        "gift"
+      ],
+      "variants": [
+        {
+          "id": "one",
+          "label": "1 шт",
+          "price": 50
+        },
+        {
+          "id": "gift5",
+          "label": "5 шт у подарунковій коробці",
+          "price": 295
+        }
+      ],
+      "variantTitle": "Формат",
+      "check": [
+        "Ціна набору 5 шт у коробці порахована: 5 × 50 + 45 грн"
+      ]
+    },
+    {
+      "id": "nut-condensed-milk",
+      "category": "pastries",
+      "name": "Горішок зі згущенкою",
+      "price": 35,
+      "weight": "40 г",
+      "description": "Хрусткі кришечки печива, що приховують всередині солодку начинку на основі згущеного молока.",
+      "contains": "Масло вершкове, яйця, сметана, борошно, варене згущене молоко",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 6.7,
+        "fat": 24.25,
+        "carbs": 49.49,
+        "kcal": 435.4
+      },
+      "shelfLife": "5 діб",
+      "images": {
+        "main": "nut-condensed-milk",
+        "cut": "nut-condensed-milk-cut"
+      },
+      "tags": [
+        "gift"
+      ],
+      "variants": [
+        {
+          "id": "one",
+          "label": "1 шт",
+          "price": 35
+        },
+        {
+          "id": "gift5",
+          "label": "5 шт у подарунковій коробці",
+          "price": 220
+        }
+      ],
+      "variantTitle": "Формат",
+      "check": [
+        "Ціна набору 5 шт у коробці порахована: 5 × 35 + 45 грн"
+      ]
+    },
+    {
+      "id": "tube-baileys",
+      "category": "pastries",
+      "name": "Трубочка «Бейліс»",
+      "price": 70,
+      "weight": "75 г",
+      "description": "Хрустка шоколадна трубочка, наповнена ніжним та солодким кремом на основі вареного згущеного молока зі смаком бейліс.",
+      "contains": "Яйця, борошно, масло вершкове, варене згущене молоко",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 7.17,
+        "fat": 34.39,
+        "carbs": 52.91,
+        "kcal": 547.15
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "tube-baileys",
+        "cut": "tube-baileys-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "tube-condensed-milk",
+      "category": "pastries",
+      "name": "Трубочка зі згущенкою",
+      "price": 65,
+      "weight": "80 г",
+      "description": "Хрустка тоненька трубочка, наповнена ніжним та солодким кремом на основі вареного згущеного молока.",
+      "contains": "Яйця, борошно, масло вершкове, варене згущене молоко",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 6.35,
+        "fat": 41.58,
+        "carbs": 40.4,
+        "kcal": 558.89
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "tube-condensed-milk",
+        "cut": "tube-condensed-milk-cut"
+      },
+      "tags": []
+    },
+    {
+      "id": "puff-tubes-meringue",
+      "category": "pastries",
+      "name": "Листкові трубочки з білковим кремом",
+      "price": 70,
+      "weight": "16 см · 40–45 г",
+      "description": "Хрустке листкове тісто, яке тримає в обіймах ніжний білковий крем, під шаром цукрової пудри.",
+      "contains": "Борошно пшеничне, масло вершкове, яйця",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.97,
+        "fat": 20.47,
+        "carbs": 64.43,
+        "kcal": 456.4
+      },
+      "shelfLife": "48 год",
+      "images": {
+        "main": "puff-tubes-meringue",
+        "cut": "puff-tubes-meringue-cut"
+      },
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "pavlova-orange-passionfruit",
+      "category": "pastries",
+      "name": "Павлова апельсин-маракуя",
+      "price": 170,
+      "weight": "50 г",
+      "description": "Хрустка зовні й ніжна всередині меренга, доповнена легким кремом на основі вершкового сиру та ароматним конфі апельсин-маракуя.",
+      "contains": "Яєчний білок, вершки, вершковий сир",
+      "allergens": [
+        "eggs",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 4.89,
+        "fat": 10.64,
+        "carbs": 67.65,
+        "kcal": 385.63
+      },
+      "shelfLife": "48 год",
+      "images": {
+        "main": "pavlova-orange-passionfruit",
+        "cut": "pavlova-orange-passionfruit-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Вага 50 г виглядає замалою для ціни 170 грн"
+      ]
+    },
+    {
+      "id": "layers-napoleon",
+      "category": "cups",
+      "name": "Cake layers наполеон",
+      "price": 180,
+      "weight": "200 г",
+      "description": "Шматочки хрустких коржів, які щедро прошаровані ніжним заварним кремом.",
+      "contains": "Яйця, борошно пшеничне, молоко, вершкове масло",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.07,
+        "fat": 19.69,
+        "carbs": 34.54,
+        "kcal": 338.04
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "layers-napoleon",
+        "cut": "layers-napoleon-cut"
+      },
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "layers-oreo-cheesecake",
+      "category": "cups",
+      "name": "Cake layers орео-чізкейк",
+      "price": 250,
+      "weight": "145–150 г",
+      "description": "Хрустка основа з печива орео та ніжний вершковий чізкейк із шматочками печива.",
+      "contains": "Вершки, борошно пшеничне, вершковий сир",
+      "allergens": [
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 4.62,
+        "fat": 22.7,
+        "carbs": 28.23,
+        "kcal": 338.04
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "layers-oreo-cheesecake",
+        "cut": "layers-oreo-cheesecake-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Калорійність 338,04 ккал збігається до сотих з Cake layers наполеон — можливо, скопійована"
+      ]
+    },
+    {
+      "id": "layers-snickers",
+      "category": "cups",
+      "name": "Cake layers снікерс",
+      "price": 220,
+      "weight": "160 г",
+      "description": "Шматочки шоколадного бісквіту під шарами ніжного крему, солоної карамелі з арахісом та шоколадної глазурі.",
+      "contains": "Молоко, борошно пшеничне, яйця, вершковий сир, вершки, вершкове масло, арахіс, шоколад молочний",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk",
+        "peanuts"
+      ],
+      "kbzhv": {
+        "protein": 7.38,
+        "fat": 27.86,
+        "carbs": 30.26,
+        "kcal": 400.75
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "layers-snickers",
+        "cut": "layers-snickers-cut"
+      },
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "layers-tiramisu",
+      "category": "cups",
+      "name": "Cake layers тірамісу",
+      "price": 240,
+      "weight": "125 г",
+      "description": "Ніжний крем з маскарпоне в поєднанні з печивом савоярді в кавовому просоченні.",
+      "contains": "Маскарпоне, вершки",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 4.08,
+        "fat": 24.45,
+        "carbs": 23.87,
+        "kcal": 334.21
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "layers-tiramisu",
+        "cut": "layers-tiramisu-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "У списку алергенів лише маскарпоне й вершки, але савоярді зазвичай містить борошно і яйця — позначили їх"
+      ]
+    },
+    {
+      "id": "layers-red-velvet",
+      "category": "cups",
+      "name": "Cake layers червоний оксамит",
+      "price": 220,
+      "weight": "160 г",
+      "description": "Оксамитовий бісквіт із ароматним, яскравим ягідним конфі у ніжному вершковому кремі.",
+      "contains": "Вершковий сир, вершки, борошно пшеничне, яйця, кефір",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 2.6,
+        "fat": 13.37,
+        "carbs": 27.77,
+        "kcal": 243.0
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "layers-red-velvet",
+        "cut": "layers-red-velvet-cut"
+      },
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "layers-chocolate-cherry",
+      "category": "cups",
+      "name": "Cake layers шоколад-вишня",
+      "price": 250,
+      "weight": "175 г",
+      "description": "Шоколадний бісквіт та соковита вишнева начинка у поєднанні з ніжним шоколадно-вершковим кремом.",
+      "contains": "Молоко, борошно пшеничне, яйця, вершковий сир, вершки, молочний шоколад",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 4.04,
+        "fat": 16.98,
+        "carbs": 23.94,
+        "kcal": 267.41
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "layers-chocolate-cherry",
+        "cut": "layers-chocolate-cherry-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "berries": true
+    },
+    {
+      "id": "layers-chia",
+      "category": "cups",
+      "name": "Cake layers безлактозний чіа-пудинг",
+      "price": 260,
+      "weight": "210–215 г",
+      "description": "Безлактозний десерт на кокосовому молоці з насінням чіа, соковитим яскравим ягідним конфі і медово-горіховою гранолою.",
+      "contains": "Вівсянка плющена, мигдаль, фундук, мед, масло вершкове, безлактозний йогурт",
+      "allergens": [
+        "gluten",
+        "milk",
+        "nuts"
+      ],
+      "kbzhv": {
+        "protein": 3.52,
+        "fat": 5.77,
+        "carbs": 29.49,
+        "kcal": 184.51
+      },
+      "shelfLife": "48 год",
+      "images": {
+        "main": "layers-chia",
+        "cut": "layers-chia-cut"
+      },
+      "tags": [
+        "new",
+        "lactose-free"
+      ],
+      "check": [
+        "У складі є вершкове масло — чи справді десерт безлактозний?"
+      ]
+    },
+    {
+      "id": "trifle-red-velvet",
+      "category": "cups",
+      "name": "Трайфл червоний оксамит",
+      "price": 840,
+      "weight": "130–140 г/шт",
+      "description": "Ніжні шари яскравого червоного бісквіту оксамит, поєднані легким, гармонійним за смаком крем-чизом.",
+      "contains": "Борошно пшеничне, яйця, кефір, масло вершкове, вершковий сир",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 8.3,
+        "fat": 32.2,
+        "carbs": 44.6,
+        "kcal": 494
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "trifle-red-velvet",
+        "cut": "trifle-red-velvet-cut"
+      },
+      "tags": [
+        "gift"
+      ],
+      "variants": [
+        {
+          "id": "set4",
+          "label": "Набір 4 шт",
+          "price": 840
+        },
+        {
+          "id": "set6",
+          "label": "Набір 6 шт",
+          "price": 1260
+        }
+      ],
+      "variantTitle": "Набір",
+      "unitPrice": 210,
+      "check": [
+        "Незрозуміло, 210 грн — це ціна за 1 шт чи за набір. Набори порахували як 210 × 4 і 210 × 6"
+      ]
+    },
+    {
+      "id": "trifle-honey",
+      "category": "cups",
+      "name": "Трайфл медівник",
+      "price": 840,
+      "weight": "130–140 г/шт",
+      "description": "Солодкість медової крихти в поєднанні з ніжним сметанковим кремом.",
+      "contains": "Борошно пшеничне, мед, яйця, масло вершкове, сметана",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 4.1,
+        "fat": 14.1,
+        "carbs": 26.6,
+        "kcal": 245
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "trifle-honey",
+        "cut": "trifle-honey-cut"
+      },
+      "tags": [
+        "gift"
+      ],
+      "variants": [
+        {
+          "id": "set4",
+          "label": "Набір 4 шт",
+          "price": 840
+        },
+        {
+          "id": "set6",
+          "label": "Набір 6 шт",
+          "price": 1260
+        }
+      ],
+      "variantTitle": "Набір",
+      "unitPrice": 210,
+      "check": [
+        "Незрозуміло, 210 грн — це ціна за 1 шт чи за набір. Набори порахували як 210 × 4 і 210 × 6"
+      ]
+    },
+    {
+      "id": "trifle-chocolate-caramel",
+      "category": "cups",
+      "name": "Трайфл шоколад-карамель",
+      "price": 840,
+      "weight": "130–140 г/шт",
+      "description": "Крихта ніжного шоколадного бісквіту, об’єднана шарами карамелі та крему на основі вершкового сиру.",
+      "contains": "Борошно пшеничне, яйця, вершкове масло, вершки, вершковий сир",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 5.3,
+        "fat": 6.1,
+        "carbs": 51.4,
+        "kcal": 767
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "trifle-chocolate-caramel",
+        "cut": "trifle-chocolate-caramel-cut"
+      },
+      "tags": [
+        "gift"
+      ],
+      "variants": [
+        {
+          "id": "set4",
+          "label": "Набір 4 шт",
+          "price": 840
+        },
+        {
+          "id": "set6",
+          "label": "Набір 6 шт",
+          "price": 1260
+        }
+      ],
+      "variantTitle": "Набір",
+      "unitPrice": 210,
+      "check": [
+        "Незрозуміло, 210 грн — це ціна за 1 шт чи за набір. Набори порахували як 210 × 4 і 210 × 6",
+        "КБЖВ не сходиться: жири 6,1 г, але 767 ккал"
+      ]
+    },
+    {
+      "id": "trifle-berry",
+      "category": "cups",
+      "name": "Трайфл ягідний",
+      "price": 840,
+      "weight": "130–140 г/шт",
+      "description": "Ніжні шари бісквіту в поєднанні з в міру солодким кремом на основі вершкового сиру і ягідного кюлі.",
+      "contains": "Борошно пшеничне, яйця, молоко, масло вершкове, вершковий сир",
+      "allergens": [
+        "eggs",
+        "gluten",
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 9.7,
+        "fat": 24.6,
+        "carbs": 32.2,
+        "kcal": 537
+      },
+      "shelfLife": "72 год",
+      "images": {
+        "main": "trifle-berry",
+        "cut": "trifle-berry-cut"
+      },
+      "tags": [
+        "gift"
+      ],
+      "variants": [
+        {
+          "id": "set4",
+          "label": "Набір 4 шт",
+          "price": 840
+        },
+        {
+          "id": "set6",
+          "label": "Набір 6 шт",
+          "price": 1260
+        }
+      ],
+      "variantTitle": "Набір",
+      "unitPrice": 210,
+      "check": [
+        "Незрозуміло, 210 грн — це ціна за 1 шт чи за набір. Набори порахували як 210 × 4 і 210 × 6",
+        "КБЖВ не сходиться: з білків, жирів і вуглеводів виходить ~390 ккал, а вказано 537"
+      ]
+    },
+    {
+      "id": "mini-pain-suisse",
+      "category": "bakery",
+      "name": "Міні пан сюїс",
+      "price": null,
+      "weight": "35–40 г",
+      "description": "Хрустка випічка з листкового тіста з запеченим ванільним заварним кремом та шматочками темного термостабільного шоколаду.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 8.035,
+        "fat": 27.43,
+        "carbs": 50.88,
+        "kcal": 482.71
+      },
+      "shelfLife": "48 год при +2…+6 °C",
+      "images": {
+        "main": "mini-pain-suisse",
+        "cut": "mini-pain-suisse-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів",
+        "Решта асортименту випічки («увесь асортимент» з меню на завтра) невідома"
+      ]
+    },
+    {
+      "id": "caramel-jar",
+      "category": "caramel",
+      "name": "Карамель у банці",
+      "price": 500,
+      "weight": "470 г",
+      "description": "Густа, тягуча та неймовірно смачна — класична або з додаванням морської солі для ідеального балансу смаку.",
+      "contains": "Вершки, вершкове масло",
+      "allergens": [
+        "milk"
+      ],
+      "kbzhv": {
+        "protein": 0.97,
+        "fat": 40.45,
+        "carbs": 49.07,
+        "kcal": 557.73
+      },
+      "shelfLife": "14 діб",
+      "images": {
+        "main": "caramel-jar",
+        "cut": "caramel-jar-cut"
+      },
+      "tags": [
+        "gift"
+      ],
+      "variants": [
+        {
+          "id": "classic",
+          "label": "Класична (золота кришка)",
+          "price": 500
+        },
+        {
+          "id": "salted",
+          "label": "Солона (чорна кришка)",
+          "price": 500
+        }
+      ],
+      "variantTitle": "Смак"
+    }
+  ],
+  "macarons": {
+    "note": "КБЖВ п'яти класичних смаків (лайм-кокос, мак-малина, лимонний щербет, шоколад-маракуйя, вишня-боби тонка) у 2–2,5 раза вищі за решту — УТОЧНИТИ, чи всі на 100 г",
+    "shelfLife": "4 доби",
+    "classic": [
+      {
+        "id": "classic-kinder",
+        "group": "classic",
+        "name": "Кіндер",
+        "image": "mac-classic-kinder",
+        "contains": "Борошно мигдалеве, вершки, шоколад молочний, шоколад білий, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 4.1,
+          "fat": 9.0,
+          "carbs": 17.3,
+          "kcal": 164.1
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-lime-coconut",
+        "group": "classic",
+        "name": "Лайм-кокос",
+        "image": "mac-classic-lime-coconut",
+        "contains": "Яєчний білок, борошно мигдалеве, білий шоколад, вершки, яйця, масло вершкове",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 7.07,
+          "fat": 29.02,
+          "carbs": 61.67,
+          "kcal": 502.86
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-plombir-blueberry",
+        "group": "classic",
+        "name": "Пломбір-лохина",
+        "image": "mac-classic-plombir-blueberry",
+        "contains": "Борошно мигдалеве, шоколад білий, вершки, вершковий сир, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.2,
+          "fat": 10.3,
+          "carbs": 22.2,
+          "kcal": 191.1
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-watermelon",
+        "group": "classic",
+        "name": "Кавун",
+        "image": "mac-classic-watermelon",
+        "contains": "Борошно мигдалеве, вершки, шоколад білий, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.13,
+          "fat": 9.7,
+          "carbs": 19.4,
+          "kcal": 174.2
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-mcflurry",
+        "group": "classic",
+        "name": "Макфлурі",
+        "image": "mac-classic-mcflurry",
+        "contains": "Борошно мигдалеве, шоколад білий, вершки, яєчний білок, шоколад темний, пломбір натуральний",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.3,
+          "fat": 10.8,
+          "carbs": 21.4,
+          "kcal": 193.6
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-pear-dorblu",
+        "group": "classic",
+        "name": "Груша-дорблю",
+        "image": "mac-classic-pear-dorblu",
+        "contains": "Борошно мигдалеве, шоколад білий, вершки, сир дорблю, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.5,
+          "fat": 10.6,
+          "carbs": 21.4,
+          "kcal": 191.6
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-hazelnut-cherry",
+        "group": "classic",
+        "name": "Фундук-вишня",
+        "image": "mac-classic-hazelnut-cherry",
+        "contains": "Борошно мигдалеве, вершки, шоколад темний, яєчний білок, праліне з фундука",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.7,
+          "fat": 11.5,
+          "carbs": 19.5,
+          "kcal": 194.0
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-lavender-bilberry",
+        "group": "classic",
+        "name": "Лаванда-чорниця",
+        "image": "mac-classic-lavender-bilberry",
+        "contains": "Борошно мигдалеве, вершки, шоколад білий, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.2,
+          "fat": 10.15,
+          "carbs": 20.2,
+          "kcal": 181.8
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-lemon-sorbet",
+        "group": "classic",
+        "name": "Лимонний щербет",
+        "image": "mac-classic-lemon-sorbet",
+        "contains": "Яєчний білок, борошно мигдалеве, білий шоколад, вершки",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 8.78,
+          "fat": 24.39,
+          "carbs": 45.75,
+          "kcal": 433.39
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-currant-cheesecake",
+        "group": "classic",
+        "name": "Смородиновий чізкейк",
+        "image": "mac-classic-currant-cheesecake",
+        "contains": "Борошно мигдалеве, шоколад білий, вершки, вершковий сир, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.1,
+          "fat": 9.1,
+          "carbs": 22.0,
+          "kcal": 180.3
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-pistachio",
+        "group": "classic",
+        "name": "Фісташка",
+        "image": "mac-classic-pistachio",
+        "contains": "Борошно мигдалеве, шоколад білий, вершки, яєчний білок, паста фісташки",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.3,
+          "fat": 11.2,
+          "carbs": 20.3,
+          "kcal": 193.0
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-poppy-raspberry",
+        "group": "classic",
+        "name": "Мак-малина",
+        "image": "mac-classic-poppy-raspberry",
+        "contains": "Яєчний білок, борошно мигдалеве, білий шоколад, вершки, вершковий сир",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.14,
+          "fat": 23.24,
+          "carbs": 61.7,
+          "kcal": 488.77
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-lemon-cheesecake",
+        "group": "classic",
+        "name": "Лимонний чізкейк",
+        "image": "mac-classic-lemon-cheesecake",
+        "contains": "Борошно мигдалеве, шоколад білий, вершки, яйця, масло вершкове, вершковий сир, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.5,
+          "fat": 11.8,
+          "carbs": 21.2,
+          "kcal": 201.8
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-mango-passionfruit",
+        "group": "classic",
+        "name": "Манго-маракуйя",
+        "image": "mac-classic-mango-passionfruit",
+        "contains": "Шоколад білий, вершковий сир, яйця, борошно пшеничне в/г, вершки, масло вершкове",
+        "allergens": [
+          "eggs",
+          "gluten",
+          "milk"
+        ],
+        "kbzhv": {
+          "protein": 4.5,
+          "fat": 14.6,
+          "carbs": 21.7,
+          "kcal": 233.3
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-cheesecake-nutella",
+        "group": "classic",
+        "name": "Чізкейк-нутелла",
+        "image": "mac-classic-cheesecake-nutella",
+        "contains": "Борошно мигдалеве, вершки, шоколад молочний, горіхова паста, вершковий сир, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.6,
+          "fat": 12.2,
+          "carbs": 22.0,
+          "kcal": 209.9
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-melon-camembert",
+        "group": "classic",
+        "name": "Диня-камамбер",
+        "image": "mac-classic-melon-camembert",
+        "contains": "Шоколад білий, борошно мигдалеве, вершки, камамбер, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.5,
+          "fat": 11.2,
+          "carbs": 20.7,
+          "kcal": 196.2
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-coconut-strawberry",
+        "group": "classic",
+        "name": "Кокос-полуниця",
+        "image": "mac-classic-coconut-strawberry",
+        "contains": "Борошно мигдалеве, вершки, шоколад білий, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 4.3,
+          "fat": 15.6,
+          "carbs": 21.8,
+          "kcal": 242.3
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-bounty",
+        "group": "classic",
+        "name": "Баунті",
+        "image": "mac-classic-bounty",
+        "contains": "Борошно мигдалеве, вершки, шоколад молочний, вершковий сир, шоколад білий",
+        "allergens": [
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.5,
+          "fat": 11.4,
+          "carbs": 19.4,
+          "kcal": 191.5
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-ferrero",
+        "group": "classic",
+        "name": "Ферреро",
+        "image": "mac-classic-ferrero",
+        "contains": "Борошно мигдалеве, вершки, шоколад молочний, праліне з фундука, яєчний білок, фундук",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.9,
+          "fat": 12.2,
+          "carbs": 19.4,
+          "kcal": 200.27
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-chocolate-passionfruit",
+        "group": "classic",
+        "name": "Шоколад-маракуйя",
+        "image": "mac-classic-chocolate-passionfruit",
+        "contains": "Яєчний білок, борошно мигдалеве, молочний шоколад, вершки, вершковий сир",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.74,
+          "fat": 25.73,
+          "carbs": 45.59,
+          "kcal": 447.09
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-salted-caramel",
+        "group": "classic",
+        "name": "Солона карамель",
+        "image": "mac-classic-salted-caramel",
+        "contains": "Борошно мигдалеве, вершки, шоколад молочний, вершковий сир, масло вершкове, яєчний білок",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 3.5,
+          "fat": 12.1,
+          "carbs": 23.8,
+          "kcal": 213.8
+        },
+        "weight": "50 г"
+      },
+      {
+        "id": "classic-cherry-tonka",
+        "group": "classic",
+        "name": "Вишня-боби тонка",
+        "image": "mac-classic-cherry-tonka",
+        "contains": "Яєчний білок, борошно мигдалеве, молочний шоколад, вершки",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.72,
+          "fat": 26.15,
+          "carbs": 44.88,
+          "kcal": 449.05
+        },
+        "weight": "50 г"
+      }
+    ],
+    "premium": [
+      {
+        "id": "premium-pear-dorblu",
+        "group": "p100",
+        "name": "Груша-дорблю",
+        "image": "mac-premium-pear-dorblu",
+        "contains": "Яєчний білок, борошно мигдалеве, білий шоколад, вершки, сир дорблю",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.32,
+          "fat": 25.07,
+          "carbs": 43.87,
+          "kcal": 434.15
+        },
+        "weight": "40–55 г"
+      },
+      {
+        "id": "premium-caramel-popcorn",
+        "group": "p100",
+        "name": "Карамельний попкорн",
+        "image": "mac-premium-caramel-popcorn",
+        "contains": "Яєчний білок, борошно мигдалеве, вершки, білий шоколад, вершкове масло",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 8.29,
+          "fat": 26.67,
+          "carbs": 51.23,
+          "kcal": 473.32
+        },
+        "weight": "40–55 г"
+      },
+      {
+        "id": "premium-latte-halva",
+        "group": "p100",
+        "name": "Лате халва",
+        "image": "mac-premium-latte-halva",
+        "contains": "Яєчний білок, борошно мигдалеве, молочний шоколад, вершки",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.54,
+          "fat": 26.31,
+          "carbs": 42.19,
+          "kcal": 439.32
+        },
+        "weight": "40–45 г"
+      },
+      {
+        "id": "premium-twix",
+        "group": "p100",
+        "name": "Твікс",
+        "image": "mac-premium-twix",
+        "contains": "Яєчний білок, борошно мигдалеве, молочний шоколад, вершки, вершкове масло, борошно пшеничне, яйця",
+        "allergens": [
+          "eggs",
+          "gluten",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.84,
+          "fat": 24.17,
+          "carbs": 46.66,
+          "kcal": 437.02
+        },
+        "weight": "40–45 г"
+      },
+      {
+        "id": "premium-lemon-pie",
+        "group": "p100",
+        "name": "Лимонний пиріг",
+        "image": "mac-premium-lemon-pie",
+        "contains": "Яєчний білок, борошно мигдалеве, вершки, білий шоколад, вершковий сир, яйця, борошно пшеничне, вершкове масло",
+        "allergens": [
+          "eggs",
+          "gluten",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 10.42,
+          "fat": 28.18,
+          "carbs": 51.28,
+          "kcal": 497.74
+        },
+        "weight": "40–55 г"
+      },
+      {
+        "id": "premium-oreo",
+        "group": "p100",
+        "name": "Орео",
+        "image": "mac-premium-oreo",
+        "contains": "Яєчний білок, борошно мигдалеве, вершки, білий шоколад",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 8.45,
+          "fat": 19.69,
+          "carbs": 36.07,
+          "kcal": 350.76
+        },
+        "weight": "40–45 г"
+      },
+      {
+        "id": "premium-chocolate-currant",
+        "group": "p100",
+        "name": "Шоколад-смородина",
+        "image": "mac-premium-chocolate-currant",
+        "contains": "Яєчний білок, борошно мигдалеве, молочний шоколад, вершки, вершковий сир",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.0,
+          "fat": 24.43,
+          "carbs": 42.69,
+          "kcal": 422.89
+        },
+        "weight": "40–55 г"
+      },
+      {
+        "id": "premium-matcha-coconut-strawberry",
+        "group": "p120",
+        "name": "Матча-кокос-полуниця",
+        "image": "mac-premium-matcha-coconut-strawberry",
+        "contains": "Яєчний білок, борошно мигдалеве, білий шоколад, вершки",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.05,
+          "fat": 28.09,
+          "carbs": 37.86,
+          "kcal": 436.46
+        },
+        "weight": "50–55 г"
+      },
+      {
+        "id": "premium-bubble-gum",
+        "group": "p120",
+        "name": "Бабл-гам",
+        "image": "mac-premium-bubble-gum",
+        "contains": "Яєчний білок, борошно мигдалеве, білий шоколад, вершки",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 8.61,
+          "fat": 29.03,
+          "carbs": 46.83,
+          "kcal": 479.47
+        },
+        "weight": "50–55 г"
+      },
+      {
+        "id": "premium-bueno",
+        "group": "p120",
+        "name": "Буено",
+        "image": "mac-premium-bueno",
+        "contains": "Яєчний білок, борошно мигдалеве, вершки, білий шоколад, молочний шоколад, сухе молоко, праліне молока",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.41,
+          "fat": 31.38,
+          "carbs": 47.43,
+          "kcal": 507.01
+        },
+        "weight": "50–55 г"
+      },
+      {
+        "id": "premium-pistachio",
+        "group": "p120",
+        "name": "Фісташка",
+        "image": "mac-premium-pistachio",
+        "contains": "Яєчний білок, борошно мигдалеве, білий шоколад, вершки, паста фісташки, фісташка",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 8.63,
+          "fat": 28.91,
+          "carbs": 42.32,
+          "kcal": 461.45
+        },
+        "weight": "50–55 г"
+      },
+      {
+        "id": "premium-dubai-chocolate",
+        "group": "p120",
+        "name": "Дубайський шоколад",
+        "image": "mac-premium-dubai-chocolate",
+        "contains": "Яєчний білок, борошно мигдалеве, молочний шоколад, вершки, білий шоколад, вершкове масло, фісташкова паста, фісташка",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 10.16,
+          "fat": 31.63,
+          "carbs": 45.54,
+          "kcal": 503.75
+        },
+        "weight": "50–55 г"
+      },
+      {
+        "id": "premium-raffaello",
+        "group": "p120",
+        "name": "Рафаелло",
+        "image": "mac-premium-raffaello",
+        "contains": "Яєчний білок, борошно мигдалеве, білий шоколад, вершки, маскарпоне, іриска, мигдалева паста",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 9.25,
+          "fat": 32.45,
+          "carbs": 44.81,
+          "kcal": 505.79
+        },
+        "weight": "50–55 г"
+      },
+      {
+        "id": "premium-gorgonzola-walnut",
+        "group": "p120",
+        "name": "Горгонзола-волоський горіх",
+        "image": "mac-premium-gorgonzola-walnut",
+        "contains": "Яєчний білок, борошно мигдалеве, білий шоколад, вершки, сир горгонзола, вершкове масло, волоський горіх",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 8.19,
+          "fat": 31.46,
+          "carbs": 47.68,
+          "kcal": 501.47
+        },
+        "weight": "50–55 г"
+      },
+      {
+        "id": "premium-cappuccino-camembert",
+        "group": "premium",
+        "name": "Капучино камамбер",
+        "image": null,
+        "contains": "Шоколад білий, вершки, борошно мигдалеве, яєчний білок, камамбер, фундучне праліне, шоколад молочний",
+        "allergens": [
+          "eggs",
+          "milk",
+          "nuts"
+        ],
+        "kbzhv": {
+          "protein": 4.22,
+          "fat": 15.95,
+          "carbs": 22.35,
+          "kcal": 250.81
+        },
+        "weight": null,
+        "unavailable": true,
+        "check": "Є лише в таблиці складу: немає фото і невідомо, до якої цінової групи належить"
+      }
+    ]
+  }
+}

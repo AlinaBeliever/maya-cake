@@ -54,9 +54,9 @@ window.MC_CONFIG = {
   B2B: {
     minQty: 10,
     items: [
-      { id: 'mac-classic', label: 'Макарон класичні (22 смаки)', opt: 60, rrp: 80, weight: '50 г', shelfLife: 'уточнюйте' },
-      { id: 'mac-p100', label: 'Макарон преміум (7 смаків)', opt: 100, rrp: 110, weight: '40–55 г', shelfLife: 'уточнюйте' },
-      { id: 'mac-p120', label: 'Макарон преміум+ (7 смаків)', opt: 120, rrp: 125, weight: '50–55 г', shelfLife: 'уточнюйте' },
+      { id: 'mac-classic', label: 'Макарон класичні (22 смаки)', opt: 60, rrp: 80, weight: '50 г', shelfLife: '4 доби' },
+      { id: 'mac-p100', label: 'Макарон преміум (7 смаків)', opt: 100, rrp: 110, weight: '40–55 г', shelfLife: '4 доби' },
+      { id: 'mac-p120', label: 'Макарон преміум+ (7 смаків)', opt: 120, rrp: 125, weight: '50–55 г', shelfLife: '4 доби' },
       { id: 'peach-cream', label: 'Тістечко персик', opt: 70, rrp: 95, weight: '65–70 г', shelfLife: '72 год', minQty: 3, minNote: 'від 3 шт одного виду' }
     ]
   },

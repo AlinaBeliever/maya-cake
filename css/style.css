@@ -1010,3 +1010,12 @@ html:not(.motion) .hero__cut::before, html:not(.motion) .hero__cut::after { disp
 }
 @media (min-width: 600px) { .team { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
 .team .ph-circle { max-width: 220px; margin: 0 auto; }
+
+/* Фото власників і сертифікат */
+.faces__photo { max-width: 480px; aspect-ratio: 4 / 5; border-radius: 999px 999px var(--radius-lg) var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); background: var(--white); }
+.faces__photo img { width: 100%; height: 100%; object-fit: cover; }
+.ph-circle--img { overflow: hidden; background: var(--powder); }
+.ph-circle--img img { width: 100%; height: 100%; object-fit: cover; }
+.cert { margin: 0; text-align: center; }
+.cert img { width: 100%; height: auto; border-radius: var(--radius); }
+.cert figcaption { margin-top: 12px; font-size: 14px; }

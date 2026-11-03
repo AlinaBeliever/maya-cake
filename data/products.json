@@ -57,7 +57,7 @@
         "nuts"
       ],
       "kbzhv": null,
-      "shelfLife": null,
+      "shelfLife": "4 доби",
       "images": {
         "main": null,
         "cut": null
@@ -69,8 +69,7 @@
       "priceFrom": 275,
       "image": "mac-classic-kinder",
       "check": [
-        "Роздрібна ціна 55 грн/шт може бути застарілою",
-        "Термін придатності макарон не вказаний"
+        "Роздрібна ціна 55 грн/шт може бути застарілою"
       ]
     },
     {
@@ -87,7 +86,7 @@
         "nuts"
       ],
       "kbzhv": null,
-      "shelfLife": null,
+      "shelfLife": "4 доби",
       "images": {
         "main": null,
         "cut": null
@@ -99,8 +98,7 @@
       "priceFrom": 400,
       "image": "mac-premium-dubai-chocolate",
       "check": [
-        "Роздрібні ціни 100 і 120 грн/шт можуть бути застарілими",
-        "Термін придатності макарон не вказаний"
+        "Роздрібні ціни 100 і 120 грн/шт можуть бути застарілими"
       ]
     },
     {
@@ -1551,6 +1549,428 @@
       ]
     },
     {
+      "id": "mini-pain-suisse",
+      "category": "bakery",
+      "name": "Міні пан сюїс",
+      "price": null,
+      "weight": "35–40 г",
+      "description": "Хрустка випічка з листкового тіста з запеченим ванільним заварним кремом та шматочками темного термостабільного шоколаду.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 8.035,
+        "fat": 27.43,
+        "carbs": 50.88,
+        "kcal": 482.71
+      },
+      "shelfLife": "48 год у вітрині під кришкою при +2…+6 °C",
+      "images": {
+        "main": "mini-pain-suisse",
+        "cut": "mini-pain-suisse-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів"
+      ]
+    },
+    {
+      "id": "twist-raspberry",
+      "category": "bakery",
+      "name": "Твіст малиновий",
+      "price": null,
+      "weight": "65 г",
+      "description": "Листкове тісто у витонченій формі, всередині якої ароматна та соковита малинова начинка.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 6.01,
+        "fat": 20.14,
+        "carbs": 50.83,
+        "kcal": 406.67
+      },
+      "shelfLife": "48 год у вітрині під кришкою при +2…+6 °C",
+      "images": {
+        "main": "twist-raspberry",
+        "cut": "twist-raspberry-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "twist-mocaccino",
+      "category": "bakery",
+      "name": "Твіст мокачино",
+      "price": null,
+      "weight": "60 г",
+      "description": "Листкове тісто у витонченій формі, всередині якої прихований ніжний шоколадно-кавовий заварний крем.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 7.65,
+        "fat": 25.46,
+        "carbs": 49.77,
+        "kcal": 458.45
+      },
+      "shelfLife": "48 год у вітрині під кришкою при +2…+6 °C",
+      "images": {
+        "main": "twist-mocaccino",
+        "cut": "twist-mocaccino-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "blueberry-puff",
+      "category": "bakery",
+      "name": "Blueberry puff",
+      "price": null,
+      "weight": "65 ± 5 г",
+      "description": "Листкова випічка у формі квадрата з начинкою з ніжного ганашу на білому шоколаді та ягідного конфі з лохини.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 6.41,
+        "fat": 25.03,
+        "carbs": 48.6,
+        "kcal": 444.38
+      },
+      "shelfLife": "48 год у вітрині під кришкою при +2…+6 °C",
+      "images": {
+        "main": "blueberry-puff",
+        "cut": "blueberry-puff-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "brioche-raspberry",
+      "category": "bakery",
+      "name": "Бріош з малиною",
+      "price": null,
+      "weight": "95 ± 5 г",
+      "description": "Пухка та ніжна бріош з хрустким штрейзелем, всередині якої запечений заварний крем, який зверху доповнює малина.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 6.19,
+        "fat": 11.6,
+        "carbs": 37.89,
+        "kcal": 281.16
+      },
+      "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
+      "images": {
+        "main": "brioche-raspberry",
+        "cut": "brioche-raspberry-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ],
+      "note": "Найсмачніше теплим — розігрійте в мікрохвильовій печі до 30 секунд."
+    },
+    {
+      "id": "brioche-blueberry",
+      "category": "bakery",
+      "name": "Бріош з лохиною",
+      "price": null,
+      "weight": "100 ± 5 г",
+      "description": "Пухка та ніжна бріош з хрустким штрейзелем, всередині запечений заварний крем, який зверху доповнює соковита начинка з лохини.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 5.83,
+        "fat": 11.05,
+        "carbs": 35.14,
+        "kcal": 262.09
+      },
+      "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
+      "images": {
+        "main": "brioche-blueberry",
+        "cut": "brioche-blueberry-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ],
+      "note": "Найсмачніше теплим — розігрійте в мікрохвильовій печі до 30 секунд."
+    },
+    {
+      "id": "donut-classic",
+      "category": "bakery",
+      "name": "Пончик класичний",
+      "price": null,
+      "weight": "40–45 г",
+      "description": "Повітряний, ніжний пончик із золотистою скоринкою, вкритий тонким шаром цукрової пудри.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 6.24,
+        "fat": 7.37,
+        "carbs": 43.38,
+        "kcal": 256.44
+      },
+      "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
+      "images": {
+        "main": "donut-classic",
+        "cut": "donut-classic-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "donut-three-milks",
+      "category": "bakery",
+      "name": "Пончик три молока",
+      "price": null,
+      "weight": "70–75 г",
+      "description": "Пухке дріжджове тісто з ніжним кремом на основі вершкового сиру та вареного згущеного молока.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 6.3,
+        "fat": 13.4,
+        "carbs": 46.77,
+        "kcal": 319.29
+      },
+      "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
+      "images": {
+        "main": "donut-three-milks",
+        "cut": "donut-three-milks-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "donut-chocolate",
+      "category": "bakery",
+      "name": "Пончик шоколадний",
+      "price": null,
+      "weight": "70–75 г",
+      "description": "Повітряний пончик із ніжною шоколадною намелакою всередині, вкритий тонким шаром какао.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 6.03,
+        "fat": 14.73,
+        "carbs": 35.23,
+        "kcal": 292.19
+      },
+      "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
+      "images": {
+        "main": "donut-chocolate",
+        "cut": "donut-chocolate-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "donut-currant",
+      "category": "bakery",
+      "name": "Пончик смородиновий",
+      "price": null,
+      "weight": "75–80 г",
+      "description": "Ніжне дріжджове тісто з ванільним заварним кремом і соковитим конфі чорної смородини.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 4.61,
+        "fat": 7.95,
+        "carbs": 41.23,
+        "kcal": 248.7
+      },
+      "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
+      "images": {
+        "main": "donut-currant",
+        "cut": "donut-currant-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "donut-raspberry",
+      "category": "bakery",
+      "name": "Пончик малиновий",
+      "price": null,
+      "weight": "95 ± 5 г",
+      "description": "Повітряне дріжджове тісто в поєднанні з соковитою малиновою начинкою та вершковим крем-чизом.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 5.28,
+        "fat": 8.43,
+        "carbs": 32.43,
+        "kcal": 225.16
+      },
+      "shelfLife": "36 год у вітрині під кришкою при 6 ± 2 °C",
+      "images": {
+        "main": "donut-raspberry",
+        "cut": "donut-raspberry-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "cookie-chocolate-chunk",
+      "category": "bakery",
+      "name": "Печиво з шоколадом",
+      "price": null,
+      "weight": "50–55 г",
+      "description": "Печиво з хрусткими краями й мʼякою серединкою, щедро наповнене шматочками молочного шоколаду.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 7.05,
+        "fat": 26.7,
+        "carbs": 62.57,
+        "kcal": 511.03
+      },
+      "shelfLife": "3–5 діб у герметично закритій банці або під скляною кришкою при температурі не вище 20 °C",
+      "images": {
+        "main": "cookie-chocolate-chunk",
+        "cut": "cookie-chocolate-chunk-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "cookie-chocolate",
+      "category": "bakery",
+      "name": "Шоколадне печиво",
+      "price": null,
+      "weight": "50 г",
+      "description": "Мʼяке та насичене за смаком шоколадне печиво з вологою серединкою, яка тане в роті.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 7.19,
+        "fat": 23.08,
+        "carbs": 48.15,
+        "kcal": 429.69
+      },
+      "shelfLife": "3–5 діб у герметично закритій банці або під скляною кришкою при температурі не вище 20 °C",
+      "images": {
+        "main": "cookie-chocolate",
+        "cut": "cookie-chocolate-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "cookie-oat",
+      "category": "bakery",
+      "name": "Класичне вівсяне печиво",
+      "price": null,
+      "weight": "45–50 г",
+      "description": "Печиво на основі вівсяних пластівців з мʼякою серединкою, злегка хрусткою скоринкою і вираженим вершковим смаком.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 7.58,
+        "fat": 19.4,
+        "carbs": 66.29,
+        "kcal": 463.9
+      },
+      "shelfLife": "3–5 діб у герметично закритій банці або під скляною кришкою при температурі не вище 20 °C",
+      "images": {
+        "main": "cookie-oat",
+        "cut": "cookie-oat-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
+      "id": "cookie-oat-almond",
+      "category": "bakery",
+      "name": "Вівсяно-мигдалеве печиво",
+      "price": null,
+      "weight": "50 г",
+      "description": "Хрустке вівсяне печиво з додаванням шматочків смаженого мигдалю та солодких родзинок.",
+      "contains": null,
+      "allergens": [],
+      "kbzhv": {
+        "protein": 8.97,
+        "fat": 23.94,
+        "carbs": 65.12,
+        "kcal": 504.01
+      },
+      "shelfLife": "3–5 діб у герметично закритій банці або під скляною кришкою при температурі не вище 20 °C",
+      "images": {
+        "main": "cookie-oat-almond",
+        "cut": "cookie-oat-almond-cut"
+      },
+      "tags": [
+        "new"
+      ],
+      "check": [
+        "Немає ціни",
+        "Немає списку алергенів (є лише опис і КБЖВ)"
+      ]
+    },
+    {
       "id": "layers-napoleon",
       "category": "cups",
       "name": "Cake layers наполеон",
@@ -1940,35 +2360,6 @@
       ]
     },
     {
-      "id": "mini-pain-suisse",
-      "category": "bakery",
-      "name": "Міні пан сюїс",
-      "price": null,
-      "weight": "35–40 г",
-      "description": "Хрустка випічка з листкового тіста з запеченим ванільним заварним кремом та шматочками темного термостабільного шоколаду.",
-      "contains": null,
-      "allergens": [],
-      "kbzhv": {
-        "protein": 8.035,
-        "fat": 27.43,
-        "carbs": 50.88,
-        "kcal": 482.71
-      },
-      "shelfLife": "48 год при +2…+6 °C",
-      "images": {
-        "main": "mini-pain-suisse",
-        "cut": "mini-pain-suisse-cut"
-      },
-      "tags": [
-        "new"
-      ],
-      "check": [
-        "Немає ціни",
-        "Немає списку алергенів",
-        "Решта асортименту випічки («увесь асортимент» з меню на завтра) невідома"
-      ]
-    },
-    {
       "id": "caramel-jar",
       "category": "caramel",
       "name": "Карамель у банці",
@@ -2010,7 +2401,7 @@
   ],
   "macarons": {
     "note": "КБЖВ п'яти класичних смаків (лайм-кокос, мак-малина, лимонний щербет, шоколад-маракуйя, вишня-боби тонка) у 2–2,5 раза вищі за решту — УТОЧНИТИ, чи всі на 100 г",
-    "shelfLife": null,
+    "shelfLife": "4 доби",
     "classic": [
       {
         "id": "classic-kinder",

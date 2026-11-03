@@ -46,13 +46,19 @@
       const f = document.createElement('iframe');
       f.width = width || 1280; f.height = height || 800;
       document.getElementById('frames').appendChild(f);
-      f.onload = async () => {
+      let done = false;
+      const finish = async () => {
+        if (done) return;
+        done = true;
         const w = f.contentWindow;
         w.addEventListener('error', (e) => errors.push(url + ': ' + e.message));
-        try { await w.MC.ready; await w.MC.data(); } catch (e) { /* сторінка без даних */ }
+        try { await Promise.race([Promise.all([w.MC.ready, w.MC.data()]), sleep(4000)]); } catch (e) { /* сторінка без даних */ }
         await sleep(150);
         resolve(f);
       };
+      f.onload = finish;
+      // запасний варіант: якщо подія load затрималась (повільні фото) — продовжуємо через 6 с
+      setTimeout(() => { if (f.contentWindow && f.contentWindow.MC) finish(); }, 6000);
       f.src = '../' + url;
     });
   }
@@ -60,6 +66,9 @@
   const waitFor = async (fn, ms) => { for (let t = 0; t < (ms || 3000); t += 50) { if (fn()) return true; await sleep(50); } return false; };
 
   /* ---------- 1. Дедлайн 14:00 за Києвом ---------- */
+  // ?part=1 — дедлайн, каталог, кошик, оформлення; ?part=2 — лише ширини екрана. Без параметра — усе.
+  const PART = new URLSearchParams(location.search).get('part');
+  if (PART !== '2') {
   const D = MC.delivery;
   const iso = D.iso;
   const scen = [
@@ -284,10 +293,13 @@
   close(f);
   setNow(null);
 
+  }
+  if (PART !== '1') {
   /* ---------- 6. Ширини екрана: без горизонтального прокручування ---------- */
   localStorage.clear();
   const pages = ['index.html', 'catalog.html', 'product.html?id=cake-raspberry-mango', 'box.html', 'b2b.html', 'delivery.html', 'about.html', 'checkout.html', 'thanks.html'];
-  for (const w of [375, 414, 768, 1280, 1440]) {
+  const WS = (new URLSearchParams(location.search).get('w') || '375,414,768,1280,1440').split(',').map(Number);
+  for (const w of WS) {
     const bad = [];
     for (const p of pages) {
       const fr = await open(p, w, 800);
@@ -298,6 +310,7 @@
     check(`Ширина ${w} px: жодна сторінка не прокручується вбік`, !bad.length, bad.join(', ') || null);
   }
 
+  }
   check('Жодної помилки JavaScript на сторінках', !errors.length, errors.join(' | ') || null);
   localStorage.clear();
   document.getElementById('summary').innerHTML = failed

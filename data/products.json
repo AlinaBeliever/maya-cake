@@ -696,37 +696,43 @@
           "id": "chocolate-cherry",
           "label": "Шоколад-вишня",
           "price": 900,
-          "image": "bento-filling-chocolate-cherry"
+          "image": "bento-filling-chocolate-cherry",
+          "photo": "cake-chocolate-cherry"
         },
         {
           "id": "spartak",
           "label": "Спартак",
           "price": 900,
-          "image": "bento-filling-spartak"
+          "image": "bento-filling-spartak",
+          "photo": "spartak"
         },
         {
           "id": "strawberry-honey",
           "label": "Полуничний медівник",
           "price": 900,
-          "image": "bento-filling-strawberry-honey"
+          "image": "bento-filling-strawberry-honey",
+          "photo": "strawberry-honey-cake"
         },
         {
           "id": "red-velvet",
           "label": "Червоний оксамит",
           "price": 900,
-          "image": "bento-filling-red-velvet"
+          "image": "bento-filling-red-velvet",
+          "photo": "red-velvet"
         },
         {
           "id": "poppy-lemon",
           "label": "Мак-лимон-лохина",
           "price": 900,
-          "image": "bento-filling-poppy-lemon"
+          "image": "bento-filling-poppy-lemon",
+          "photo": "cake-poppy-lemon-blueberry"
         },
         {
           "id": "berry-plombir",
           "label": "Ягідний пломбір",
           "price": 900,
-          "image": "bento-filling-berry-plombir"
+          "image": "bento-filling-berry-plombir",
+          "photo": "berry-plombir"
         }
       ],
       "variantTitle": "Начинка",
@@ -1991,9 +1997,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-napoleon-card",
-        "extra": "layers-napoleon",
-        "cut": null
+        "main": "layers-napoleon",
+        "cut": "layers-napoleon-cut",
+        "hover": false
       },
       "tags": [
         "new"
@@ -2019,9 +2025,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-oreo-cheesecake-card",
-        "extra": "layers-oreo-cheesecake",
-        "cut": null
+        "main": "layers-oreo-cheesecake",
+        "cut": "layers-oreo-cheesecake-cut",
+        "hover": false
       },
       "tags": [
         "new"
@@ -2052,9 +2058,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-snickers-card",
-        "extra": "layers-snickers",
-        "cut": null
+        "main": "layers-snickers",
+        "cut": "layers-snickers-cut",
+        "hover": false
       },
       "tags": [
         "new"
@@ -2081,9 +2087,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-tiramisu-card",
-        "extra": "layers-tiramisu",
-        "cut": null
+        "main": "layers-tiramisu",
+        "cut": "layers-tiramisu-cut",
+        "hover": false
       },
       "tags": [
         "new"
@@ -2113,9 +2119,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-red-velvet-card",
-        "extra": "layers-red-velvet",
-        "cut": null
+        "main": "layers-red-velvet",
+        "cut": "layers-red-velvet-cut",
+        "hover": false
       },
       "tags": [
         "new"
@@ -2142,9 +2148,9 @@
       },
       "shelfLife": "72 год",
       "images": {
-        "main": "layers-chocolate-cherry-card",
-        "extra": "layers-chocolate-cherry",
-        "cut": null
+        "main": "layers-chocolate-cherry",
+        "cut": "layers-chocolate-cherry-cut",
+        "hover": false
       },
       "tags": [
         "new"
@@ -2172,9 +2178,9 @@
       },
       "shelfLife": "48 год",
       "images": {
-        "main": "layers-chia-card",
-        "extra": "layers-chia",
-        "cut": null
+        "main": "layers-chia",
+        "cut": "layers-chia-cut",
+        "hover": false
       },
       "tags": [
         "new",

@@ -12,7 +12,7 @@
     if (p.images.extra) slides.push({ src: MC.img(p.images.extra, 800), srcset: MC.srcset(p.images.extra), alt: p.name });
     if (p.images.cut) slides.push({ cut: true, src: `assets/img/${p.images.cut}.webp`, alt: `${p.name} — розріз` });
     // Начинка на вибір (бенто) — окремий кадр, що змінюється разом із вибором
-    if (variant && variant.image) slides.push({ cut: true, filling: true, src: `assets/img/${variant.image}.webp`, alt: `${p.name} — ${variant.label}` });
+    if (variant && variant.photo) slides.push({ filling: true, src: MC.img(variant.photo, 800), srcset: MC.srcset(variant.photo), alt: `${p.name} — ${variant.label}` });
     if (!slides.length) {
       return '<div class="gallery"><div class="gallery__track"><div class="gallery__slide"><span class="ph"><span>фото буде</span></span></div></div></div>';
     }
@@ -146,8 +146,12 @@
   // Обрали начинку — показуємо її розріз у галереї
   function showFilling(root, p, v) {
     const imgs = MC.qsa('img[data-filling]', root);
-    if (!v.image || !imgs.length) return;
-    imgs.forEach((im) => { im.src = `assets/img/${v.image}.webp`; im.alt = `${p.name} — ${v.label}`; });
+    if (!v.photo || !imgs.length) return;
+    imgs.forEach((im) => {
+      const thumb = !!im.closest('[data-go]');
+      im.src = MC.img(v.photo, thumb ? 400 : 800);
+      if (!thumb) { im.srcset = MC.srcset(v.photo); im.alt = `${p.name} — ${v.label}`; }
+    });
     const slide = imgs[0].closest('.gallery__slide');
     const btn = MC.qs(`[data-go="${slide.id.replace('slide-', '')}"]`, root);
     if (btn) btn.click();

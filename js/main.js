@@ -225,7 +225,7 @@
     opts = opts || {};
     const url = MC.productUrl(p);
     const main = MC.mainImage(p);
-    const cut = p.images && p.images.cut;
+    const cut = p.images && p.images.hover !== false && p.images.cut;
     let media;
     if (main) {
       media = `<img src="${MC.img(main, 400)}" srcset="${MC.srcset(main)}" sizes="(min-width: 1200px) 290px, (min-width: 768px) 31vw, 46vw" width="400" height="500" loading="${opts.eager ? 'eager' : 'lazy'}" decoding="async" alt="${MC.esc(p.name)}">` +

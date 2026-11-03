@@ -21,7 +21,8 @@
       const t = MC.delivery.daysText(z);
       (groups[t] = groups[t] || []).push(z.label);
     });
-    MC.qs('[data-b2b-days]').textContent = Object.keys(groups).map((t) => `${groups[t].join(', ')} — ${t}`).join('. ') + '.';
+    // кожна група днів — з нового рядка
+    MC.qs('[data-b2b-days]').innerHTML = Object.keys(groups).map((t) => `${MC.esc(groups[t].join(', '))} — ${t}.`).join('<br>');
 
     // Калькулятор
     const range = MC.qs('[data-range]');
@@ -80,7 +81,6 @@
         city: form.elements.city.value.trim(),
         contact_name: form.elements.contact_name.value.trim(),
         phone,
-        instagram: form.elements.instagram.value.trim(),
         weekly_qty: form.elements.weekly_qty.value.trim(),
         interest: MC.qsa('input[name="interest"]:checked', form).map((c) => c.value).join(', '),
         trial_date: dateInput.value,

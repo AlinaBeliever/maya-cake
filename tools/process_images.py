@@ -387,14 +387,6 @@ def circle_img(A, box, size=CUT_SIZE, inset=0.035):
     return out
 
 
-def circle_card(circle):
-    """Кадр 4:5 для картки: коло з розрізом по центру на білому (для фото, де самий десерт знято надто близько)."""
-    W, H = 640, 800   # коло 480 px займає 3/4 ширини — без розтягування
-    card = Image.new('RGB', (W, H), (255, 255, 255))
-    card.paste(circle, ((W - circle.size[0]) // 2, (H - circle.size[1]) // 2 - 16), circle)
-    return card
-
-
 def save_sizes(im, name):
     paths = []
     for w in WIDTHS:
@@ -602,8 +594,6 @@ def main():
         mains.append(save_sizes(photo, name)[0])
         if circ:
             cuts.append(save_one(circle_img(A, circ), f'{name}-cut'))
-            if name.startswith('layers-'):
-                mains.append(save_sizes(circle_card(circle_img(A, circ)), f'{name}-card')[0])
         print(f'  ✓ {name}')
     extra = []
     if not only:

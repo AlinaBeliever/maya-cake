@@ -507,75 +507,106 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 .hscroll::-webkit-scrollbar { display: none; }
 .hscroll > * { scroll-snap-align: start; flex: none; }
 
-/* --- Головна: hero — текст ліворуч, фото торта на праву половину --- */
+/* --- Головна: hero — велике «Maya», над ним один десерт, текст по центру --- */
 .hero {
-  display: flex; flex-direction: column;
-  margin-top: calc(var(--header-h) * -1);   /* фото заходить під прозору шапку */
+  --obj: min(clamp(220px, 30vw, 440px), 46svh);
+  position: relative; overflow: hidden;           /* «Maya» не дає горизонтального скролу */
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: max(640px, calc(100svh - var(--header-h) - 32px));
+  padding: 24px var(--gutter) 88px;
+  background: var(--cream); text-align: center;
 }
-.hero__figure { order: -1; margin: 0; display: flex; flex-direction: column; }
-.hero__media { position: relative; overflow: hidden; background: var(--white); aspect-ratio: 1; max-height: 56svh; width: 100%; }
-.hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.hero__caption { margin: 16px var(--gutter) 0; text-align: right; }
-.hero__caption a { display: inline-flex; align-items: baseline; gap: 12px; text-decoration: none; }
-.hero__caption em { font-family: var(--font-display); font-style: italic; font-size: 18px; color: var(--navy); }
-.hero__caption span { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.hero__caption a:hover em { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-.hero__text { padding: 20px var(--gutter) 44px; }
+.hero__stage { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.hero__object { position: relative; width: var(--obj); }
+.hero__word {
+  position: absolute; left: 50%; top: 50%; z-index: 0;
+  transform: translate(calc(-50% + var(--px, 0px)), calc(-50% + var(--py, 0px)));
+  font-family: var(--font-display); font-weight: 300; font-size: clamp(180px, 32vw, 520px);
+  line-height: .8; letter-spacing: -.03em; white-space: nowrap;
+  color: color-mix(in srgb, var(--powder) 55%, var(--cream));
+  user-select: none; -webkit-user-select: none; pointer-events: none;
+}
+@supports not (color: color-mix(in srgb, red, blue)) { .hero__word { color: #F0D9DB; } }
+.hero__para { position: relative; z-index: 1; will-change: transform; }
+.hero__float { position: relative; }
+.hero__img { display: block; width: 100%; height: auto; }
+.hero__ph {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--navy);
+}
+.hero__ph[hidden] { display: none; }
+.hero__ground {
+  width: 70%; height: 24px; margin: -14px auto 0;
+  background: radial-gradient(closest-side, rgba(31, 42, 68, .18), transparent 70%);
+  filter: blur(6px);
+}
+.hero__text { position: relative; z-index: 1; margin-top: 28px; max-width: 640px; }
 .hero__eyebrow {
-  display: flex; align-items: center; gap: 14px; margin: 0 0 18px;
+  display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 0 14px;
   font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .25em; color: var(--olive);
 }
-.hero__eyebrow::before { content: ''; width: 40px; height: 1px; background: currentColor; flex: none; }
+.hero__eyebrow::before, .hero__eyebrow::after { content: ''; width: 32px; height: 1px; background: currentColor; flex: none; }
 .hero__title {
-  margin: 0 0 28px; color: var(--navy);
-  font-family: var(--font-display); font-weight: 300; font-size: clamp(44px, 6vw, 84px); line-height: 1.05; letter-spacing: -.01em;
+  margin: 0 0 26px; color: var(--navy);
+  font-family: var(--font-display); font-weight: 300; font-size: clamp(32px, 4vw, 52px); line-height: 1.1;
 }
-.hero__title em { font-style: italic; font-weight: 300; }
-.hero__line { display: block; overflow: hidden; padding-bottom: .06em; }
-.hero__line > span { display: inline-block; }
-.hero__actions { display: flex; flex-direction: column; align-items: stretch; gap: 14px; }
+.hero__title em { font-style: italic; font-weight: 400; white-space: nowrap; }
+.hero__actions { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
 .btn-ed {
-  display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 16px 34px;
+  display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 16px 28px;
   border-radius: 2px; background: var(--navy); color: var(--white); text-decoration: none;
-  font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: .15em;
+  font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .15em;
   transition: background-color .25s var(--ease);
 }
 .btn-ed:hover { background: var(--navy-deep); color: var(--white); }
 .link-ed {
   align-self: center; padding: 10px 0; color: var(--navy); text-decoration: none;
-  font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: .15em;
+  font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .15em;
   background: linear-gradient(currentColor, currentColor) no-repeat left calc(100% - 6px) / 100% 1px;
   transition: background-size .45s var(--ease);
 }
 .link-ed:hover { background-size: 0 1px; background-position: right calc(100% - 6px); }
 .link-ed span { display: inline-block; transition: transform .3s var(--ease); }
 .link-ed:hover span { transform: translateX(4px); }
-@media (min-width: 900px) {
-  .hero {
-    display: grid; grid-template-columns: 1fr 1fr; align-items: center;
-    height: calc(100vh - 32px); height: calc(100svh - 32px); min-height: 620px;
+/* назва й ціна: на телефоні — під кнопками, на ширших — у правому нижньому куті */
+.hero__now, .hero__corner { font-size: 12px; color: var(--muted); }
+.hero__now { margin: 18px 0 0; }
+.hero__now a, .hero__corner a { color: inherit; text-decoration: none; }
+.hero__now em, .hero__corner em { font-family: var(--font-display); font-size: 16px; color: var(--navy); }
+.hero__now a:hover em, .hero__corner a:hover em { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.hero__corner { display: none; }
+@media (max-width: 767px) {
+  .hero { --obj: 62vw; min-height: 0; padding-top: 16px; padding-bottom: 44px; }
+  .hero__word { font-size: 42vw; }
+}
+@media (min-width: 768px) {
+  .hero__actions { flex-direction: row; justify-content: center; align-items: center; gap: 32px; }
+  .hero__now { display: none; }
+  .hero__corner {
+    display: flex; align-items: center; gap: 14px; margin: 0;
+    position: absolute; bottom: 28px; z-index: 2;
   }
-  .hero__figure { order: 0; height: 100%; min-height: 0; }
-  .hero__media { flex: 1 1 auto; aspect-ratio: auto; max-height: none; min-height: 0; }
-  .hero__caption { margin: 16px var(--gutter) 20px; }
-  /* текст по центру висоти, лівий край — на одній лінії з рештою сторінки */
-  .hero__text {
-    padding: var(--header-h) 48px 0 max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+  .hero__corner--left { left: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))); font-variant-numeric: tabular-nums; letter-spacing: .08em; }
+  .hero__corner--right { right: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))); }
+  .hero__arrow {
+    width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%;
+    background: transparent; color: var(--navy); font: inherit; font-size: 14px; cursor: pointer;
+    transition: border-color .2s var(--ease), background-color .2s var(--ease);
   }
-  .hero__title { margin-bottom: 36px; }
-  .hero__actions { flex-direction: row; align-items: center; gap: 32px; }
+  .hero__arrow:hover { border-color: var(--navy); background: var(--white); }
 }
 
-/* Вхід: рядки заголовка знизу по черзі, фото повільно «сідає» */
+/* Вхід (один раз), далі десерт ледь «дихає». Вимикається при «зменшити рух». */
 @media (prefers-reduced-motion: no-preference) {
-  .hero__line > span { transform: translateY(110%); animation: hero-line .7s var(--ease) forwards; }
-  .hero__line:nth-child(2) > span { animation-delay: .12s; }
-  .hero__eyebrow, .hero__actions, .hero__caption { opacity: 0; animation: hero-fade .7s var(--ease) .3s forwards; }
-  .hero__media img { animation: hero-zoom 1.6s var(--ease) both; }
+  .hero__word { animation: hero-word 1.2s var(--ease) both; }
+  .hero__rise { animation: hero-rise 1s cubic-bezier(0, 0, .2, 1) .3s both; }
+  .hero__float { animation: hero-breathe 6s ease-in-out 1.3s infinite; }
+  .hero__text, .hero__corner { animation: hero-fade .8s var(--ease) .6s both; }
 }
-@keyframes hero-line { to { transform: none; } }
-@keyframes hero-fade { to { opacity: 1; } }
-@keyframes hero-zoom { from { transform: scale(1.05); } to { transform: none; } }
+@keyframes hero-word { from { opacity: 0; letter-spacing: .05em; } }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(40px) scale(.96); } }
+@keyframes hero-breathe { 50% { transform: translateY(-6px); } }
+@keyframes hero-fade { from { opacity: 0; transform: translateY(10px); } }
 
 /* --- Біжучий рядок зі смаками макарон --- */
 .marquee { overflow: hidden; padding: 22px 0; border-bottom: 1px solid var(--line); background: var(--cream); }

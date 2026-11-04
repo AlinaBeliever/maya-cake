@@ -518,18 +518,22 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 }
 .hero__stage { display: flex; flex-direction: column; align-items: center; width: 100%; }
 .hero__object { position: relative; width: var(--obj); }
+/* Контейнер слова обрізаний по нижньому краю десерту: хвіст «y» не доходить до тексту (≥ 24 px) */
+.hero__wordbox {
+  position: absolute; z-index: 0; left: 50%; top: -100vh; bottom: 0; width: 100vw;
+  transform: translateX(-50%); overflow: hidden; pointer-events: none;
+}
 .hero__word {
-  position: absolute; left: 50%; top: 40%; z-index: 0;
-  transform: translate(calc(-50% + var(--px, 0px)), calc(-50% + var(--py, 0px)));
+  position: absolute; left: 50%; bottom: calc(var(--obj) * .06);
+  transform: translate(calc(-50% + var(--px, 0px)), var(--py, 0px));
   font-family: var(--font-display); font-weight: 300; font-size: clamp(180px, 32vw, 520px);
   line-height: .8; letter-spacing: -.03em; white-space: nowrap;
-  color: color-mix(in srgb, var(--powder) 55%, var(--cream));
-  user-select: none; -webkit-user-select: none; pointer-events: none;
+  color: #F3E4E3;
+  user-select: none; -webkit-user-select: none;
 }
-@supports not (color: color-mix(in srgb, red, blue)) { .hero__word { color: #F0D9DB; } }
 .hero__para { position: relative; z-index: 1; will-change: transform; }
 .hero__float { position: relative; }
-.hero__img { display: block; width: 100%; height: auto; object-fit: contain; }
+.hero__img { display: block; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 0 1px rgba(0, 0, 0, .06)); }
 .hero__ph {
   position: absolute; inset: 0; display: grid; place-items: center;
   font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--navy);
@@ -540,7 +544,7 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   background: radial-gradient(closest-side, rgba(31, 42, 68, .18), transparent 70%);
   filter: blur(6px);
 }
-.hero__text { position: relative; z-index: 1; margin-top: 28px; max-width: 640px; }
+.hero__text { position: relative; z-index: 1; margin-top: 28px; max-width: 900px; }
 .hero__eyebrow {
   display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 0 14px;
   font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .25em; color: var(--olive);
@@ -548,7 +552,7 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 .hero__eyebrow::before, .hero__eyebrow::after { content: ''; width: 32px; height: 1px; background: currentColor; flex: none; }
 .hero__title {
   margin: 0 0 26px; color: var(--navy);
-  font-family: var(--font-display); font-weight: 300; font-size: clamp(32px, 4vw, 52px); line-height: 1.1;
+  font-family: var(--font-display); font-weight: 300; font-size: clamp(38px, 4.6vw, 64px); line-height: 1.1;
 }
 .hero__title em { font-style: italic; font-weight: 400; white-space: nowrap; }
 .hero__actions { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }

@@ -24,7 +24,7 @@
   <!-- шрифти вантажаться паралельно й не затримують показ сторінки -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@400;500;600&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css?v=20261104j">
+  <link rel="stylesheet" href="css/style.css?v=20261104k">
 </head>
 <body data-page="index">
 <main id="main">
@@ -74,9 +74,9 @@
         <a class="cat" href="catalog.html?cat=tarts"><span class="cat__circle"><img src="assets/img/tart-plum-orange-cut.webp" width="320" height="320" alt="" loading="lazy"></span>Тарти</a>
         <a class="cat" href="catalog.html?cat=eclairs"><span class="cat__circle"><img src="assets/img/eclair-classic-cut.webp" width="320" height="320" alt="" loading="lazy"></span>Еклери й шу</a>
         <a class="cat" href="catalog.html?cat=pastries"><span class="cat__circle"><img src="assets/img/whoopie-raspberry-cut.webp" width="320" height="320" alt="" loading="lazy"></span>Тістечка</a>
-        <a class="cat" href="catalog.html?cat=cups"><span class="cat__circle"><img src="assets/img/trifle-red-velvet-400.webp" width="400" height="500" alt="" loading="lazy"></span>У стаканчиках</a>
         <a class="cat" href="catalog.html?cat=bakery"><span class="cat__circle"><img src="assets/img/brioche-raspberry-cut.webp" width="320" height="320" alt="" loading="lazy"></span>Випічка</a>
         <a class="cat" href="catalog.html?cat=caramel"><span class="cat__circle"><img src="assets/img/caramel-jar-cut.webp" width="320" height="320" alt="" loading="lazy"></span>Карамель</a>
+        <a class="cat" href="catalog.html?cat=cups"><span class="cat__circle"><img src="assets/img/trifle-red-velvet-400.webp" width="400" height="500" alt="" loading="lazy"></span>У стаканчиках</a>
         <a class="cat" href="catalog.html?gift=1"><span class="cat__circle"><img src="assets/img/napoleon-400.webp" width="400" height="500" alt="" loading="lazy"></span>Подарунки</a>
       </nav>
     </div>
@@ -86,11 +86,8 @@
   <section class="section" style="padding-top:0" aria-labelledby="featured-title">
     <div class="container">
       <div class="section-head">
-        <div>
-          <span class="eyebrow">Новинки сезону</span>
-          <h2 id="featured-title">Радимо спробувати</h2>
-        </div>
-        <a class="link-arrow" href="catalog.html?new=1">Усі новинки <svg aria-hidden="true"><use href="assets/icons/sprite.svg#arrow"/></svg></a>
+        <h2 id="featured-title">Радимо спробувати</h2>
+        <a class="link-arrow" href="catalog.html">Увесь каталог <svg aria-hidden="true"><use href="assets/icons/sprite.svg#arrow"/></svg></a>
       </div>
       <div class="product-grid" data-featured></div>
     </div>
@@ -177,16 +174,23 @@
   <section class="section" style="padding-top:0" aria-labelledby="ig-title">
     <div class="container">
       <div class="section-head">
-        <h2 id="ig-title">@maya.cake.kyiv</h2>
+        <h2 id="ig-title"><a class="ig-handle" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener">@maya.cake.kyiv</a></h2>
         <a class="link-arrow" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener">Підписатися <svg aria-hidden="true"><use href="assets/icons/sprite.svg#arrow"/></svg></a>
       </div>
-      <div class="insta">
-        <a href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Instagram Maya Cake"><img src="assets/img/whoopie-raspberry-400.webp" width="400" height="500" alt="" loading="lazy"></a>
-        <a href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Instagram Maya Cake"><img src="assets/img/roll-raspberry-400.webp" width="400" height="500" alt="" loading="lazy"></a>
-        <a href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Instagram Maya Cake"><img src="assets/img/tart-lemon-400.webp" width="400" height="500" alt="" loading="lazy"></a>
-        <a href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Instagram Maya Cake"><img src="assets/img/mousse-cherry-profiteroles-400.webp" width="400" height="500" alt="" loading="lazy"></a>
-        <a href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Instagram Maya Cake"><img src="assets/img/eclair-condensed-milk-400.webp" width="400" height="500" alt="" loading="lazy"></a>
-        <a href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Instagram Maya Cake"><img src="assets/img/layers-snickers-400.webp" width="400" height="500" alt="" loading="lazy"></a>
+      <!-- Фото з Instagram: 4 в ряд на комп'ютері, 1 на телефоні; самі гортаються кожні 2 с, можна гортати й вручну -->
+      <div class="insta" data-insta>
+        <div class="insta__track" data-insta-track tabindex="0" aria-label="Фото з Instagram — гортайте">
+          <a class="insta__slide" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Фото 1 з Instagram Maya Cake"><img src="assets/img/insta-1.webp" width="720" height="960" alt="" loading="lazy"></a>
+          <a class="insta__slide" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Фото 2 з Instagram Maya Cake"><img src="assets/img/insta-2.webp" width="720" height="960" alt="" loading="lazy"></a>
+          <a class="insta__slide" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Фото 3 з Instagram Maya Cake"><img src="assets/img/insta-3.webp" width="720" height="960" alt="" loading="lazy"></a>
+          <a class="insta__slide" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Фото 4 з Instagram Maya Cake"><img src="assets/img/insta-4.webp" width="720" height="960" alt="" loading="lazy"></a>
+          <a class="insta__slide" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Фото 5 з Instagram Maya Cake"><img src="assets/img/insta-5.webp" width="720" height="960" alt="" loading="lazy"></a>
+          <a class="insta__slide" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Фото 6 з Instagram Maya Cake"><img src="assets/img/insta-6.webp" width="720" height="960" alt="" loading="lazy"></a>
+          <a class="insta__slide" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Фото 7 з Instagram Maya Cake"><img src="assets/img/insta-7.webp" width="720" height="960" alt="" loading="lazy"></a>
+          <a class="insta__slide" href="https://instagram.com/maya.cake.kyiv" target="_blank" rel="noopener" aria-label="Фото 8 з Instagram Maya Cake"><img src="assets/img/insta-8.webp" width="720" height="960" alt="" loading="lazy"></a>
+        </div>
+        <button class="insta__nav insta__nav--prev" type="button" aria-label="Попереднє фото" data-insta-prev><svg aria-hidden="true"><use href="assets/icons/sprite.svg#arrow"/></svg></button>
+        <button class="insta__nav insta__nav--next" type="button" aria-label="Наступне фото" data-insta-next><svg aria-hidden="true"><use href="assets/icons/sprite.svg#arrow"/></svg></button>
       </div>
     </div>
   </section>
@@ -221,9 +225,9 @@
   </section>
 </main>
 
-<script src="js/config.js?v=20261104j"></script>
-<script src="js/main.js?v=20261104j"></script>
-<script src="js/cart.js?v=20261104j"></script>
-<script src="js/index.js?v=20261104j"></script>
+<script src="js/config.js?v=20261104k"></script>
+<script src="js/main.js?v=20261104k"></script>
+<script src="js/cart.js?v=20261104k"></script>
+<script src="js/index.js?v=20261104k"></script>
 </body>
 </html>

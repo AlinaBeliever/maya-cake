@@ -238,11 +238,11 @@
       media = `<img src="${MC.img(main, 400)}" srcset="${MC.srcset(main)}" sizes="(min-width: 1200px) 290px, (min-width: 768px) 31vw, 46vw" width="400" height="500" loading="${opts.eager ? 'eager' : 'lazy'}" decoding="async" alt="${MC.esc(p.name)}">` +
         (cut ? `<span class="card__cut" aria-hidden="true"><img src="assets/img/${cut}.webp" width="320" height="320" loading="lazy" alt=""></span>` : '');
     } else if (p.image) {
-      media = `<span class="card__cut" style="opacity:1"><img src="assets/img/${p.image}.webp" width="200" height="200" loading="lazy" alt="${MC.esc(p.name)}" style="border-radius:0;width:62%"></span>`;
+      media = `<span class="card__cut card__cut--solo"><img src="assets/img/${p.image}.webp" width="200" height="200" loading="lazy" alt="${MC.esc(p.name)}"></span>`;
     } else {
       media = '<span class="ph"><span>фото буде</span></span>';
     }
-    const badges = (p.tags || []).filter((t) => BADGES[t]).slice(0, 1).map((t) => `<span class="badge">${BADGES[t]}</span>`).join('');
+    const badges = opts.noBadges ? '' : (p.tags || []).filter((t) => BADGES[t]).slice(0, 1).map((t) => `<span class="badge">${BADGES[t]}</span>`).join('');
     const pi = MC.priceInfo(p);
     let action;
     if (!pi) {

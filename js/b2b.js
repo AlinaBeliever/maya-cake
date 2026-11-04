@@ -47,12 +47,6 @@
     calc();
 
     // Форма заявки
-    MC.qs('[data-b2b-checks]').innerHTML = items.map((it) =>
-      `<label class="check"><input type="checkbox" name="interest" value="${MC.esc(it.label)}"> ${MC.esc(it.label)}</label>`).join('') +
-      '<label class="check"><input type="checkbox" name="interest" value="Інші десерти з каталогу"> Інші десерти з каталогу</label>';
-    const dateInput = MC.qs('#b-date');
-    dateInput.min = MC.delivery.iso(MC.delivery.earliest('kyiv'));
-
     const form = MC.qs('[data-b2b-form]');
     const alertEl = MC.qs('[data-b2b-alert]');
     form.addEventListener('submit', (e) => {
@@ -82,9 +76,6 @@
         city: form.elements.city.value.trim(),
         contact_name: form.elements.contact_name.value.trim(),
         phone,
-        weekly_qty: form.elements.weekly_qty.value.trim(),
-        interest: MC.qsa('input[name="interest"]:checked', form).map((c) => c.value).join(', '),
-        trial_date: dateInput.value,
         message: form.elements.message.value.trim(),
         _gotcha: form.elements._gotcha.value
       };

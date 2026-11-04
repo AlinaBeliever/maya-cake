@@ -30,7 +30,7 @@
   --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --container: 1240px;
-  --gutter: 16px;
+  --gutter: 20px;          /* відступ від країв на телефоні */
   --radius: 6px;
   --radius-lg: 14px;
   --shadow: 0 1px 2px rgba(24, 52, 71, .05), 0 8px 24px rgba(24, 52, 71, .06);
@@ -311,6 +311,9 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   background: var(--cream); opacity: 0; transition: opacity .4s var(--ease);
 }
 .card__cut img { mix-blend-mode: normal; }
+/* макарон у каталозі: без білого квадрата навколо */
+.card__cut--solo { opacity: 1; }
+.card__cut--solo img { width: 62%; border-radius: 0; mix-blend-mode: multiply; }
 .card__cut img { width: 72%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
 @media (hover: hover) {
   .card:hover .card__cut { opacity: 1; }
@@ -548,7 +551,7 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 .link-ed:hover { background-size: 0 1px; background-position: right calc(100% - 6px); }
 .link-ed span { display: inline-block; transition: transform .3s var(--ease); }
 .link-ed:hover span { transform: translateX(4px); }
-.hero__caption { margin: 18px 0 0; font-size: 13px; color: var(--muted); }
+.hero__caption { display: none; margin: 0; font-size: 13px; color: var(--muted); }   /* лише поверх фото на ноутбуці */
 .hero__caption a { color: inherit; text-decoration: none; }
 .hero__caption em { font-family: var(--font-display); font-size: 17px; color: var(--navy); }
 .hero__caption a:hover em { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
@@ -580,7 +583,7 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   .hero__text { max-width: min(560px, 44vw); }
   .hero__title { margin-bottom: 34px; }
   .hero__actions { flex-direction: row; align-items: center; gap: 32px; }
-  .hero__caption { position: absolute; left: var(--gutter); bottom: 28px; margin: 0; }
+  .hero__caption { display: block; position: absolute; left: var(--gutter); bottom: 28px; margin: 0; }
 }
 
 /* Вхід: текст проявляється знизу, фото повільно «сідає». Вимикається при «зменшити рух». */
@@ -684,10 +687,28 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 }
 
 /* --- Стрічка Instagram --- */
-.insta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.insta a { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 4px; background: var(--white); }
-.insta img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
-.insta a:hover img { transform: scale(1.05); }
+.ig-handle { color: inherit; text-decoration: none; }
+.ig-handle:hover { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+.insta { position: relative; }
+.insta__track {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 12px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain;
+}
+.insta__track::-webkit-scrollbar { display: none; }
+.insta__slide { scroll-snap-align: start; aspect-ratio: 3 / 4; overflow: hidden; border-radius: var(--radius); background: var(--powder-soft); }
+.insta__slide img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.insta__slide:hover img { transform: scale(1.04); }
+.insta__nav {
+  position: absolute; top: 50%; z-index: 1; width: 44px; height: 44px; margin-top: -22px; padding: 0;
+  display: grid; place-items: center; border: 0; border-radius: 50%;
+  background: rgba(251, 246, 242, .92); color: var(--navy); box-shadow: var(--shadow); cursor: pointer;
+}
+.insta__nav svg { width: 20px; height: 20px; }
+.insta__nav--prev { left: 10px; }
+.insta__nav--prev svg { transform: scaleX(-1); }
+.insta__nav--next { right: 10px; }
+@media (min-width: 600px) { .insta__track { grid-auto-columns: calc((100% - 12px) / 2); } }
+@media (min-width: 900px) { .insta__track { grid-auto-columns: calc((100% - 36px) / 4); } .insta__nav--prev { left: -22px; } .insta__nav--next { right: -22px; } }
 @media (min-width: 900px) { .insta { grid-template-columns: repeat(6, 1fr); gap: 12px; } }
 
 /* --- FAQ --- */
@@ -1015,6 +1036,7 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 .tray--opts { margin-top: 1px; padding-top: 4px; border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
 .tray-wrap > .tray:first-child { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
 .tray--opts .tray__opts { margin-top: 0; }
+.tray-hint { display: none; }
 @media (max-width: 1023px) {
   /* Телефон: перемикач → коробка → смаки → подарунок і кнопка */
   .builder { display: flex; flex-direction: column; gap: 20px; }
@@ -1022,6 +1044,7 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   .builder__controls { order: 1; }
   .builder .tray-wrap > .tray:first-child { order: 2; border-radius: var(--radius-lg); padding: 14px; }
   .builder [data-flavors] { order: 3; }
+  .tray-hint { display: block; order: 1; margin: 4px 0 -8px; font-size: 14px; font-weight: 600; color: var(--navy); text-align: center; }
   .builder .tray--opts { order: 4; border-radius: var(--radius-lg); padding-top: 20px; margin-top: 0; }
   .tray__lid h2 { font-size: 22px; }
   .tray__lid { margin-bottom: 10px; }

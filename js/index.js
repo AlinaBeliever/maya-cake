@@ -4,14 +4,40 @@
 
   // Добірка на головній. Порядок можна змінити — це id з data/products.json
   const FEATURED = [
-    'cake-raspberry-mango', 'mousse-cherry-profiteroles', 'roll-raspberry', 'tart-plum-orange',
-    'eclair-classic', 'honey-cake-caramel', 'layers-snickers', 'pavlova-orange-passionfruit'
+    'red-velvet', 'napoleon', 'honey-cake-caramel', 'tart-lemon',
+    'tart-caramel-almond', 'peach-condensed-milk', 'potato-caramel'
   ];
 
+  // Instagram: автогортання кожні 2 с, пауза, коли людина гортає сама або наводить мишку
+  function initInsta() {
+    const root = MC.qs('[data-insta]');
+    if (!root) return;
+    const track = MC.qs('[data-insta-track]', root);
+    const step = () => track.querySelector('.insta__slide').getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
+    const atEnd = () => track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    const go = (dir) => {
+      if (dir > 0 && atEnd()) track.scrollTo({ left: 0, behavior: 'smooth' });
+      else if (dir < 0 && track.scrollLeft <= 4) track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+      else track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+    };
+    let paused = 0;
+    const pause = (ms) => { paused = Date.now() + ms; };
+    MC.qs('[data-insta-prev]', root).addEventListener('click', () => { pause(6000); go(-1); });
+    MC.qs('[data-insta-next]', root).addEventListener('click', () => { pause(6000); go(1); });
+    ['pointerdown', 'touchstart', 'wheel'].forEach((ev) => track.addEventListener(ev, () => pause(6000), { passive: true }));
+    root.addEventListener('mouseenter', () => { paused = Infinity; });
+    root.addEventListener('mouseleave', () => { paused = 0; });
+    if (!MC.motionOn()) return;   // «зменшити рух» — без автогортання
+    let visible = false;
+    if ('IntersectionObserver' in window) new IntersectionObserver((e) => { visible = e[0].isIntersecting; }).observe(root);
+    setInterval(() => { if (visible && Date.now() > paused && !document.hidden) go(1); }, 2000);
+  }
+
   MC.ready.then(() => {
+    initInsta();
     MC.data().then((d) => {
       const grid = MC.qs('[data-featured]');
-      grid.innerHTML = FEATURED.map((id) => d.byId[id]).filter(Boolean).map((p) => MC.card(p)).join('');
+      grid.innerHTML = FEATURED.map((id) => d.byId[id]).filter(Boolean).map((p) => MC.card(p, { noBadges: true })).join('');
 
       // Візуал коробки: 10 класичних макарон
       const pick = ['kinder', 'pistachio', 'coconut-strawberry', 'salted-caramel', 'lavender-bilberry',

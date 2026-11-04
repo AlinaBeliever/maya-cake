@@ -580,7 +580,7 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   .hero { min-height: min(calc(100svh - var(--header-h) - 32px), 780px); }
 }
 /* текст поверх фото — лише на широкому екрані, де торт стоїть праворуч і не заходить під текст */
-@media (min-width: 900px) and (min-aspect-ratio: 3 / 2) {
+@media (min-width: 900px) and (min-aspect-ratio: 3 / 2), (min-width: 1200px) and (min-aspect-ratio: 4 / 3) {
   .hero { display: block; height: calc(100vh - 32px); height: calc(100svh - 32px); min-height: 620px; margin-top: calc(var(--header-h) * -1); }   /* фото під прозорою шапкою */
   /* фон у тон фото: зліва світліше, праворуч трохи тепліше-сіре */
   .hero__media { position: absolute; inset: 0; display: block; padding: 0; background: linear-gradient(100deg, #FAF8F6 0%, #F3F0ED 55%, #EAE6E2 100%); }

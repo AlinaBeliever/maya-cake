@@ -828,8 +828,8 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 
 /* --- Конструктор коробки --- */
 .builder { display: grid; gap: 28px; padding-bottom: 120px; }
-.seg { display: inline-flex; padding: 4px; border-radius: 2px; background: var(--white); border: 1px solid var(--line); }
-.seg button { border: 0; background: none; padding: 10px 18px; border-radius: 2px; cursor: pointer; font-weight: 600; font-size: 14px; color: var(--ink); min-height: 40px; }
+.seg { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); }
+.seg button { border: 0; background: none; padding: 10px 18px; border-radius: 999px; cursor: pointer; font-weight: 600; font-size: 14px; color: var(--ink); min-height: 40px; }
 .seg button[aria-pressed="true"] { background: var(--navy); color: var(--white); }
 .builder__controls { display: grid; gap: 14px; }
 .builder__sizes { display: flex; flex-wrap: wrap; gap: 8px; }

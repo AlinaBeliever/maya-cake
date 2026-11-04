@@ -562,6 +562,21 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   .hero__inner { padding-top: 32px; padding-bottom: 48px; }
   .hero__actions { flex-direction: row; align-items: center; gap: 32px; }
 }
+/* планшет: як на ноутбуці — текст ліворуч, торт без фону праворуч */
+@media (min-width: 768px) {
+  .hero {
+    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center;
+  }
+  .hero__media { order: 2; justify-content: flex-end; padding: 24px var(--gutter) 24px 0; }
+  .hero__media img { width: 100%; max-width: 560px; max-height: 62svh; object-fit: contain; object-position: right center; }
+  .hero__inner { order: 1; width: 100%; padding-top: 40px; padding-bottom: 40px; padding-right: 0; }
+  .hero__actions { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
+  .hero__actions .btn-ed { white-space: nowrap; }
+}
+/* горизонтальний планшет — hero на висоту екрана */
+@media (min-width: 768px) and (min-aspect-ratio: 1/1) {
+  .hero { min-height: min(calc(100svh - var(--header-h) - 32px), 780px); }
+}
 /* текст поверх фото — лише на широкому екрані, де торт стоїть праворуч і не заходить під текст */
 @media (min-width: 900px) and (min-aspect-ratio: 3 / 2) {
   .hero { display: block; height: calc(100vh - 32px); height: calc(100svh - 32px); min-height: 620px; margin-top: calc(var(--header-h) * -1); }   /* фото під прозорою шапкою */

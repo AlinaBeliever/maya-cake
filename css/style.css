@@ -509,6 +509,8 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 
 /* --- Головна: hero — фото на всю ширину, текст ліворуч --- */
 .hero {
+  /* ↓ РОЗМІР ТОРТА на ноутбуці: яку частину ширини екрана займає фото (більше — ближче, менше — «віддаленіше») */
+  --hero-photo-size: 72%;
   position: relative; display: flex; flex-direction: column;
   background: var(--cream);
 }
@@ -554,8 +556,18 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 /* текст поверх фото — лише на широкому екрані, де торт стоїть праворуч і не заходить під текст */
 @media (min-width: 900px) and (min-aspect-ratio: 3 / 2) {
   .hero { display: block; height: calc(100vh - 32px); height: calc(100svh - 32px); min-height: 620px; margin-top: calc(var(--header-h) * -1); }   /* фото під прозорою шапкою */
-  .hero__media { position: absolute; inset: 0; aspect-ratio: auto; max-height: none; }
-  .hero__media img { object-position: right center; }
+  /* фон у тон фото: зліва світліше, праворуч трохи тепліше-сіре */
+  .hero__media { position: absolute; inset: 0; aspect-ratio: auto; max-height: none; background: linear-gradient(100deg, #FAF8F6 0%, #F3F0ED 55%, #EAE6E2 100%); }
+  /* фото притиснуте до правого нижнього кута; лівий і верхній краї м'яко розчиняються у фоні */
+  .hero__media img {
+    inset: auto 0 0 auto; width: var(--hero-photo-size); height: auto;
+    max-height: calc(100% - var(--header-h) - 12px);   /* торт не заходить під шапку */
+    object-fit: contain; object-position: right bottom; transform-origin: right bottom;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%), linear-gradient(to bottom, transparent 0, #000 16%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent 0, #000 22%), linear-gradient(to bottom, transparent 0, #000 16%);
+    mask-composite: intersect;
+  }
   .hero__inner {
     position: relative; z-index: 1; height: 100%;
     display: flex; flex-direction: column; justify-content: center;
@@ -577,21 +589,6 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 }
 @keyframes hero-zoom { from { transform: scale(1.05); } }
 @keyframes hero-fade { from { opacity: 0; transform: translateY(16px); } }
-
-/* --- Біжучий рядок зі смаками макарон --- */
-.marquee { overflow: hidden; padding: 22px 0; border-bottom: 1px solid var(--line); background: var(--cream); }
-.marquee__track { display: flex; width: max-content; }
-.marquee__group { display: flex; margin: 0; padding: 0; list-style: none; }
-.marquee__group li {
-  display: flex; align-items: center; white-space: nowrap;
-  font-family: var(--font-display); font-style: italic; font-weight: 300; font-size: 28px; line-height: 1.2; color: var(--navy);
-}
-.marquee__group li::after { content: ''; width: 6px; height: 6px; margin: 0 28px; border-radius: 50%; background: var(--powder-deep); }
-@media (prefers-reduced-motion: no-preference) {
-  .marquee__track { animation: marquee 50s linear infinite; }
-  .marquee:hover .marquee__track { animation-play-state: paused; }
-}
-@keyframes marquee { to { transform: translateX(-50%); } }
 
 /* --- Рядок довіри: лише лінії зверху й знизу, пункти рівно по центру --- */
 .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }

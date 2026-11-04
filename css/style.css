@@ -1069,6 +1069,16 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   .builder .tray--opts { order: 4; border-radius: var(--radius-lg); padding-top: 20px; margin-top: 0; }
   .tray__lid h2 { font-size: 22px; }
   .tray__lid { margin-bottom: 10px; }
+  /* коробка закріплена під шапкою, поки гортаєш смаки — видно, що вже обрано */
+  .builder .tray-wrap > .tray:first-child {
+    position: sticky; top: calc(var(--header-h) + 6px); z-index: 20;
+    padding: 10px 12px 12px; box-shadow: 0 6px 20px rgba(24, 52, 71, .12);
+  }
+  .builder .tray__lid { margin-bottom: 8px; }
+  .builder .tray__lid h2 { font-size: 20px; }
+  .builder .tray__cells { gap: 6px; padding: 8px; max-width: 340px; margin: 0 auto; }
+  .builder .tray__cells.cols-4 { max-width: 270px; }
+  .builder .tray__list { display: none; }   /* обрані смаки й так видно в комірках */
 }
 @media (min-width: 1024px) {
   .tray-wrap { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow); }

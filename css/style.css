@@ -110,10 +110,10 @@ p { margin: 0 0 1em; }
   --btn-bg: var(--navy);
   --btn-fg: var(--white);
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  min-height: 48px; padding: 12px 26px;
-  border: 1px solid var(--btn-bg); border-radius: 999px;
+  min-height: 50px; padding: 14px 26px;
+  border: 1px solid var(--btn-bg); border-radius: 2px;   /* один стиль кнопок на весь сайт — прямокутні, як у hero */
   background: var(--btn-bg); color: var(--btn-fg);
-  font-weight: 600; font-size: 15px; letter-spacing: .01em; line-height: 1.2;
+  font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; line-height: 1.2;
   text-decoration: none; cursor: pointer;
   transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .2s var(--ease);
 }
@@ -125,7 +125,7 @@ p { margin: 0 0 1em; }
 .btn--light { --btn-bg: var(--white); --btn-fg: var(--navy); border-color: var(--white); }
 .btn--light:hover { --btn-bg: var(--cream); color: var(--navy); }
 .btn--block { width: 100%; }
-.btn--sm { min-height: 40px; padding: 8px 18px; font-size: 14px; }
+.btn--sm { min-height: 40px; padding: 8px 16px; font-size: 12px; letter-spacing: .1em; }
 .btn svg { width: 18px; height: 18px; flex: none; }
 
 .icon-btn {
@@ -417,7 +417,7 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 .cart-item__remove:hover { color: var(--danger); }
 .cart-item__limit { grid-column: 2 / -1; font-size: 12px; color: var(--muted); }
 
-.qty { display: inline-flex; align-items: center; margin-top: 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); }
+.qty { display: inline-flex; align-items: center; margin-top: 10px; border: 1px solid var(--line); border-radius: 2px; background: var(--white); }
 .qty button { width: 36px; height: 36px; border: 0; background: none; color: var(--navy); cursor: pointer; border-radius: 50%; display: grid; place-items: center; }
 .qty button:hover:not([disabled]) { background: var(--powder-soft); }
 .qty button[disabled] { opacity: .35; cursor: not-allowed; }
@@ -483,7 +483,8 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 .data-error code { background: var(--white); padding: 2px 6px; border-radius: 4px; }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  /* без переходів зовсім: «майже нульова» тривалість лишала вміст кошика невидимим */
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
 /* Доповнення */
@@ -613,11 +614,10 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 /* --- Категорії-кола --- */
 .cats { display: flex; gap: 16px; }
 .cat { display: grid; justify-items: center; gap: 10px; width: 96px; text-decoration: none; color: var(--ink); font-size: 14px; font-weight: 500; text-align: center; line-height: 1.25; }
-.cat__circle { width: 96px; height: 96px; border-radius: 50%; background: var(--powder); overflow: hidden; transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
-.cat__circle img { width: 100%; height: 100%; object-fit: cover; }
-.cat__circle.is-contain { background: var(--white); }
-.cat__circle.is-contain img { object-fit: contain; padding: 14px; }
-.cat:hover .cat__circle { transform: translateY(-3px); box-shadow: var(--shadow); }
+/* категорії: самі десерти без фону (вирізані фото з прозорістю) */
+.cat__circle { display: block; width: 96px; height: 96px; transition: transform .3s var(--ease); }
+.cat__circle img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 6px 8px rgba(24, 52, 71, .10)); }
+.cat:hover .cat__circle { transform: translateY(-4px); }
 .cat:hover { color: var(--navy); }
 @media (min-width: 1024px) {
   .cats { display: grid; grid-template-columns: repeat(11, 1fr); gap: 12px; margin: 0; padding: 0; overflow: visible; }
@@ -828,8 +828,8 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
 
 /* --- Конструктор коробки --- */
 .builder { display: grid; gap: 28px; padding-bottom: 120px; }
-.seg { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); }
-.seg button { border: 0; background: none; padding: 10px 18px; border-radius: 999px; cursor: pointer; font-weight: 600; font-size: 14px; color: var(--ink); min-height: 40px; }
+.seg { display: inline-flex; padding: 4px; border-radius: 2px; background: var(--white); border: 1px solid var(--line); }
+.seg button { border: 0; background: none; padding: 10px 18px; border-radius: 2px; cursor: pointer; font-weight: 600; font-size: 14px; color: var(--ink); min-height: 40px; }
 .seg button[aria-pressed="true"] { background: var(--navy); color: var(--white); }
 .builder__controls { display: grid; gap: 14px; }
 .builder__sizes { display: flex; flex-wrap: wrap; gap: 8px; }

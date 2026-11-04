@@ -3201,34 +3201,5 @@
         "check": "Є лише в таблиці складу: немає фото і невідомо, до якої цінової групи належить"
       }
     ]
-  },
-  "hero": {
-    "_note": "Десерти для першого екрана головної (стрілки ← →). image — назва файлу в assets/img/ без .webp, фото БЕЗ фону (PNG/WebP з прозорістю), ~880 px завширшки. Поки image = null, показується заглушка hero-object-placeholder.",
-    "items": [
-      {
-        "id": "berry-plombir",
-        "image": "hero-berry-plombir"
-      },
-      {
-        "id": "whoopie-pistachio",
-        "image": null
-      },
-      {
-        "id": "tart-lemon",
-        "image": null
-      },
-      {
-        "id": "eclair-classic",
-        "image": null
-      },
-      {
-        "id": "pavlova-orange-passionfruit",
-        "image": null
-      },
-      {
-        "id": "potato-kinder",
-        "image": null
-      }
-    ]
   }
 }

@@ -13,29 +13,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261104e">
+  <link rel="stylesheet" href="css/style.css?v=20261104g">
 </head>
 <body data-page="index">
 <main id="main">
 
-  <!-- 1. Hero: велике слово «Maya», над ним один десерт без фону, текст по центру -->
-  <section class="hero" aria-labelledby="hero-title" data-hero>
-    <div class="hero__stage">
-      <div class="hero__object">
-        <div class="hero__wordbox" aria-hidden="true"><span class="hero__word" data-hero-word>Maya</span></div>
-        <div class="hero__para" data-hero-para>
-          <div class="hero__rise">
-            <div class="hero__float" data-hero-frame>
-              <!-- TODO: замінити заглушку на справжні фото десертів без фону.
-                   Файл — assets/img/<назва>.webp з прозорим фоном, ~880 px завширшки;
-                   назву вписати в data/products.json → hero.items[].image -->
-              <img class="hero__img" src="assets/img/hero-berry-plombir.webp" width="836" height="698" alt="Ягідний пломбір" fetchpriority="high" data-hero-img>
-              <span class="hero__ph" data-hero-ph hidden>фото буде</span>
-            </div>
-            <div class="hero__ground" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
+  <!-- 1. Hero: фото на всю ширину, текст ліворуч -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <img src="assets/img/hero-1672.webp" srcset="assets/img/hero-900.webp 900w, assets/img/hero-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="Торт «Ягідний пломбір» на мармуровій дошці" fetchpriority="high">
+    </div>
+    <div class="container hero__inner">
       <div class="hero__text">
         <p class="hero__eyebrow">Кондитерська · Київ</p>
         <h1 class="hero__title" id="hero-title">Французькі десерти <em>з Києва</em></h1>
@@ -43,15 +31,9 @@
           <a class="btn-ed" href="catalog.html">Обрати десерти</a>
           <a class="link-ed" href="box.html">Зібрати коробку <span aria-hidden="true">→</span></a>
         </div>
-        <p class="hero__now"><a href="product.html?id=berry-plombir" data-hero-link><em data-hero-name>Ягідний пломбір</em> · <span data-hero-price>1 400 грн</span></a></p>
       </div>
+      <p class="hero__caption"><a href="product.html?id=berry-plombir"><em>Ягідний пломбір</em> · <span>1 400 грн</span></a></p>
     </div>
-    <div class="hero__corner hero__corner--left">
-      <button class="hero__arrow" type="button" aria-label="Попередній десерт" data-hero-prev>←</button>
-      <span class="hero__count" aria-live="polite"><span data-hero-index>01</span> / <span data-hero-total>06</span></span>
-      <button class="hero__arrow" type="button" aria-label="Наступний десерт" data-hero-next>→</button>
-    </div>
-    <p class="hero__corner hero__corner--right"><a href="product.html?id=berry-plombir" data-hero-link><em data-hero-name>Ягідний пломбір</em> · <span data-hero-price>1 400 грн</span></a></p>
   </section>
 
   <!-- Біжучий рядок зі смаками макарон -->
@@ -236,9 +218,9 @@
   </section>
 </main>
 
-<script src="js/config.js?v=20261104e"></script>
-<script src="js/main.js?v=20261104e"></script>
-<script src="js/cart.js?v=20261104e"></script>
-<script src="js/index.js?v=20261104e"></script>
+<script src="js/config.js?v=20261104g"></script>
+<script src="js/main.js?v=20261104g"></script>
+<script src="js/cart.js?v=20261104g"></script>
+<script src="js/index.js?v=20261104g"></script>
 </body>
 </html>

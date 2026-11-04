@@ -480,15 +480,17 @@ def gift_boxes(files):
     return out
 
 
-def hero(files, name='napoleon'):
-    """Фото для першого екрана головної — основне фото торта без зменшення (права половина екрана)."""
-    n, opt = PRODUCTS[name]
-    A = load(files, n)
-    photo = main_photo(A, n, opt, find_circle(A, bg_color(A), n))
+def hero(files):
+    """Фото на весь перший екран головної — «Ягідний пломбір» (materials/photos, широкий кадр 1672×941).
+    Не збільшуємо: 1672 px для ноутбука, 900 px для телефона."""
+    src = os.path.join(SRC, 'Білий ягідний торт у мінімалістичній студії.png')
+    if not os.path.exists(src):
+        return []
+    im = Image.open(src).convert('RGB')
     out = []
-    for w in (600, photo.size[0]):
-        p = os.path.join(OUT, f'hero-{name}-{w}.webp')
-        photo.resize((w, round(photo.size[1] * w / photo.size[0])), Image.LANCZOS).save(p, 'WEBP', quality=84, method=6)
+    for w in (900, im.size[0]):
+        p = os.path.join(OUT, f'hero-{w}.webp')
+        im.resize((w, round(im.size[1] * w / im.size[0])), Image.LANCZOS).save(p, 'WEBP', quality=84, method=6)
         out.append(p)
     return out
 

@@ -568,11 +568,12 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   /* фото притиснуте до правого нижнього кута; лівий і верхній краї м'яко розчиняються у фоні */
   .hero__media img {
     inset: auto var(--hero-photo-shift) 0 auto; width: var(--hero-photo-size); height: auto;
-    max-height: calc(100% - var(--header-h) - 12px);   /* торт не заходить під шапку */
+    bottom: 48px;                                      /* місце для підпису під тортом */
+    max-height: calc(100% - var(--header-h) - 60px);   /* торт не заходить під шапку */
     object-fit: contain; object-position: right bottom; transform-origin: right bottom;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%, #000 90%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 16%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%, #000 90%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 16%, #000 90%, transparent 100%);
     -webkit-mask-composite: source-in;
-    mask-image: linear-gradient(to right, transparent 0, #000 22%, #000 90%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 16%);
+    mask-image: linear-gradient(to right, transparent 0, #000 22%, #000 90%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 16%, #000 90%, transparent 100%);
     mask-composite: intersect;
   }
   .hero__inner {
@@ -583,7 +584,8 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   .hero__text { max-width: min(560px, 44vw); }
   .hero__title { margin-bottom: 34px; }
   .hero__actions { flex-direction: row; align-items: center; gap: 32px; }
-  .hero__caption { display: block; position: absolute; left: var(--gutter); bottom: 28px; margin: 0; }
+  /* підпис праворуч під тортом */
+  .hero__caption { display: block; position: absolute; right: calc(var(--hero-photo-shift) + var(--hero-photo-size) * .2); bottom: 16px; margin: 0; }
 }
 
 /* Вхід: текст проявляється знизу, фото повільно «сідає». Вимикається при «зменшити рух». */

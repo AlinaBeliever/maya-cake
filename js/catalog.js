@@ -77,11 +77,18 @@
       writeUrl();
     }
 
+    // Змінили категорію чи фільтр унизу списку — повертаємо на початок списку
+    const toListTop = () => {
+      const header = MC.qs('.site-header');
+      const top = MC.qs('.page-head').getBoundingClientRect().bottom + window.scrollY - (header ? header.offsetHeight : 0);
+      if (window.scrollY > top + 1) window.scrollTo({ top, behavior: 'auto' });
+    };
     chips.addEventListener('click', (e) => {
       const b = e.target.closest('[data-cat]');
       if (!b) return;
       state.cat = b.dataset.cat;
       render();
+      toListTop();
     });
     filters.addEventListener('click', (e) => {
       const b = e.target.closest('[data-filter]');
@@ -94,9 +101,10 @@
         state.on.add(k);
       }
       render();
+      toListTop();
     });
-    sort.addEventListener('change', () => { state.sort = sort.value; render(); });
-    MC.qs('[data-reset]').addEventListener('click', () => { state.on.clear(); state.cat = ''; state.sort = 'popular'; render(); });
+    sort.addEventListener('change', () => { state.sort = sort.value; render(); toListTop(); });
+    MC.qs('[data-reset]').addEventListener('click', () => { state.on.clear(); state.cat = ''; state.sort = 'popular'; render(); toListTop(); });
 
     render();
     const active = chips.querySelector('[aria-pressed="true"]');

@@ -118,7 +118,7 @@ PRODUCTS = {
     'cake-raspberry-mango': (73, {}),
     'layers-chocolate-cherry': (74, {}),
     'eclair-classic': (75, {}),
-    'berry-plombir': (76, {}),
+    'berry-plombir': (54, {}),   # версія з ягодами (як на головній); сторіз 76 — інша версія з червоним желе
     'three-milks-profiteroles': (77, {}),
     'layers-chia': (78, {}),
     'tart-plum-orange': (79, {}),
@@ -146,7 +146,8 @@ BENTO = ['chocolate-cherry', 'spartak', 'strawberry-honey', 'red-velvet', 'poppy
 
 # ---------------------------------------------------------------------------
 def stories():
-    files = sorted(glob.glob(os.path.join(SRC, '*_n.jpg')))
+    # лише сторіз-макети 1206×2144; інші фото з тієї ж папки (Instagram тощо) пропускаємо
+    files = [f for f in sorted(glob.glob(os.path.join(SRC, '*_n.jpg'))) if Image.open(f).size == (1206, 2144)]
     if len(files) != 84:
         print(f'Увага: знайдено {len(files)} сторіз, очікувалось 84', file=sys.stderr)
     return files

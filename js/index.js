@@ -4,8 +4,8 @@
 
   // Добірка на головній. Порядок можна змінити — це id з data/products.json
   const FEATURED = [
-    'red-velvet', 'napoleon', 'honey-cake-caramel', 'tart-lemon',
-    'tart-caramel-almond', 'peach-condensed-milk', 'potato-caramel'
+    'red-velvet', 'napoleon', 'tube-condensed-milk', 'tart-lemon',
+    'tart-caramel-almond', 'peach-condensed-milk', 'potato-caramel', 'trifle-honey'
   ];
 
   // Instagram: автогортання кожні 2 с, пауза, коли людина гортає сама або наводить мишку

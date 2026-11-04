@@ -519,13 +519,15 @@ body:not([data-page="index"]) .site-header, .site-header.is-scrolled { backgroun
   --hero-photo-size: 72%;
   /* ↓ ПОЛОЖЕННЯ ТОРТА: відступ від правого краю екрана (0% — впритул праворуч, більше — лівіше) */
   --hero-photo-shift: 6%;
+  /* ↓ РОЗМІР ТОРТА на телефоні: яку частину ширини екрана займає торт (менше — менший торт) */
+  --hero-cake-phone: 70%;
   position: relative; display: flex; flex-direction: column;
   background: var(--cream);
 }
 .hero__media { position: relative; display: flex; justify-content: flex-end; padding: 12px 10px 0 var(--gutter); }   /* телефон: торт трохи правіше */
 .hero__media picture { display: contents; }   /* щоб торт вирівнювався разом із блоком */
 /* телефон і планшет: торт без фону просто на кремовій сторінці */
-.hero__media img { display: block; width: min(80%, 520px); height: auto; filter: drop-shadow(0 18px 22px rgba(24, 52, 71, .10)); }
+.hero__media img { display: block; width: min(var(--hero-cake-phone), 520px); height: auto; filter: drop-shadow(0 18px 22px rgba(24, 52, 71, .10)); }
 .hero__inner { padding-top: 24px; padding-bottom: 40px; }
 .hero__eyebrow {
   display: flex; align-items: center; gap: 14px; margin: 0 0 14px;

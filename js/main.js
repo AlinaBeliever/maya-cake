@@ -168,6 +168,11 @@
     if (p.price != null) return { value: p.price, from: false };
     return null;
   };
+  // Таблиця на телефоні стає картками: кожна клітинка отримує підпис зі свого заголовка
+  MC.labelTable = function (table) {
+    const heads = MC.qsa('thead th', table).map((th) => th.textContent.trim());
+    MC.qsa('tbody tr', table).forEach((tr) => [...tr.cells].forEach((td, i) => td.setAttribute('data-label', heads[i] || '')));
+  };
   MC.priceText = function (p) {
     const pi = MC.priceInfo(p);
     if (!pi) return 'ціну уточнюйте';
@@ -221,11 +226,13 @@
   };
   MC.categoryLabel = (data, id) => (data.categories.find((c) => c.id === id) || {}).label || '';
 
+  const CAN_HOVER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   MC.card = function (p, opts) {
     opts = opts || {};
     const url = MC.productUrl(p);
     const main = MC.mainImage(p);
-    const cut = p.images && p.images.hover !== false && p.images.cut;
+    // коло з розрізом показується лише при наведенні мишкою — на телефоні його не вантажимо
+    const cut = CAN_HOVER && p.images && p.images.hover !== false && p.images.cut;
     let media;
     if (main) {
       media = `<img src="${MC.img(main, 400)}" srcset="${MC.srcset(main)}" sizes="(min-width: 1200px) 290px, (min-width: 768px) 31vw, 46vw" width="400" height="500" loading="${opts.eager ? 'eager' : 'lazy'}" decoding="async" alt="${MC.esc(p.name)}">` +

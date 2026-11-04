@@ -14,6 +14,7 @@
       <td class="num">${MC.price(it.rrp)}</td>
       <td class="num">${MC.price(it.rrp - it.opt)} · ${pct(it)}%</td>
       <td>${MC.esc(it.shelfLife)}</td></tr>`).join('');
+    MC.labelTable(MC.qs('[data-b2b-table]'));
 
     // Дні доставки по містах
     const groups = {};

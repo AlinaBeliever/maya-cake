@@ -7,6 +7,7 @@
     MC.qs('[data-zones]').innerHTML = zones.map((z) => `<tr>
       <td>${z.label}</td><td>${MC.delivery.daysText(z)}${z.unconfirmed ? '*' : ''}</td>
       <td class="num">${MC.price(z.fee)}</td><td class="num">від ${MC.price(z.freeFrom)}</td></tr>`).join('');
+    MC.labelTable(MC.qs('.zones-table'));
     const unc = zones.filter((z) => z.unconfirmed).map((z) => z.label);
     MC.qs('[data-unconfirmed]').textContent = unc.length ? `* ${unc.join(', ')} — дні доставки уточнюються, напишіть нам перед замовленням.` : '';
     MC.qs('[data-pits]').textContent = MC.NOTE_PITS;

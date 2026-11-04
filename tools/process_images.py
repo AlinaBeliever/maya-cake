@@ -490,7 +490,7 @@ def hero(files):
     out = []
     for w in (900, im.size[0]):
         p = os.path.join(OUT, f'hero-{w}.webp')
-        im.resize((w, round(im.size[1] * w / im.size[0])), Image.LANCZOS).save(p, 'WEBP', quality=84, method=6)
+        im.resize((w, round(im.size[1] * w / im.size[0])), Image.LANCZOS).save(p, 'WEBP', quality=94, method=6)
         out.append(p)
     return out
 
@@ -519,6 +519,8 @@ def logo():
     A = np.asarray(im).astype(float)
     ref = np.abs(np.array([16, 90, 127]) - bg).sum()
     alpha = np.clip(np.abs(A - bg).sum(-1) / ref * 255, 0, 255).astype(np.uint8)
+    alpha[alpha < 24] = 0          # прибираємо «шум» фону — файл стає в рази легшим
+    alpha[alpha > 232] = 255
     a = Image.fromarray(alpha)
     a = a.crop(a.getbbox())
     out = []
@@ -526,7 +528,16 @@ def logo():
         solid = Image.new('RGBA', a.size, color + (255,))
         solid.putalpha(a)
         solid.save(os.path.join(OUT, f'{name}.png'), optimize=True)
-        out.append(save_one(solid, name, 90))
+        # на сайті логотип не вищий за 56 px — беремо 2× для чітких екранів
+        small = solid.resize((round(solid.size[0] * 120 / solid.size[1]), 120), Image.LANCZOS)
+        out.append(save_one(small, name, 90))
+    # картинка для прев'ю посилання (Telegram, Viber, Facebook): логотип на кремовому фоні, 1200×630
+    og = Image.new('RGB', (1200, 630), (251, 246, 242))
+    mark = Image.open(os.path.join(OUT, 'logo.png'))
+    mark = mark.resize((round(mark.size[0] * 300 / mark.size[1]), 300), Image.LANCZOS)
+    og.paste(mark, ((1200 - mark.size[0]) // 2, (630 - mark.size[1]) // 2), mark)
+    og.save(os.path.join(OUT, 'og-image.jpg'), quality=90, optimize=True)
+    out.append(os.path.join(OUT, 'og-image.jpg'))
     fav = Image.new('RGBA', (64, 64), (220, 194, 193, 255))
     mark = Image.open(os.path.join(OUT, 'logo.png'))
     mark.thumbnail((52, 52), Image.LANCZOS)
